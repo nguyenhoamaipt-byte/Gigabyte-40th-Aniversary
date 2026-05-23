@@ -1,877 +1,897 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en">
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>GIGABYTE 40 Vietnam — Campaign Proposal</title>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Inter:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet"/>
+<title>GIGABYTE 40 — Vietnam Campaign 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
 <style>
+/* ─── RESET & TOKENS ─────────────────────────────────────── */
 *{margin:0;padding:0;box-sizing:border-box}
 :root{
-  --black:#070707;--gold:#C9963A;--gold-light:#e8b55a;--gold-pale:#f8f0e0;
-  --white:#ffffff;--g50:#f6f5f1;--g100:#edeae3;--g200:#d5d1c7;
-  --g400:#9e9a90;--g600:#5e5b53;--g800:#1e1d17;--red:#e63946;
-  --green:#2a9d5c;
+  --ink:#08080A;--gold:#C9963A;--gold2:#e8b55a;--gold3:#f8f0e0;
+  --white:#fff;--f1:#f5f4f0;--f2:#eae8e2;--f3:#d0cdc5;
+  --muted:#888077;--body:#3a3830;
+  --r:0px;
 }
 html{scroll-behavior:smooth}
-body{font-family:'Inter',sans-serif;background:var(--white);color:var(--black);font-size:15px;line-height:1.7;}
+body{font-family:'Inter',sans-serif;background:var(--white);color:var(--ink);font-size:15px;line-height:1.7;-webkit-font-smoothing:antialiased}
 
-/* ═══════════════════════════════ HERO ═══════════════════════════════ */
-.hero{background:var(--black);padding:90px 64px 72px;position:relative;overflow:hidden;min-height:560px;display:flex;flex-direction:column;justify-content:flex-end;}
-.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 70% 90% at 85% 40%,rgba(201,150,58,0.10) 0%,transparent 65%),radial-gradient(ellipse 40% 60% at 15% 80%,rgba(201,150,58,0.05) 0%,transparent 60%);}
-.hero-rings{position:absolute;top:-120px;right:-120px;pointer-events:none;}
-.hero-rings span{position:absolute;border-radius:50%;border:1px solid rgba(201,150,58,0.08);}
-.hero-rings span:nth-child(1){width:800px;height:800px;top:0;right:0;}
-.hero-rings span:nth-child(2){width:580px;height:580px;top:110px;right:110px;}
-.hero-rings span:nth-child(3){width:360px;height:360px;top:220px;right:220px;}
-.hero-rings span:nth-child(4){width:160px;height:160px;top:320px;right:320px;}
-.hero-content{position:relative;z-index:2;}
-.hero-eyebrow{font-family:'Syne',sans-serif;font-size:10px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:14px;margin-bottom:22px;}
-.hero-eyebrow::before{content:'';display:block;width:48px;height:1px;background:var(--gold);}
-.hero h1{font-family:'Syne',sans-serif;font-size:clamp(52px,8.5vw,106px);font-weight:800;line-height:.92;color:var(--white);letter-spacing:-3px;margin-bottom:6px;}
-.hero h1 em{color:var(--gold);font-style:normal;}
-.hero-tagline{font-size:18px;color:rgba(255,255,255,0.38);font-weight:300;letter-spacing:.2px;margin-bottom:52px;max-width:560px;}
-.hero-pills{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:52px;}
-.pill{border:1px solid rgba(201,150,58,0.22);color:rgba(255,255,255,0.45);font-size:10px;padding:5px 14px;letter-spacing:.8px;font-family:'Syne',sans-serif;text-transform:uppercase;}
-.pill.hot{border-color:rgba(201,150,58,0.6);color:var(--gold-light);}
-.hero-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:0;border-top:1px solid rgba(255,255,255,0.06);padding-top:32px;margin-top:8px;}
-.h-stat label{font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:6px;}
-.h-stat span{font-size:13px;color:rgba(255,255,255,0.5);display:block;line-height:1.45;}
+/* ─── HERO ───────────────────────────────────────────────── */
+.hero{
+  background:var(--ink);min-height:100vh;
+  display:grid;grid-template-rows:1fr auto;
+  padding:0;position:relative;overflow:hidden;
+}
+.hero-art{
+  position:absolute;inset:0;
+  background:
+    radial-gradient(ellipse 60% 80% at 100% 10%, rgba(201,150,58,.12) 0%,transparent 60%),
+    radial-gradient(ellipse 40% 50% at 0% 100%, rgba(201,150,58,.06) 0%,transparent 55%);
+}
+.hero-grid{
+  position:absolute;inset:0;
+  background-image:
+    linear-gradient(rgba(201,150,58,.04) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(201,150,58,.04) 1px,transparent 1px);
+  background-size:80px 80px;
+}
+.hero-inner{
+  position:relative;z-index:2;
+  padding:120px 80px 0;
+  display:flex;flex-direction:column;justify-content:flex-end;
+}
+.hero-label{
+  font-family:'Syne',sans-serif;font-size:10px;letter-spacing:5px;
+  text-transform:uppercase;color:var(--gold);
+  display:flex;align-items:center;gap:16px;margin-bottom:28px;
+}
+.hero-label::before{content:'';width:56px;height:1px;background:var(--gold);}
+.hero h1{
+  font-family:'Syne',sans-serif;
+  font-size:clamp(72px,12vw,160px);
+  font-weight:800;line-height:.88;
+  color:var(--white);letter-spacing:-5px;
+  margin-bottom:28px;
+}
+.hero h1 span{color:var(--gold);}
+.hero-desc{
+  font-size:17px;color:rgba(255,255,255,.38);font-weight:300;
+  max-width:500px;line-height:1.75;margin-bottom:56px;
+  letter-spacing:.1px;
+}
+.hero-tags{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:64px;}
+.tag{
+  font-family:'Syne',sans-serif;font-size:9px;letter-spacing:2.5px;
+  text-transform:uppercase;padding:6px 14px;
+  border:1px solid rgba(201,150,58,.2);color:rgba(255,255,255,.35);
+}
+.tag.lit{border-color:rgba(201,150,58,.55);color:var(--gold2);}
+.hero-bar{
+  position:relative;z-index:2;
+  border-top:1px solid rgba(255,255,255,.06);
+  display:grid;grid-template-columns:repeat(4,1fr);
+}
+.hb{padding:28px 80px 28px 0;margin-left:80px;}
+.hb:not(:last-child){border-right:1px solid rgba(255,255,255,.05);}
+.hb label{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:6px;}
+.hb span{font-size:13px;color:rgba(255,255,255,.45);line-height:1.5;}
+.hb:first-child{margin-left:80px;}
 
-/* ═══════════════════════════════ NAV ═══════════════════════════════ */
-nav{position:sticky;top:0;z-index:100;background:var(--black);overflow-x:auto;border-bottom:1px solid rgba(201,150,58,0.1);}
-nav ul{display:flex;list-style:none;padding:0 48px;}
-nav a{font-family:'Syne',sans-serif;font-size:9.5px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.3);text-decoration:none;padding:13px 16px;white-space:nowrap;display:block;border-bottom:2px solid transparent;transition:all .2s;}
-nav a:hover,nav a.active{color:var(--gold);border-bottom-color:var(--gold);}
+/* ─── NAV ────────────────────────────────────────────────── */
+nav{
+  position:sticky;top:0;z-index:99;
+  background:rgba(8,8,10,.96);backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(201,150,58,.1);
+}
+.nav-inner{display:flex;padding:0 80px;}
+nav a{
+  font-family:'Syne',sans-serif;font-size:9px;letter-spacing:2.5px;
+  text-transform:uppercase;color:rgba(255,255,255,.28);
+  text-decoration:none;padding:14px 18px;white-space:nowrap;
+  border-bottom:2px solid transparent;transition:all .2s;
+}
+nav a:hover{color:var(--gold);border-bottom-color:var(--gold);}
 
-/* ═══════════════════════════════ LAYOUT ═══════════════════════════════ */
-.wrap{max-width:1000px;margin:0 auto;padding:0 64px;}
-.sec{padding:80px 0 60px;}
-.sec+.sec{border-top:1px solid var(--g100);}
+/* ─── LAYOUT ─────────────────────────────────────────────── */
+.w{max-width:1040px;margin:0 auto;padding:0 80px;}
+.sec{padding:96px 0 72px;}
+.sec+.sec{border-top:1px solid var(--f2);}
 
-/* ═══════════════════════════════ SECTION HEADERS ═══════════════════════════════ */
-.s-eye{font-family:'Syne',sans-serif;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:10px;margin-bottom:10px;}
-.s-eye::before{content:'';display:block;width:20px;height:1px;background:var(--gold);}
-.s-num{font-family:'Syne',sans-serif;font-size:100px;font-weight:800;color:var(--g100);line-height:1;margin-bottom:-28px;letter-spacing:-4px;}
-.sec h2{font-family:'Syne',sans-serif;font-size:36px;font-weight:700;line-height:1.08;letter-spacing:-.5px;margin-bottom:14px;}
-.lead{font-size:15px;color:var(--g600);max-width:660px;margin-bottom:44px;padding-left:20px;border-left:3px solid var(--gold);line-height:1.8;}
+/* ─── SECTION HEADER ─────────────────────────────────────── */
+.s-over{font-family:'Syne',sans-serif;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:10px;margin-bottom:10px;}
+.s-over::before{content:'';width:18px;height:1px;background:var(--gold);}
+.s-index{font-family:'Syne',sans-serif;font-size:120px;font-weight:800;color:var(--f2);line-height:1;margin-bottom:-34px;letter-spacing:-6px;user-select:none;}
+.sec h2{font-family:'Syne',sans-serif;font-size:clamp(28px,3.5vw,40px);font-weight:700;line-height:1.08;letter-spacing:-.5px;margin-bottom:14px;}
+.intro{font-size:15px;color:var(--muted);max-width:620px;margin-bottom:48px;padding-left:20px;border-left:3px solid var(--gold);line-height:1.8;}
 
-/* ═══════════════════════════════ CALLOUT ═══════════════════════════════ */
-.callout{background:var(--black);padding:40px 50px;margin:40px 0;position:relative;overflow:hidden;}
-.callout::before{content:'"';font-family:'Syne',sans-serif;font-size:180px;font-weight:800;color:var(--gold);opacity:.06;position:absolute;top:-50px;left:20px;line-height:1;pointer-events:none;}
-.callout p{font-family:'Syne',sans-serif;font-size:20px;line-height:1.55;color:var(--white);position:relative;z-index:1;font-weight:500;max-width:700px;}
-.callout .attr{font-family:'Inter',sans-serif;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);margin-top:16px;}
+/* ─── QUOTE BLOCK ────────────────────────────────────────── */
+.qblock{
+  background:var(--ink);padding:48px 56px;margin:44px 0;
+  position:relative;overflow:hidden;
+}
+.qblock::before{
+  content:'"';font-family:'Syne',sans-serif;font-size:200px;
+  font-weight:800;color:var(--gold);opacity:.05;
+  position:absolute;top:-60px;left:20px;line-height:1;pointer-events:none;
+}
+.qblock p{font-family:'Syne',sans-serif;font-size:19px;line-height:1.6;color:var(--white);position:relative;z-index:1;font-weight:500;max-width:680px;}
+.qblock cite{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-top:16px;display:block;font-style:normal;}
 
-/* ═══════════════════════════════ INSIGHT ═══════════════════════════════ */
-.insight{background:var(--gold-pale);border-left:4px solid var(--gold);padding:18px 24px;margin:28px 0;font-size:14px;line-height:1.75;}
-.insight strong{font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:7px;font-family:'Syne',sans-serif;}
+/* ─── NOTE ───────────────────────────────────────────────── */
+.note{background:var(--gold3);border-left:4px solid var(--gold);padding:18px 24px;margin:28px 0;font-size:13.5px;line-height:1.75;color:var(--body);}
+.note b{font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:6px;font-family:'Syne',sans-serif;}
 
-/* ═══════════════════════════════ CARDS ═══════════════════════════════ */
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1px;background:var(--g200);margin:28px 0;}
-.card{background:var(--white);padding:28px 28px 32px;}
-.c-tag{font-family:'Syne',sans-serif;font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);margin-bottom:12px;}
+/* ─── STAT ROW ───────────────────────────────────────────── */
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:1px;background:var(--f3);margin:40px 0;}
+.stat{background:var(--white);padding:28px 20px;text-align:center;}
+.stat-v{font-family:'Syne',sans-serif;font-size:38px;font-weight:800;color:var(--ink);line-height:1;}
+.stat-v sup{font-size:16px;color:var(--gold);}
+.stat-l{font-size:11px;color:var(--muted);margin-top:8px;line-height:1.5;}
+
+/* ─── FLOW ───────────────────────────────────────────────── */
+.flow{display:flex;align-items:stretch;gap:0;margin:36px 0;flex-wrap:nowrap;overflow-x:auto;}
+.fl{flex:1;min-width:150px;background:var(--ink);padding:28px 22px;position:relative;}
+.fl-step{font-family:'Syne',sans-serif;font-size:8px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:12px;}
+.fl h4{font-family:'Syne',sans-serif;font-size:13px;font-weight:700;color:var(--white);margin-bottom:8px;line-height:1.3;}
+.fl p{font-size:12px;color:rgba(255,255,255,.42);line-height:1.6;}
+.fl-arrow{width:1px;background:rgba(201,150,58,.25);flex-shrink:0;position:relative;}
+.fl-arrow::after{content:'›';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);color:var(--gold);font-size:18px;background:var(--white);padding:2px 0;}
+.fl.accent{background:var(--gold);}
+.fl.accent h4,.fl.accent p,.fl.accent .fl-step{color:var(--ink);}
+.fl.accent p{color:rgba(0,0,0,.55);}
+
+/* ─── CARDS ──────────────────────────────────────────────── */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1px;background:var(--f3);margin:28px 0;}
+.card{background:var(--white);padding:30px;}
+.card-tag{font-family:'Syne',sans-serif;font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);margin-bottom:12px;}
 .card h3{font-family:'Syne',sans-serif;font-size:15px;font-weight:600;margin-bottom:10px;line-height:1.3;}
-.card p{font-size:13px;color:var(--g600);line-height:1.7;}
-.card.feat{border-top:3px solid var(--gold);}
-.card.dark{background:var(--black);}
-.card.dark h3,.card.dark p{color:var(--white);}
-.card.dark .c-tag{color:var(--gold-light);}
+.card p{font-size:13px;color:var(--muted);line-height:1.7;}
+.card.top{border-top:3px solid var(--gold);}
+.card.dark{background:var(--ink);}
+.card.dark h3{color:var(--white);}
+.card.dark p{color:rgba(255,255,255,.4);}
+.card.dark .card-tag{color:var(--gold2);}
 
-/* ═══════════════════════════════ KPI BAR ═══════════════════════════════ */
-.kpi-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;background:var(--g200);margin:36px 0;}
-.kpi{background:var(--white);padding:28px 16px;text-align:center;}
-.kpi-v{font-family:'Syne',sans-serif;font-size:36px;font-weight:800;color:var(--black);line-height:1;}
-.kpi-v sup{font-size:15px;color:var(--gold);}
-.kpi-l{font-size:11px;color:var(--g400);margin-top:8px;line-height:1.5;}
+/* ─── SPLIT ──────────────────────────────────────────────── */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--f3);margin:28px 0;}
+.sp{background:var(--white);padding:32px;}
+.sp.dark{background:var(--ink);}
+.sp h4{font-family:'Syne',sans-serif;font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);margin-bottom:16px;}
+.sp p,.sp li{font-size:13px;color:var(--muted);line-height:1.7;}
+.sp.dark p,.sp.dark li{color:rgba(255,255,255,.4);}
+.sp ul{list-style:none;}
+.sp li{padding:5px 0 5px 18px;position:relative;}
+.sp li::before{content:'→';color:var(--gold);position:absolute;left:0;top:6px;font-size:11px;}
 
-/* ═══════════════════════════════ TABLE ═══════════════════════════════ */
+/* ─── TABLE ──────────────────────────────────────────────── */
 .tbl{width:100%;border-collapse:collapse;margin:24px 0;font-size:13px;}
-.tbl th{background:var(--black);color:var(--white);padding:11px 16px;text-align:left;font-family:'Syne',sans-serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;font-weight:400;}
-.tbl td{padding:11px 16px;border-bottom:1px solid var(--g100);vertical-align:top;color:var(--g800);line-height:1.6;}
-.tbl tr:hover td{background:var(--g50);}
-.tbl tr.highlight td{background:#fffbf2;}
-.badge{display:inline-block;padding:2px 9px;font-size:10px;font-family:'Syne',sans-serif;letter-spacing:.5px;}
-.badge.gold{background:var(--gold-pale);color:#7a5a1a;}
-.badge.dark{background:var(--black);color:var(--gold);}
-.badge.green{background:#e8f5ee;color:#1a6b3c;}
-.badge.red{background:#fdecea;color:#b02020;}
+.tbl th{background:var(--ink);color:var(--white);padding:12px 16px;text-align:left;font-family:'Syne',sans-serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;font-weight:400;}
+.tbl td{padding:12px 16px;border-bottom:1px solid var(--f2);vertical-align:top;color:var(--body);line-height:1.65;}
+.tbl tr:hover td{background:var(--f1);}
+.chip{display:inline-block;padding:2px 9px;font-size:10px;font-family:'Syne',sans-serif;letter-spacing:.3px;}
+.chip.g{background:var(--gold3);color:#7a5a1a;}
+.chip.d{background:var(--ink);color:var(--gold);}
+.chip.gr{background:#e8f5ee;color:#1a6b3c;}
 
-/* ═══════════════════════════════ PAIR ═══════════════════════════════ */
-.pair{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--g200);margin:28px 0;}
-.pb{background:var(--white);padding:30px;}
-.pb.dark{background:var(--black);}
-.pb h4{font-family:'Syne',sans-serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:14px;}
-.pb p,.pb li{font-size:13px;color:var(--g600);line-height:1.7;}
-.pb.dark p,.pb.dark li{color:rgba(255,255,255,.5);}
-.pb ul{list-style:none;padding:0;}
-.pb li{padding:5px 0 5px 20px;position:relative;}
-.pb li::before{content:'→';color:var(--gold);position:absolute;left:0;font-size:11px;top:6px;}
+/* ─── TIER BLOCK ─────────────────────────────────────────── */
+.tiers{display:flex;flex-direction:column;gap:2px;margin:28px 0;}
+.tier{display:grid;grid-template-columns:72px 1fr;background:var(--f1);}
+.tier-l{
+  background:var(--ink);color:var(--gold);
+  font-family:'Syne',sans-serif;font-size:8px;letter-spacing:2px;text-transform:uppercase;
+  display:flex;align-items:center;justify-content:center;
+  padding:18px 4px;text-align:center;writing-mode:vertical-rl;transform:rotate(180deg);
+}
+.tier-r{padding:20px 24px;}
+.tier-r h4{font-family:'Syne',sans-serif;font-size:14px;font-weight:600;margin-bottom:5px;}
+.tier-r p{font-size:13px;color:var(--muted);line-height:1.65;}
 
-/* ═══════════════════════════════ TIMELINE ═══════════════════════════════ */
-.tl{margin:32px 0;}
-.tl-row{display:grid;grid-template-columns:110px 1fr;gap:20px;padding:22px 0;border-bottom:1px solid var(--g100);}
-.tl-lbl{font-family:'Syne',sans-serif;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);padding-top:3px;line-height:1.6;}
-.tl-t{font-family:'Syne',sans-serif;font-size:14px;font-weight:600;margin-bottom:5px;}
-.tl-b{font-size:13px;color:var(--g600);line-height:1.7;}
-
-/* ═══════════════════════════════ TIER ═══════════════════════════════ */
-.tier{display:grid;grid-template-columns:80px 1fr;gap:0;margin:8px 0;background:var(--g50);}
-.tier-l{background:var(--black);color:var(--gold);font-family:'Syne',sans-serif;font-size:8.5px;letter-spacing:2px;text-transform:uppercase;display:flex;align-items:center;justify-content:center;padding:16px 6px;text-align:center;writing-mode:vertical-rl;transform:rotate(180deg);}
-.tier-b{padding:20px 24px;}
-.tier-b h4{font-family:'Syne',sans-serif;font-size:14px;font-weight:600;margin-bottom:6px;}
-.tier-b p{font-size:13px;color:var(--g600);line-height:1.7;}
-
-/* ═══════════════════════════════ AGENDA ═══════════════════════════════ */
-.agenda{margin:24px 0;}
-.ag-row{display:grid;grid-template-columns:72px 1fr;gap:16px;padding:16px 0;border-bottom:1px solid var(--g100);}
-.ag-t{font-family:'Syne',sans-serif;font-size:11px;color:var(--gold);font-weight:600;padding-top:3px;}
-.ag-c strong{color:var(--black);font-size:14px;display:block;margin-bottom:3px;font-family:'Syne',sans-serif;font-weight:600;}
-.ag-c p{font-size:13px;color:var(--g600);line-height:1.65;}
-
-/* ═══════════════════════════════ PROMO MECHANIC VISUAL ═══════════════════════════════ */
-.mechanic-flow{display:flex;align-items:center;gap:0;margin:32px 0;flex-wrap:wrap;}
-.mf-box{flex:1;min-width:160px;background:var(--black);padding:24px 20px;position:relative;}
-.mf-box h4{font-family:'Syne',sans-serif;font-size:12px;font-weight:700;color:var(--white);margin-bottom:6px;}
-.mf-box p{font-size:12px;color:rgba(255,255,255,.45);line-height:1.6;}
-.mf-box .mf-label{font-family:'Syne',sans-serif;font-size:8px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:10px;}
-.mf-arrow{width:40px;flex-shrink:0;text-align:center;color:var(--gold);font-size:22px;font-weight:300;}
-.mf-box.gift{background:var(--gold);}
-.mf-box.gift h4,.mf-box.gift p,.mf-box.gift .mf-label{color:var(--black);}
-.mf-box.gift p{color:rgba(0,0,0,.6);}
-
-/* ═══════════════════════════════ VIRAL CARD ═══════════════════════════════ */
-.viral-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:1px;background:var(--g200);margin:28px 0;}
-.vc{background:var(--white);padding:28px;}
-.vc-num{font-family:'Syne',sans-serif;font-size:40px;font-weight:800;color:var(--g100);line-height:1;margin-bottom:4px;}
-.vc h3{font-family:'Syne',sans-serif;font-size:14px;font-weight:700;margin-bottom:8px;color:var(--black);}
-.vc .why{font-size:10px;color:var(--gold);font-family:'Syne',sans-serif;letter-spacing:.8px;text-transform:uppercase;margin-bottom:8px;}
-.vc p{font-size:12.5px;color:var(--g600);line-height:1.7;}
-.vc .mechanic{background:var(--g50);padding:10px 14px;margin-top:14px;font-size:12px;color:var(--g600);border-left:2px solid var(--gold);line-height:1.65;}
-
-/* ═══════════════════════════════ POSM GRID ═══════════════════════════════ */
-.posm-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1px;background:var(--g200);margin:24px 0;}
-.posm-c{background:var(--white);padding:22px;}
-.posm-c h4{font-family:'Syne',sans-serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:12px;padding-bottom:10px;border-bottom:1px solid var(--g100);}
-.posm-c ul{list-style:none;padding:0;}
-.posm-c li{font-size:12px;color:var(--g600);padding:4px 0;border-bottom:1px solid var(--g50);}
-.posm-c li:last-child{border:none;}
-
-/* ═══════════════════════════════ DATA CALLOUT ═══════════════════════════════ */
-.data-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1px;background:var(--g200);margin:20px 0;}
-.dr{background:var(--g50);padding:20px;}
-.dr .val{font-family:'Syne',sans-serif;font-size:28px;font-weight:800;color:var(--black);line-height:1;}
-.dr .lbl{font-size:11px;color:var(--g400);margin-top:6px;line-height:1.5;}
-.dr .src{font-size:10px;color:var(--gold);font-family:'Syne',sans-serif;margin-top:4px;letter-spacing:.5px;}
-
-/* ═══════════════════════════════ PHASE BANNER ═══════════════════════════════ */
-.phase{display:grid;grid-template-columns:100px 1fr;gap:0;margin:8px 0;border-left:4px solid var(--gold);background:var(--g50);}
-.phase-n{background:var(--gold);display:flex;align-items:center;justify-content:center;padding:20px 10px;}
-.phase-n span{font-family:'Syne',sans-serif;font-size:22px;font-weight:800;color:var(--black);}
+/* ─── PHASE ──────────────────────────────────────────────── */
+.phases{display:flex;flex-direction:column;gap:2px;margin:28px 0;}
+.phase{display:grid;grid-template-columns:88px 1fr;background:var(--f1);}
+.phase-n{background:var(--gold);display:flex;align-items:center;justify-content:center;}
+.phase-n span{font-family:'Syne',sans-serif;font-size:11px;font-weight:700;color:var(--ink);text-align:center;line-height:1.3;padding:4px;}
 .phase-b{padding:18px 22px;}
-.phase-b h4{font-family:'Syne',sans-serif;font-size:13px;font-weight:700;margin-bottom:5px;}
-.phase-b p{font-size:12.5px;color:var(--g600);line-height:1.65;}
+.phase-b h4{font-family:'Syne',sans-serif;font-size:13px;font-weight:600;margin-bottom:4px;}
+.phase-b p{font-size:13px;color:var(--muted);line-height:1.6;}
 
-/* ═══════════════════════════════ COLOPHON / CLOSING ═══════════════════════════════ */
-.closing{background:var(--black);padding:80px 64px;text-align:center;margin-top:80px;}
-.closing h2{font-family:'Syne',sans-serif;font-size:42px;font-weight:800;color:var(--white);letter-spacing:-1.5px;margin-bottom:18px;line-height:1.08;}
-.closing h2 em{color:var(--gold);font-style:normal;}
-.closing p{color:rgba(255,255,255,.38);font-size:15px;max-width:520px;margin:0 auto 28px;line-height:1.75;}
-.sig{font-family:'Syne',sans-serif;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-top:32px;}
+/* ─── AGENDA ─────────────────────────────────────────────── */
+.agenda{margin:28px 0;}
+.ag{display:grid;grid-template-columns:72px 1fr;gap:16px;padding:16px 0;border-bottom:1px solid var(--f2);}
+.ag-t{font-family:'Syne',sans-serif;font-size:11px;color:var(--gold);font-weight:600;padding-top:2px;}
+.ag-t.peak{color:var(--white);background:var(--gold);padding:4px 8px;font-size:10px;text-align:center;align-self:start;}
+.ag h4{font-family:'Syne',sans-serif;font-size:13px;font-weight:600;margin-bottom:3px;}
+.ag p{font-size:12.5px;color:var(--muted);line-height:1.6;}
 
-/* ═══════════════════════════════ BLIST ═══════════════════════════════ */
-.blist{list-style:none;margin:18px 0;}
-.blist li{font-size:14px;color:var(--g600);padding:9px 0 9px 24px;border-bottom:1px solid var(--g100);position:relative;line-height:1.65;}
-.blist li::before{content:'▸';color:var(--gold);position:absolute;left:0;top:9px;}
-.blist li strong{color:var(--black);}
+/* ─── VIRAL CARDS ────────────────────────────────────────── */
+.viral{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1px;background:var(--f3);margin:28px 0;}
+.vc{background:var(--white);padding:28px;}
+.vc-n{font-family:'Syne',sans-serif;font-size:44px;font-weight:800;color:var(--f2);line-height:1;margin-bottom:4px;}
+.vc h3{font-family:'Syne',sans-serif;font-size:14px;font-weight:700;margin-bottom:6px;}
+.vc .trigger{font-size:9px;color:var(--gold);letter-spacing:2px;text-transform:uppercase;font-family:'Syne',sans-serif;margin-bottom:8px;}
+.vc p{font-size:12.5px;color:var(--muted);line-height:1.65;}
+.vc .how{background:var(--f1);padding:10px 14px;margin-top:12px;font-size:12px;color:var(--muted);border-left:2px solid var(--gold);line-height:1.6;}
 
-/* ═══════════════════════════════ RESPONSIVE ═══════════════════════════════ */
-@media(max-width:700px){
-  .hero,.wrap,.closing{padding-left:24px;padding-right:24px;}
-  nav ul{padding:0 12px;}
-  .pair,.tl-row,.phase,.tier{grid-template-columns:1fr;}
-  .mechanic-flow{flex-direction:column;}
-  .mf-arrow{transform:rotate(90deg);}
-  .ag-row{grid-template-columns:56px 1fr;}
+/* ─── POSM GRID ──────────────────────────────────────────── */
+.posm{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1px;background:var(--f3);margin:28px 0;}
+.pm{background:var(--white);padding:22px;}
+.pm h4{font-family:'Syne',sans-serif;font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);margin-bottom:12px;padding-bottom:10px;border-bottom:1px solid var(--f2);}
+.pm ul{list-style:none;}
+.pm li{font-size:12px;color:var(--muted);padding:4px 0;border-bottom:1px solid var(--f1);}
+.pm li:last-child{border:none;}
+
+/* ─── KPI GRID ───────────────────────────────────────────── */
+.kpi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--f3);margin:32px 0;}
+.kg{background:var(--white);padding:0;}
+.kg-head{background:var(--ink);padding:14px 20px;}
+.kg-head h4{font-family:'Syne',sans-serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);}
+.kg-body{padding:20px;}
+.kg-item{padding:10px 0;border-bottom:1px solid var(--f1);}
+.kg-item:last-child{border:none;}
+.kg-item .metric{font-size:12.5px;color:var(--body);margin-bottom:2px;}
+.kg-item .target{font-family:'Syne',sans-serif;font-size:13px;font-weight:700;color:var(--gold);}
+
+/* ─── BUDGET TABLE ───────────────────────────────────────── */
+.btbl{width:100%;border-collapse:collapse;margin:24px 0;font-size:13px;}
+.btbl th{padding:11px 16px;text-align:left;font-family:'Syne',sans-serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;font-weight:400;background:var(--ink);color:var(--white);}
+.btbl td{padding:11px 16px;border-bottom:1px solid var(--f2);color:var(--body);}
+.btbl tr.total td{background:var(--ink);color:var(--white);font-family:'Syne',sans-serif;font-weight:600;}
+.btbl tr.total td:first-child{color:var(--gold);}
+.btbl tr.net td{background:var(--gold3);}
+.btbl tr.net td:last-child{font-weight:700;}
+
+/* ─── CLOSE ──────────────────────────────────────────────── */
+.close{
+  background:var(--ink);padding:96px 80px;text-align:center;
+  position:relative;overflow:hidden;
+}
+.close::before{
+  content:'40';font-family:'Syne',sans-serif;font-size:400px;
+  font-weight:800;color:rgba(201,150,58,.03);
+  position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+  line-height:1;pointer-events:none;white-space:nowrap;letter-spacing:-20px;
+}
+.close h2{
+  font-family:'Syne',sans-serif;font-size:clamp(32px,4vw,48px);
+  font-weight:800;color:var(--white);letter-spacing:-1.5px;
+  margin-bottom:18px;line-height:1.1;position:relative;
+}
+.close h2 em{color:var(--gold);font-style:normal;}
+.close p{color:rgba(255,255,255,.32);font-size:15px;max-width:480px;margin:0 auto 32px;line-height:1.8;position:relative;}
+.close-sig{font-family:'Syne',sans-serif;font-size:10px;letter-spacing:3.5px;text-transform:uppercase;color:var(--gold);position:relative;}
+
+/* ─── RESPONSIVE ─────────────────────────────────────────── */
+@media(max-width:720px){
+  .hero-inner,.w,.close{padding-left:24px;padding-right:24px;}
+  .hb{margin-left:24px;padding-right:24px;}
+  .hb:first-child{margin-left:24px;}
+  .hero-bar{grid-template-columns:1fr 1fr;}
+  .nav-inner{padding:0 16px;}
+  .split,.tier,.phase,.flow{grid-template-columns:1fr;flex-direction:column;}
+  .fl-arrow{display:none;}
+  .kpi-grid{grid-template-columns:1fr;}
 }
 </style>
 </head>
 <body>
 
-<!-- ══════════════════════ HERO ══════════════════════ -->
+<!-- ══ HERO ══════════════════════════════════════════════════════════ -->
 <header class="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-rings"><span></span><span></span><span></span><span></span></div>
-  <div class="hero-content">
-    <div class="hero-eyebrow">Vietnam Marketing Campaign · 2026</div>
-    <h1>GIGABYTE <em>40</em></h1>
-    <p class="hero-tagline">40 năm kiến tạo công nghệ — chiến dịch đặt Gigabyte lên bản đồ thương hiệu Việt Nam.</p>
-    <div class="hero-pills">
-      <span class="pill hot">Promotion · Gift Bundle + LCD</span>
-      <span class="pill">45–60 Ngày</span>
-      <span class="pill">Laptop · PC Components · Monitor</span>
-      <span class="pill">40 Mini Events · 1 Festival</span>
-      <span class="pill">HCM First · National Rollout</span>
+  <div class="hero-art"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-inner">
+    <div class="hero-label">Vietnam Campaign Proposal · 2026</div>
+    <h1>GIGABYTE<br/><span>40</span></h1>
+    <p class="hero-desc">Forty years of engineering. One campaign to give Gigabyte a name in Vietnam.</p>
+    <div class="hero-tags">
+      <span class="tag lit">Buy Laptop/PC → Get Free Monitor + Gift Set</span>
+      <span class="tag">45–60 Day Campaign</span>
+      <span class="tag">Laptop · Components · Monitor</span>
+      <span class="tag">40 Activations · 1 Festival</span>
     </div>
-    <div class="hero-stats">
-      <div class="h-stat"><label>Big idea</label><span>Mua hàng nhận màn hình<br/>+ Gift Set 40th Anniversary</span></div>
-      <div class="h-stat"><label>Cơ chế bán hàng</label><span>3 mechanics — 3 product lines<br/>1 Lucky Draw unify</span></div>
-      <div class="h-stat"><label>Awareness engine</label><span>40 activations → 1 festival<br/>OOH + KOL + Viral content</span></div>
-      <div class="h-stat"><label>Sales driver</label><span>GVGS entry point<br/>→ Nurture lên high AOV</span></div>
-      <div class="h-stat"><label>Prepared by</label><span>Nguyen Hoa Mai (Mia)<br/>Head of Marketing</span></div>
-    </div>
+  </div>
+  <div class="hero-bar">
+    <div class="hb"><label>Core Hook</label><span>Buy Laptop/PC →<br/>Free Monitor Gift</span></div>
+    <div class="hb"><label>Event Strategy</label><span>40 mini activations<br/>→ 1 national festival</span></div>
+    <div class="hb"><label>Awareness Engine</label><span>OOH · KOL · Viral content<br/>Heritage narrative</span></div>
+    <div class="hb"><label>Data Goal</label><span>First direct consumer<br/>database in Vietnam</span></div>
   </div>
 </header>
 
-<!-- ══════════════════════ NAV ══════════════════════ -->
-<nav><ul>
-  <li><a href="#overview">Overview</a></li>
-  <li><a href="#promo">01 · Promotion</a></li>
-  <li><a href="#event">02 · Event</a></li>
-  <li><a href="#media">03 · Media & Content</a></li>
-  <li><a href="#partners">04 · Partnership</a></li>
-  <li><a href="#posm">05 · POSM</a></li>
-  <li><a href="#kpi">06 · KPIs</a></li>
-</ul></nav>
+<!-- ══ NAV ═══════════════════════════════════════════════════════════ -->
+<nav><div class="nav-inner">
+  <a href="#overview">Overview</a>
+  <a href="#promo">01 · Promotion</a>
+  <a href="#event">02 · Event</a>
+  <a href="#media">03 · Media</a>
+  <a href="#partners">04 · Partners</a>
+  <a href="#posm">05 · In-Store</a>
+  <a href="#kpi">06 · KPIs</a>
+</div></nav>
 
-<!-- ══════════════════════ OVERVIEW ══════════════════════ -->
-<div id="overview" class="wrap">
+<!-- ══ OVERVIEW ══════════════════════════════════════════════════════ -->
+<div id="overview" class="w">
 <section class="sec">
-  <div class="s-eye">Strategic Overview</div>
-  <h2>Gigabyte đã bán hàng tại Việt Nam 20 năm. Nhưng chưa ai biết tên họ.</h2>
-  <p class="lead">Người tiêu dùng Việt đang dùng Gigabyte mainboard, VGA, và laptop — mà không biết brand đó là ai. Kỷ niệm 40 năm không chỉ là dịp ăn mừng. Đây là cơ hội duy nhất để <strong>đặt tên</strong> cho một thương hiệu đã âm thầm hiện diện hàng thập kỷ.</p>
+  <div class="s-over">Strategic Overview</div>
+  <h2>Vietnamese consumers have been buying Gigabyte for decades — without knowing the name.</h2>
+  <p class="intro">Gigabyte mainboards, GPUs, and laptops are inside millions of Vietnamese machines. But as a brand? Virtually invisible. The 40th anniversary is the single best opportunity to change that — and do it while competitors are running standard materials.</p>
 
-  <div class="callout">
-    <p>Campaign này không chỉ bán laptop hay VGA. Nó dùng 40 năm công nghệ như một cái cớ để lần đầu tiên nói chuyện thẳng với người tiêu dùng Việt Nam — không qua retailer, không qua distributor. Trực tiếp.</p>
-    <div class="attr">Core strategic intent — Mia, Head of Marketing</div>
+  <div class="qblock">
+    <p>This isn't a campaign to celebrate 40 years. It uses 40 years of engineering credibility to introduce Gigabyte to a market that's been buying their products without knowing their name.</p>
+    <cite>Strategic intent</cite>
   </div>
 
-  <div class="kpi-row">
-    <div class="kpi"><div class="kpi-v">40<sup>events</sup></div><div class="kpi-l">Mini activations — 40 điểm tiếp xúc thực</div></div>
-    <div class="kpi"><div class="kpi-v">3<sup>lines</sup></div><div class="kpi-l">Laptop · Components · Monitor — mỗi line 1 mechanic</div></div>
-    <div class="kpi"><div class="kpi-v">1<sup>CDP</sup></div><div class="kpi-l">Lần đầu Gigabyte sở hữu data khách hàng trực tiếp</div></div>
-    <div class="kpi"><div class="kpi-v">2<sup>publishers</sup></div><div class="kpi-l">VNG + Garena — 2 game publishers lớn nhất VN</div></div>
-  </div>
-
-  <div class="insight">
-    <strong>Reference từ thực tế — PV × NVIDIA × MSI (10/04/2026)</strong>
-    Campaign 1-ngày tặng màn hình MSI 5.39 triệu khi mua Laptop/PC RTX 50 Series: Organic social reach 256K (vs KPI 60K = 4.3x). GVGS bán được 79% target. Laptop chỉ đạt 10%, PC đạt 33% — cho thấy high-AOV sản phẩm cần funnel dài hơn 1 ngày. <strong>GIGABYTE 40 phải thiết kế để win cả hai: awareness ngay lập tức + conversion kéo dài 45 ngày.</strong>
+  <div class="stats">
+    <div class="stat"><div class="stat-v">40<sup>yrs</sup></div><div class="stat-l">Engineering heritage — strongest brand asset going in</div></div>
+    <div class="stat"><div class="stat-v">40<sup>stops</sup></div><div class="stat-l">Mini activations before the festival — earn the audience first</div></div>
+    <div class="stat"><div class="stat-v">3<sup>lines</sup></div><div class="stat-l">Laptop · Components · Monitor — each with its own mechanic</div></div>
+    <div class="stat"><div class="stat-v">1<sup>CDP</sup></div><div class="stat-l">First time Gigabyte owns direct consumer data in Vietnam</div></div>
   </div>
 </section>
 </div>
 
-<!-- ══════════════════════ PART 1: PROMOTION ══════════════════════ -->
-<div id="promo" class="wrap">
+<!-- ══ 01 PROMOTION ══════════════════════════════════════════════════ -->
+<div id="promo" class="w">
 <section class="sec">
-  <div class="s-num">01</div>
-  <div class="s-eye">Promotion Mechanics</div>
-  <h2>3 mechanic — 3 product lines — 1 big hook: tặng màn hình</h2>
-  <p class="lead">Màn hình MSI MAG 274QF X24 27" (5.39 triệu) trong campaign PV × MSI là hook mạnh nhất của event. GIGABYTE 40 sử dụng chính cơ chế này — nhưng nâng lên thành <strong>gift bundle có identity 40th Anniversary</strong>, không chỉ đơn giản là "quà tặng kèm".</p>
+  <div class="s-index">01</div>
+  <div class="s-over">Promotion Mechanics</div>
+  <h2>One clear mechanic per product line — anchored by one irresistible hook.</h2>
+  <p class="intro">A free gaming monitor is the campaign's entry hook. Gift bundles replace discounts to protect margin. A cross-product lucky draw builds Gigabyte's first consumer database in Vietnam. Restraint is the strategy — one strong mechanic per line, executed deeply.</p>
 
-  <!-- FLOW VISUAL -->
-  <h3 style="font-family:'Syne',sans-serif;font-size:17px;font-weight:600;margin:40px 0 16px;">The promotion flow — nhìn từ góc độ khách hàng</h3>
-
-  <div class="mechanic-flow">
-    <div class="mf-box">
-      <div class="mf-label">Entry Point</div>
-      <h4>GVGS Deal</h4>
-      <p>Gear giá flash: chuột, tai nghe, màn hình entry từ 29K → 999K. Dễ chốt, tạo crowd, tạo energy.</p>
+  <!-- FLOW -->
+  <div class="flow">
+    <div class="fl">
+      <div class="fl-step">Entry</div>
+      <h4>GVGS Flash Deals</h4>
+      <p>Gaming gear from flash price. Drives foot traffic, event energy, and social content on activation day.</p>
     </div>
-    <div class="mf-arrow">→</div>
-    <div class="mf-box">
-      <div class="mf-label">Mid Tier</div>
-      <h4>PC Components</h4>
-      <p>"Powered by GIGABYTE" — VGA + Mainboard → nhận quà tặng combo + unlock deal màn hình.</p>
+    <div class="fl-arrow"></div>
+    <div class="fl">
+      <div class="fl-step">Mid Tier</div>
+      <h4>PC "Powered by GIGABYTE"</h4>
+      <p>VGA + Mainboard combo → receive bundle badge + unlock monitor discount or gift.</p>
     </div>
-    <div class="mf-arrow">→</div>
-    <div class="mf-box">
-      <div class="mf-label">Hero Product</div>
-      <h4>Laptop AORUS</h4>
-      <p>Gift Bundle 40th: Backpack + AORUS Chibi + item premium. LCD MSI MAG 27" tặng thêm.</p>
+    <div class="fl-arrow"></div>
+    <div class="fl">
+      <div class="fl-step">Hero</div>
+      <h4>Laptop 40th Gift Bundle</h4>
+      <p>AORUS backpack + Chibi collectible + exclusive item + <strong style="color:#fff">free MSI MAG 27" monitor</strong>.</p>
     </div>
-    <div class="mf-arrow">→</div>
-    <div class="mf-box gift">
-      <div class="mf-label">All Products</div>
+    <div class="fl-arrow"></div>
+    <div class="fl accent">
+      <div class="fl-step">All Products</div>
       <h4>Lucky Draw</h4>
-      <p>Mỗi hóa đơn = 1 lần quay. Phần thưởng: AORUS MASTER 16, RTX 5090 INFINITY. Gigabyte có data.</p>
+      <p>Every invoice = 1 entry. Prizes: AORUS MASTER 16, RTX 5090 INFINITY. Gigabyte captures the data.</p>
     </div>
   </div>
 
   <!-- LAPTOP -->
-  <h3 style="font-family:'Syne',sans-serif;font-size:20px;font-weight:700;margin:48px 0 16px;padding-bottom:12px;border-bottom:2px solid var(--g100);">Laptop — 40th Anniversary Gift Bundle</h3>
-
-  <div class="insight">
-    <strong>Tại sao Gift Bundle thay vì discount</strong>
-    Discount nén margin và dạy người mua chờ đợt sale tiếp theo. Gift bundle — đặc biệt khi mang identity "40 năm" — tạo perceived value tại giá full. Bundle trở thành phương tiện truyền thông, không chỉ là quà tặng. Benchmark: PV × MSI hook "tặng màn hình 5.39 triệu" tạo 256K organic reach với 0 paid social.
+  <h3 style="font-family:'Syne',sans-serif;font-size:19px;font-weight:700;margin:52px 0 14px;padding-bottom:12px;border-bottom:2px solid var(--f2);">Laptop — 40th Anniversary Gift Bundle</h3>
+  <div class="note">
+    <b>Why bundle, not discount</b>
+    Discounts compress margin and train buyers to wait for the next sale. A curated gift bundle carrying "40 Years" identity creates perceived value at full price — the bundle becomes a communication vehicle, not just a freebie.
   </div>
-
   <div class="cards">
-    <div class="card feat">
-      <div class="c-tag">Tier 1 — HQ Gift Pack (Hero SKU)</div>
+    <div class="card top">
+      <div class="card-tag">Tier 1 — HQ Gift Pack · Hero SKU Only</div>
       <h3>AORUS MASTER 16 — Luxury 40th Set</h3>
-      <p>Limited edition pack từ Gigabyte HQ Taiwan — áp dụng duy nhất cho AORUS MASTER 16 (RTX 5090 Laptop). Chất lượng collectible, không tái sản xuất sau campaign. Laptop đi kèm <strong>LCD MSI MAG 274QF X24 27" (trị giá 5.39 triệu)</strong> tặng trực tiếp. Tổng perceived value: ~15–20 triệu/đơn.</p>
+      <p>Limited edition pack produced by Gigabyte HQ Taiwan, exclusively for AORUS MASTER 16 (RTX 5090 Laptop). Collectible quality. One-run only. Includes free MSI MAG 274QF X24 27" monitor (~5.4M VND value). Total perceived bundle: ~15–20M VND per unit.</p>
     </div>
-    <div class="card feat">
-      <div class="c-tag">Tier 2 — Vietnam Gift Set (All Gigabyte Laptops)</div>
-      <h3>GIGABYTE 40 Gift Set — Produced Locally</h3>
-      <p>Áp dụng toàn bộ SKU laptop Gigabyte trong campaign. Gồm: <strong>Backpack AORUS 40th edition</strong>, <strong>AORUS Chibi collectible figure</strong> (limited), và 1 premium item exclusive 40-year — không bán lẻ, không lặp lại. Packaging có in năm thành lập, hình ảnh heritage.</p>
+    <div class="card top">
+      <div class="card-tag">Tier 2 — Vietnam-Produced · All Laptop SKUs</div>
+      <h3>GIGABYTE 40 Gift Set</h3>
+      <p>Applied to all designated Gigabyte laptop SKUs. Contents: <strong>AORUS 40th backpack</strong>, <strong>AORUS Chibi collectible figure</strong> (limited run), and one premium exclusive item — not sold separately, not repeated after this campaign. Monitor gift included.</p>
     </div>
-    <div class="card feat">
-      <div class="c-tag">Retailer Co-brand Model</div>
-      <h3>Forecast → Co-branded Bundle</h3>
-      <p>Retailer submit forecast → nhận bundle có logo retailer trên packaging + POSM riêng. Allocation = 20–30% forecast volume. Không commit forecast → chỉ nhận standard bundle. <strong>Mechanism này tạo ra market intelligence Gigabyte chưa từng có tại VN.</strong></p>
+    <div class="card top">
+      <div class="card-tag">Retailer Model</div>
+      <h3>Forecast → Co-branded Allocation</h3>
+      <p>Retailers who submit sales forecasts receive co-branded bundles (retailer name on packaging + POSM). Allocation = 20–30% of committed volume. No forecast = standard bundle only. This turns a promotion into a market intelligence tool.</p>
     </div>
   </div>
 
-  <!-- PC COMPONENTS -->
-  <h3 style="font-family:'Syne',sans-serif;font-size:20px;font-weight:700;margin:52px 0 16px;padding-bottom:12px;border-bottom:2px solid var(--g100);">PC Components — "Powered by GIGABYTE"</h3>
-
-  <div class="insight">
-    <strong>The builder insight — dựa trên data thực</strong>
-    PC builder community Việt Nam là nhóm có influence ratio cao nhất trong tech. Họ không chỉ mua — họ share build của mình. "Powered by GIGABYTE" cho họ một flag để đặt lên bàn phím setup. Kết quả PV × MSI: PC đạt 33% target trong 1 ngày event, cao gấp 3x laptop. Mechanic combo tạo upsell tự nhiên từ PC sang màn hình.
-  </div>
-
-  <div class="pair">
-    <div class="pb">
-      <h4>Điều kiện nhận quà</h4>
+  <!-- PC -->
+  <h3 style="font-family:'Syne',sans-serif;font-size:19px;font-weight:700;margin:52px 0 14px;padding-bottom:12px;border-bottom:2px solid var(--f2);">PC Components — "Powered by GIGABYTE"</h3>
+  <div class="split">
+    <div class="sp">
+      <h4>Qualifying Condition</h4>
       <ul>
-        <li><strong>Tối thiểu: VGA + Mainboard GIGABYTE</strong> trong cùng 1 build</li>
-        <li>Áp dụng từ mid-range đến flagship RTX 5090 INFINITY — không giới hạn budget</li>
-        <li>Qualifying build nhận badge "Powered by GIGABYTE" tại POS</li>
-        <li>Retailers display demo build với badge — tạo aspiration tại shelf</li>
-        <li>Hero VGA: <strong>AORUS RTX 5090 INFINITY</strong> — Red Dot Design Award 2026</li>
+        <li>Minimum: <strong>VGA + Mainboard both GIGABYTE</strong> in one build</li>
+        <li>Any budget tier — from mid-range to RTX 5090 INFINITY flagship</li>
+        <li>Qualifying builds receive "Powered by GIGABYTE" badge at point of sale</li>
+        <li>Retail display: demo builds with badge — creates aspiration at shelf</li>
+        <li>Hero GPU: <strong>AORUS RTX 5090 INFINITY</strong> — Red Dot Design Award 2026</li>
       </ul>
     </div>
-    <div class="pb dark">
-      <h4>Monitor Upsell Mechanic</h4>
-      <p style="margin-bottom:12px;">"Powered by GIGABYTE" build → unlock deal màn hình AORUS hoặc MSI Gaming Monitor. Exact mechanic (discount % hoặc gift monitor) theo available funding.</p>
-      <p>Người vừa spend 30–50 triệu cho PC build là buyer có intent cao nhất cho màn hình gaming. Đây là natural upsell window — không cần thêm creative, chỉ cần đặt đúng chỗ.</p>
+    <div class="sp dark">
+      <h4>Monitor Upsell Unlock</h4>
+      <p style="margin-bottom:12px;">A qualifying "Powered by GIGABYTE" build unlocks a monitor deal — discount or free AORUS/MSI gaming monitor. Final mechanic depends on available co-funding at campaign time.</p>
+      <p>A customer who just spent 30–50M VND on a PC build is the highest-intent monitor buyer in the store. The upsell window is natural — no extra creative needed, just proper placement.</p>
     </div>
   </div>
 
   <!-- LUCKY DRAW -->
-  <h3 style="font-family:'Syne',sans-serif;font-size:20px;font-weight:700;margin:52px 0 16px;padding-bottom:12px;border-bottom:2px solid var(--g100);">Tất cả sản phẩm — Lucky Draw & GVGS Flash Deal</h3>
-
+  <h3 style="font-family:'Syne',sans-serif;font-size:19px;font-weight:700;margin:52px 0 14px;padding-bottom:12px;border-bottom:2px solid var(--f2);">All Products — Lucky Draw & Flash Deals</h3>
   <table class="tbl">
-    <thead><tr><th>Mechanic</th><th>Chi tiết</th><th>Strategic value</th></tr></thead>
+    <thead><tr><th>Mechanic</th><th>How it works</th><th>Strategic value</th></tr></thead>
     <tbody>
       <tr>
         <td><strong>Lucky Draw</strong></td>
-        <td>Mua bất kỳ sản phẩm Gigabyte → submit hóa đơn + thông tin qua hệ thống Gigabyte VN (không qua retailer). Mỗi đơn = 1 code. Thủ công có chủ đích.</td>
-        <td><span class="badge gold">CDP Building</span> Mỗi entry = 1 verified customer record. Lần đầu Gigabyte sở hữu data trực tiếp tại VN.</td>
-      </tr>
-      <tr class="highlight">
-        <td><strong>Giải thưởng Lucky Draw</strong></td>
-        <td>AORUS MASTER 16 + RTX 5090 INFINITY + full "Powered by GIGABYTE" PC build. Công bố tại Big Event — live draw trên stage.</td>
-        <td><span class="badge dark">Viral Peak</span> Live draw là moment peak của toàn campaign. Livestream capture.</td>
+        <td>Any Gigabyte purchase → customer submits invoice photo + info through Gigabyte Vietnam's own system. Intentionally manual to ensure data quality.</td>
+        <td><span class="chip d">CDP First</span> Every entry = 1 verified customer record. The first time Gigabyte owns direct consumer data in Vietnam — not routed through retailers.</td>
       </tr>
       <tr>
-        <td><strong>GVGS Flash Deal — Giờ vàng giá sốc</strong></td>
-        <td>Gaming gear (chuột, tai nghe, bàn phím, màn hình entry) với deal flash 12h00–14h00 mỗi ngày event. Giá từ 29K đến 999K.</td>
-        <td><span class="badge green">Traffic Driver</span> Benchmark: GVGS đạt 79% target trong PV × MSI. Tạo crowd, energy, và social content tự nhiên.</td>
+        <td><strong>Prizes</strong></td>
+        <td>AORUS MASTER 16 · RTX 5090 INFINITY · Full "Powered by GIGABYTE" PC build. Announced live on stage at Big Festival.</td>
+        <td><span class="chip d">Live Peak</span> Live draw is the campaign's highest-energy moment. Livestream anchor.</td>
       </tr>
       <tr>
-        <td><strong>Đấu giá 1K — Big Event Only</strong></td>
-        <td>1,000 VND starting bid cho RTX 5090 INFINITY hoặc AORUS MASTER 16. Duy nhất tại Big Festival. MC drive crowd energy. 10 phút viral nhất của toàn campaign.</td>
-        <td><span class="badge dark">Viral Peak</span> Livestream peak moment — khoảnh khắc clip-able nhất của event.</td>
+        <td><strong>GVGS Flash Deals</strong></td>
+        <td>Gaming gear (mouse, headset, keyboard, entry monitors) at flash pricing — 12:00–14:00 daily during activation events.</td>
+        <td><span class="chip gr">Traffic</span> Drives foot traffic and in-store energy. Quick-decision items that create crowd and natural social content.</td>
+      </tr>
+      <tr>
+        <td><strong>1K Auction — Festival Only</strong></td>
+        <td>1,000 VND starting bid on RTX 5090 INFINITY or AORUS MASTER 16. Exclusive to Big Festival. MC drives crowd energy. ~10 minutes.</td>
+        <td><span class="chip d">Viral Peak</span> The most clip-able, shareable moment of the entire campaign. Livestream viewership peak.</td>
       </tr>
     </tbody>
   </table>
 </section>
 </div>
 
-<!-- ══════════════════════ PART 2: EVENT ══════════════════════ -->
-<div id="event" class="wrap">
+<!-- ══ 02 EVENT ═══════════════════════════════════════════════════════ -->
+<div id="event" class="w">
 <section class="sec">
-  <div class="s-num">02</div>
-  <div class="s-eye">Event Strategy</div>
-  <h2>40 điểm lửa nhỏ — rồi mới đốt lên 1 đám lớn</h2>
-  <p class="lead">Gigabyte chưa có community tại Việt Nam. Không thể xây community bằng 1 sự kiện lớn — cần kiếm nó trước. 40 mini events làm đất. Big Festival thu hoạch. Không phải 2 tầng event — đây là một chuỗi có trình tự.</p>
+  <div class="s-index">02</div>
+  <div class="s-over">Event Strategy</div>
+  <h2>40 small fires. Then one blaze.</h2>
+  <p class="intro">Gigabyte has no community presence in Vietnam. You can't build community with one big event — you need to earn it first. The mini events do the groundwork. The festival collects the harvest.</p>
 
-  <div class="callout">
-    <p>"40 năm — 40 điểm đến — 1 hành trình." Mỗi mini event là một chương của cùng một câu chuyện. Không phải 40 activation riêng lẻ — một hành trình quốc gia với 40 trạm dừng. Big Event là chương cuối.</p>
-    <div class="attr">Event narrative logic</div>
+  <div class="qblock">
+    <p>"40 Years · 40 Destinations · 1 Journey." Each mini event is a numbered chapter in the same story. By stop 30, cities that haven't been visited are asking when it's coming to them. The Big Festival is stop #41 — the finale.</p>
+    <cite>Event narrative</cite>
   </div>
 
   <!-- MINI EVENTS -->
-  <h3 style="font-family:'Syne',sans-serif;font-size:20px;font-weight:700;margin:44px 0 16px;padding-bottom:12px;border-bottom:2px solid var(--g100);">Mini Events — The GIGABYTE 40 Tour</h3>
-
-  <div class="phase" style="margin-bottom:8px;">
-    <div class="phase-n"><span>W1–3</span></div>
-    <div class="phase-b">
-      <h4>Phase 1 — HCM Core (Top 10 stores)</h4>
-      <p>Khởi động tại HCM với 10 stores thực hiện activation đầu tiên. Số hóa từng stop: #GIGABYTE40_Stop01_HCM → content ngay trong ngày. Tạo thói quen follow "series" trên social.</p>
+  <h3 style="font-family:'Syne',sans-serif;font-size:19px;font-weight:700;margin:44px 0 14px;padding-bottom:12px;border-bottom:2px solid var(--f2);">Mini Events — The GIGABYTE 40 Tour</h3>
+  <div class="phases">
+    <div class="phase">
+      <div class="phase-n"><span>W1–3</span></div>
+      <div class="phase-b">
+        <h4>Phase 1 — HCM Core (10 stores)</h4>
+        <p>Launch in Ho Chi Minh City with the top 10 performing stores. Every stop numbered and geo-tagged. Content published same day: #GIGABYTE40_Stop01_HCM. Establishes the "series" habit before national rollout.</p>
+      </div>
     </div>
-  </div>
-  <div class="phase" style="margin-bottom:8px;">
-    <div class="phase-n"><span>W3–5</span></div>
-    <div class="phase-b">
-      <h4>Phase 2 — National Expansion (20 stores)</h4>
-      <p>Mở rộng ra Hà Nội (8 stores), Đà Nẵng (4 stores), Cần Thơ (4 stores), tỉnh thành (4 stores). Mỗi vùng có 1 micro-KOL local attend. Tournament qualifying rounds chạy song song tại cyberspace.</p>
+    <div class="phase">
+      <div class="phase-n"><span>W3–5</span></div>
+      <div class="phase-b">
+        <h4>Phase 2 — National Expansion (20 stores)</h4>
+        <p>Hanoi (8), Da Nang (4), Can Tho (4), provincial cities (4). One local micro-KOL per city. Online tournament qualifying rounds run in parallel at cybercafé stops.</p>
+      </div>
     </div>
-  </div>
-  <div class="phase">
-    <div class="phase-n"><span>W5–6</span></div>
-    <div class="phase-b">
-      <h4>Phase 3 — Countdown & Final Push (10 stores)</h4>
-      <p>10 stops cuối — các store top-performing của campaign. "Countdown to Festival" messaging. Giờ vàng intensive. Lucky draw reminder. Tạo FOMO cho Big Event.</p>
+    <div class="phase">
+      <div class="phase-n"><span>W5–6</span></div>
+      <div class="phase-b">
+        <h4>Phase 3 — Final Push & Countdown (10 stores)</h4>
+        <p>Top-performing stores from the campaign. "Countdown to Festival" messaging. Intensive flash deals. Lucky draw FOMO build. Every stop now points to the Big Event.</p>
+      </div>
     </div>
   </div>
 
   <table class="tbl" style="margin-top:28px;">
-    <thead><tr><th>Element</th><th>Nội dung tại mỗi stop</th><th>Output</th></tr></thead>
+    <thead><tr><th>Element</th><th>What happens at each stop</th></tr></thead>
     <tbody>
-      <tr><td><strong>Activation zone</strong></td><td>Demo AORUS laptop, "Powered by GIGABYTE" showcase build, gift bundle display</td><td>Brand experience trực tiếp</td></tr>
-      <tr><td><strong>Content output</strong></td><td>1 short-form video (TikTok/Reels) + 5–10 ảnh, đăng ngay trong ngày với số stop + city tag</td><td>Real-time social feed cho toàn campaign</td></tr>
-      <tr><td><strong>Lucky Draw touchpoint</strong></td><td>QR code registration tại activation — staff hỗ trợ khách submit entry</td><td>CDP data entry mỗi ngày</td></tr>
-      <tr><td><strong>Local micro-KOL</strong></td><td>1 local micro-KOL (5K–30K) attend mỗi thành phố — organic amplification đến gaming/tech community địa phương</td><td>Local trust + reach</td></tr>
-      <tr><td><strong>GVGS Flash Deal</strong></td><td>Giờ vàng giá sốc 12h–14h: gear từ 29K–999K</td><td>Traffic + revenue ngay D-Day activation</td></tr>
+      <tr><td><strong>Activation zone</strong></td><td>AORUS laptop demo, "Powered by GIGABYTE" showcase build, gift bundle physical display — visible, not described</td></tr>
+      <tr><td><strong>Content</strong></td><td>1 short video (TikTok/Reels) + 5–10 photos published same day with stop number + city tag. Feeds the ongoing tour narrative.</td></tr>
+      <tr><td><strong>Lucky Draw</strong></td><td>QR code registration station — activation staff assists customers with entry submission on the spot</td></tr>
+      <tr><td><strong>Local micro-KOL</strong></td><td>1 local micro-KOL (5K–30K) attends per city — organic amplification to the local tech/gaming community</td></tr>
+      <tr><td><strong>Flash deals</strong></td><td>12:00–14:00 GVGS flash pricing — drives traffic peak and in-store energy</td></tr>
     </tbody>
   </table>
-
-  <div class="insight">
-    <strong>Tại sao Gigabyte tự triển khai, không giao cho retailer</strong>
-    PG của retailer đang đại diện cho 10 brand cùng lúc. Gigabyte cần người đại diện cho duy nhất Gigabyte, với script cố định, demo flow chuẩn, và KPI checklist. Direct ownership = ROI tracking sạch: uplift tại activated stores vs non-activated stores đo độc lập được.
-  </div>
 
   <!-- BIG EVENT -->
-  <h3 style="font-family:'Syne',sans-serif;font-size:20px;font-weight:700;margin:52px 0 16px;padding-bottom:12px;border-bottom:2px solid var(--g100);">Big Event — GIGABYTE 40 Festival · HCM</h3>
-
-  <div class="pair">
-    <div class="pb">
-      <h4>Venue & Format</h4>
+  <h3 style="font-family:'Syne',sans-serif;font-size:19px;font-weight:700;margin:52px 0 14px;padding-bottom:12px;border-bottom:2px solid var(--f2);">Big Festival — GIGABYTE 40 · Ho Chi Minh City</h3>
+  <div class="split">
+    <div class="sp">
+      <h4>Format</h4>
       <ul>
-        <li><strong>Venue:</strong> Cung Văn hoá Lao Động, 55B Nguyễn Thị Minh Khai, Q.1, HCM</li>
-        <li><strong>Scale:</strong> 1,000–5,000 người on-site</li>
-        <li><strong>Duration:</strong> 1 ngày duy nhất — dense energy hơn 2 ngày</li>
-        <li><strong>Hybrid:</strong> Livestream YouTube + Facebook + TikTok đồng thời</li>
-        <li><strong>Benchmark:</strong> Mega Tech Fest (Phong Vũ, 2024): 5,000 người, 2.8 tỷ doanh thu, 0 marketing cost</li>
+        <li><strong>Venue:</strong> Cung Văn hoá Lao Động, 55B Nguyễn Thị Minh Khai, District 1</li>
+        <li><strong>Scale:</strong> 1,000–5,000 on-site attendees</li>
+        <li><strong>Duration:</strong> 1 full day — concentrated energy beats two average days</li>
+        <li><strong>Hybrid:</strong> Simultaneous livestream on YouTube, Facebook, TikTok</li>
+        <li><strong>Target:</strong> Gamers, esports fans, tech students, PC builders</li>
       </ul>
     </div>
-    <div class="pb dark">
-      <h4>Revenue target — Event Day</h4>
-      <p style="margin-bottom:10px;">Dựa trên Mega Tech Fest benchmark: 5,000 người × average ticket 560K = 2.8 tỷ. GIGABYTE 40 có thêm yếu tố brand celebration + tournament giúp extend dwell time và purchase intent.</p>
-      <p>Event-only voucher valid 2 giờ sau lễ bế mạc → tạo urgency cuối ngày. Target: <strong>2–3 tỷ revenue tại venue</strong> + data từ Lucky Draw entries để nurture 45 ngày còn lại.</p>
+    <div class="sp dark">
+      <h4>Revenue Target</h4>
+      <p style="margin-bottom:10px;">Event-exclusive voucher valid for 2 hours post-ceremony creates end-of-day urgency. Sales floor stays active 90 minutes after stage close.</p>
+      <p>Target: <strong style="color:var(--gold2)">2–3B VND on-site revenue</strong> from the combined laptop, PC, monitor, and GVGS purchase windows throughout the day.</p>
     </div>
   </div>
 
-  <h3 style="font-family:'Syne',sans-serif;font-size:17px;font-weight:600;margin:36px 0 14px;">Festival Agenda</h3>
+  <h3 style="font-family:'Syne',sans-serif;font-size:17px;font-weight:600;margin:36px 0 14px;">Festival Day Schedule</h3>
   <div class="agenda">
-    <div class="ag-row"><div class="ag-t">09:00</div><div class="ag-c"><strong>Mở cửa — Experience Zones</strong><p>AORUS Laptop showcase, "Powered by GIGABYTE" build station (khách tự assemble có hướng dẫn), AORUS monitor wall, RTX 5090 INFINITY display. Lucky Draw registration open. GVGS flash deal counter active.</p></div></div>
-    <div class="ag-row"><div class="ag-t">10:00</div><div class="ag-c"><strong>Opening — "The 40 Tour Arrives Home"</strong><p>Khai mạc chính thức. Recap video toàn bộ 40 mini events — từng thành phố, từng khoảnh khắc, dẫn về hôm nay. Khách đã attend bất kỳ stop nào đều cảm thấy là một phần của khoảnh khắc này. Livestream bắt đầu.</p></div></div>
-    <div class="ag-row"><div class="ag-t">10:30</div><div class="ag-c"><strong>GIGABYTE 40 Championship — Grand Final</strong><p>Delta Force + FC Online: regional champions từ HCM, HN, Miền Trung, Miền Tây thi đấu live trên main stage. MC commentary. Tournament là anchor content engine cao điểm nhất của ngày — chạy xuyên suốt buổi chiều.</p></div></div>
-    <div class="ag-row"><div class="ag-t">12:00</div><div class="ag-c"><strong>Giờ vàng giá sốc — Event Edition</strong><p>Flash deals tại GVGS counter: 12h00 sharp. Giá exclusive chỉ có tại event. Tạo traffic đổ xuống floor. Social team capture reaction tự nhiên.</p></div></div>
-    <div class="ag-row"><div class="ag-t">13:30</div><div class="ag-c"><strong>Break + Product Experience Floor</strong><p>Open exploration. KOL có mặt trên floor cho Q&A và content. Retail zone open — event voucher áp dụng từ đây. Staff hỗ trợ "Powered by GIGABYTE" build consultation.</p></div></div>
-    <div class="ag-row"><div class="ag-t">14:30</div><div class="ag-c"><strong>Championship Semifinals + KOL Session</strong><p>Ambassador KOL chơi vs semifinalists — không script. Best moment cho clip tự nhiên. Audience react live qua chat và in-venue.</p></div></div>
-    <div class="ag-row"><div class="ag-t">16:00</div><div class="ag-c"><strong>Đấu giá 1K — Viral Moment</strong><p>Starting bid 1,000 VND cho RTX 5090 INFINITY hoặc AORUS MASTER 16. MC drive crowd energy tối đa. Livestream peak. <strong>10 phút viral nhất của toàn campaign.</strong> Moment này sẽ được clip và repost organically.</p></div></div>
-    <div class="ag-row"><div class="ag-t">17:00</div><div class="ag-c"><strong>Grand Final + Lucky Draw Live</strong><p>Main stage championship match. Live lucky draw results công bố on-stage. Top prizes: AORUS MASTER 16, full Powered by GIGABYTE build, RTX 5090 INFINITY. Event-only voucher valid thêm 2 giờ.</p></div></div>
-    <div class="ag-row"><div class="ag-t">18:30</div><div class="ag-c"><strong>Close + Revenue Window</strong><p>Sales floor active thêm 90 phút. KOL photo sessions. Recap content bắt đầu publish ngay tối hôm đó. Lucky draw recap post live tối đó = peak organic reach ngày hôm sau.</p></div></div>
+    <div class="ag"><div class="ag-t">09:00</div><div><h4>Doors Open — Experience Zones</h4><p>AORUS Laptop showcase · Powered by GIGABYTE build station · AORUS monitor wall · RTX 5090 INFINITY display. Lucky Draw registration open. Brand staff on floor.</p></div></div>
+    <div class="ag"><div class="ag-t">10:00</div><div><h4>Opening — "The 40 Tour Arrives Home"</h4><p>Official opening. Recap video of all 40 mini event stops — every city, every moment, building to this. Attendees who joined any stop feel part of this finale. Livestream begins.</p></div></div>
+    <div class="ag"><div class="ag-t">10:30</div><div><h4>GIGABYTE 40 Championship — Grand Final Opens</h4><p>Delta Force + FC Online regional champions (HCM · Hanoi · Central · South) compete live on main stage. MC commentary. Tournament runs through afternoon as the content engine.</p></div></div>
+    <div class="ag"><div class="ag-t">12:00</div><div><h4>Flash Deals — Event Edition</h4><p>Exclusive GVGS pricing for festival attendees only. Drives floor traffic at midday. Social team captures natural reactions.</p></div></div>
+    <div class="ag"><div class="ag-t">14:30</div><div><h4>Semifinals + KOL Gaming Session</h4><p>Ambassador KOLs play against semifinalists — unscripted. Best moment for organic clip generation. Audience reacts live in-venue and on stream.</p></div></div>
+    <div class="ag"><div class="ag-t peak">16:00 ★</div><div><h4>1K Auction — Peak Viral Moment</h4><p>1,000 VND starting bid on RTX 5090 INFINITY or AORUS MASTER 16. MC drives maximum crowd energy. Livestream viewership peak. The most shareable 10 minutes of the campaign.</p></div></div>
+    <div class="ag"><div class="ag-t">17:00</div><div><h4>Grand Final + Live Lucky Draw</h4><p>Championship match on main stage. Lucky draw results announced live — top prizes revealed one by one. Event-exclusive voucher opens for final 2-hour purchase window.</p></div></div>
+    <div class="ag"><div class="ag-t">18:30</div><div><h4>Close + Revenue Window</h4><p>Sales floor active 90 minutes post-ceremony. KOL photo sessions. Recap content begins publishing same night. Lucky draw post = organic reach peak the following morning.</p></div></div>
   </div>
 
-  <h3 style="font-family:'Syne',sans-serif;font-size:17px;font-weight:600;margin:40px 0 14px;">Tournament Structure — GIGABYTE 40 Championship</h3>
+  <!-- TOURNAMENT -->
+  <h3 style="font-family:'Syne',sans-serif;font-size:17px;font-weight:600;margin:40px 0 14px;">Tournament Structure</h3>
   <table class="tbl">
-    <thead><tr><th>Vòng</th><th>Format</th><th>Games</th><th>Timeline</th><th>Marketing output</th></tr></thead>
+    <thead><tr><th>Round</th><th>Format</th><th>Games</th><th>Marketing Output</th></tr></thead>
     <tbody>
-      <tr><td><strong>Online Qualifying</strong></td><td>Open đăng ký toàn quốc, online bracket</td><td>Delta Force + FC Online</td><td>Week 1–3</td><td>Database từ đăng ký tournament — second CDP touchpoint</td></tr>
-      <tr><td><strong>Regional Offline</strong></td><td>Top players/region thi đấu offline tại cyber café mini event stops</td><td>Cả 2 game</td><td>Week 3–5</td><td>Content per city — amplified bởi local micro-KOL</td></tr>
-      <tr><td><strong>Grand Final</strong></td><td>Regional champions (HCM, HN, Miền Trung, Miền Tây) live tại Big Event</td><td>Cả 2 game, separate stages</td><td>Big Event Day</td><td>Livestream peak content + in-venue crowd energy</td></tr>
+      <tr><td><strong>Online Qualifying</strong></td><td>Open registration nationwide, online bracket</td><td>Delta Force · FC Online (separate)</td><td>Player database — second CDP touchpoint beyond purchases</td></tr>
+      <tr><td><strong>Regional Offline</strong></td><td>Top players per region compete offline at cybercafé mini event stops</td><td>Both titles</td><td>Per-city content amplified by local micro-KOL</td></tr>
+      <tr><td><strong>Grand Final</strong></td><td>Regional champions compete live at Festival</td><td>Both titles, separate stages</td><td>Livestream peak content + in-venue crowd energy</td></tr>
     </tbody>
   </table>
-
-  <div class="insight">
-    <strong>Tại sao Delta Force + FC Online</strong>
-    Delta Force: PC gaming core — chính xác audience mua hardware Gigabyte. FC Online: casual gamer, sinh viên, audience rộng hơn. 2 titles = 2 communities không overlap = double reach không tốn thêm infrastructure. VNG (Delta Force) và Garena (FC Online) đều có lý do để co-organize — tournament là content cho cả 2 platform của họ.
+  <div class="note">
+    <b>Why Delta Force + FC Online</b>
+    Delta Force reaches the core PC gaming/hardware community — precisely Gigabyte's primary buyer. FC Online casts a wider net: casual gamers, students, mainstream. Two titles = two distinct communities with minimal overlap = doubled reach at no additional structural cost.
   </div>
 </section>
 </div>
 
-<!-- ══════════════════════ PART 3: MEDIA & CONTENT ══════════════════════ -->
-<div id="media" class="wrap">
+<!-- ══ 03 MEDIA ═══════════════════════════════════════════════════════ -->
+<div id="media" class="w">
 <section class="sec">
-  <div class="s-num">03</div>
-  <div class="s-eye">Media & Content Strategy</div>
-  <h2>Content được thiết kế để người ta share — không chỉ để Gigabyte đăng</h2>
-  <p class="lead">PV × MSI campaign cho thấy rõ: meme content tạo reach 108K–50K/post, trong khi product post chỉ đạt 1.4K–5.3K. <strong>Mọi content trong GIGABYTE 40 phải có cơ chế lan truyền được thiết kế sẵn</strong> — không phải chỉ có thông điệp hay hình đẹp.</p>
-
-  <!-- DATA REFERENCE -->
-  <div class="data-row">
-    <div class="dr"><div class="val">256K</div><div class="lbl">Organic reach PV×MSI — 4.3× KPI</div><div class="src">Ref: PV × NVIDIA × MSI 10/04/2026</div></div>
-    <div class="dr"><div class="val">108K</div><div class="lbl">Reach từ 1 post meme funny mention duy nhất</div><div class="src">Ref: Social Details slide</div></div>
-    <div class="dr"><div class="val">20×</div><div class="lbl">Meme vs Product post — reach ratio</div><div class="src">Ref: Social Details analysis</div></div>
-    <div class="dr"><div class="val">211</div><div class="lbl">Leads từ digital ads — CPL ~114K</div><div class="src">Ref: Digital Details slide</div></div>
-  </div>
+  <div class="s-index">03</div>
+  <div class="s-over">Media & Content</div>
+  <h2>Content designed to be shared — not just posted.</h2>
+  <p class="intro">Every content format below has a specific mechanism for why people share it. The distinction matters: content people share earns trust that content people scroll past cannot buy. Authentic reach always outperforms paid reach on high-consideration purchases.</p>
 
   <!-- CONTENT PILLARS -->
-  <h3 style="font-family:'Syne',sans-serif;font-size:18px;font-weight:600;margin:40px 0 16px;">Core content pillars</h3>
-  <div class="tl">
-    <div class="tl-row">
-      <div class="tl-lbl">Heritage Series</div>
-      <div>
-        <div class="tl-t">40 năm chia thành 8–10 tập ngắn — không phải 1 documentary dài</div>
-        <div class="tl-b">Mỗi tập 60–90 giây, đăng đều trong suốt campaign. Mỗi tập kể 1 milestone: sản phẩm thay đổi ngành, khoảnh khắc "lần đầu tiên", công nghệ không ai ngờ đến. Long-form YouTube, cắt ngắn TikTok và Reels. Tạo thói quen follow — người xem chờ tập tiếp theo như xem series.</div>
-      </div>
+  <h3 style="font-family:'Syne',sans-serif;font-size:18px;font-weight:600;margin:40px 0 14px;">Content Pillars</h3>
+  <div class="cards">
+    <div class="card top">
+      <div class="card-tag">Heritage Series</div>
+      <h3>40 Years in 8–10 Episodes</h3>
+      <p>Short episodes (60–90s), released steadily across the campaign. Each tells one milestone: products that changed an industry, "first-ever" moments, technology nobody expected. Long-form on YouTube, cut for TikTok/Reels. Builds a viewing habit — people wait for the next episode like a series.</p>
     </div>
-    <div class="tl-row">
-      <div class="tl-lbl">Inside Access</div>
-      <div>
-        <div class="tl-t">Phỏng vấn nhân sự Gigabyte — không scripted, hé lộ thật sự</div>
-        <div class="tl-b">Format candid, câu hỏi mở: "Sản phẩm nào bạn tự hào nhất?", "Lần nào gần fail nhất?". Nếu kéo được người từ HQ Taiwan — đó là content đặc biệt không KOL nào có. Sự thật thuyết phục hơn bất kỳ press release nào.</div>
-      </div>
+    <div class="card top">
+      <div class="card-tag">Inside Access</div>
+      <h3>Unscripted Gigabyte Interviews</h3>
+      <p>Candid format with Gigabyte team — Vietnam and ideally HQ Taiwan. Questions: "Which product are you most proud of?", "When did something almost fail?". Authenticity that no PR release can replicate. If an HQ Taiwan engineer appears — that's exclusive content no KOL can produce.</p>
     </div>
-    <div class="tl-row">
-      <div class="tl-lbl">User Voice</div>
-      <div>
-        <div class="tl-t">Phỏng vấn user thật — câu hỏi đơn giản nhất có sức mạnh nhất</div>
-        <div class="tl-b">5–8 người dùng Gigabyte thực tế: gamer, sinh viên, creator, chủ quán net. Quay tại cửa hàng, tại nhà, tại event. Câu hỏi: "Bộ máy đầu tiên của mày dùng linh kiện gì?" — trigger cả thế hệ PC builder Việt nhớ lại và comment.</div>
-      </div>
+    <div class="card top">
+      <div class="card-tag">40 Tour Diary</div>
+      <h3>Real-Time Activation Content</h3>
+      <p>Every mini event stop published same day with stop number and city tag. Story format. Followers track the tour as it unfolds. By stop 20, cities not yet visited start asking. The Big Festival is the episode everyone's been waiting for.</p>
     </div>
-    <div class="tl-row">
-      <div class="tl-lbl">40 Tour Diary</div>
-      <div>
-        <div class="tl-t">Real-time content từ mỗi mini event stop — đăng ngay trong ngày</div>
-        <div class="tl-b">Mỗi stop được đánh số và geo-tag. Story format trên Instagram/Facebook. Followers track tour như một series đang diễn ra. Đến stop 30, người ở các thành phố chưa được ghé thăm bắt đầu hỏi "bao giờ đến chỗ tao?". Big Event là stop #41 — the finale.</div>
-      </div>
+    <div class="card top">
+      <div class="card-tag">User Voice</div>
+      <h3>Real Users, No Script</h3>
+      <p>5–8 genuine Gigabyte users: gamers, students, content creators, net café owners. One question unlocks everything: "What parts did your first build use?" — that single question triggers a generation of Vietnamese PC builders to reminisce and comment.</p>
     </div>
   </div>
 
   <!-- VIRAL MECHANICS -->
-  <h3 style="font-family:'Syne',sans-serif;font-size:18px;font-weight:600;margin:44px 0 16px;">5 viral mechanics — có cơ chế lan truyền thiết kế sẵn</h3>
-  <div class="viral-cards">
+  <h3 style="font-family:'Syne',sans-serif;font-size:18px;font-weight:600;margin:44px 0 14px;">5 Viral Mechanics — Built-in Sharing Logic</h3>
+  <div class="viral">
     <div class="vc">
-      <div class="vc-num">01</div>
-      <h3>"Máy tính đầu tiên của mày dùng linh kiện gì?"</h3>
-      <div class="why">Trigger: Nostalgia + Identity</div>
-      <p>Gigabyte mainboard có mặt từ những năm 2000 — hầu hết PC builder thế hệ đầu đều từng dùng. Câu hỏi này khai thác ký ức cá nhân, không cần Gigabyte làm gì nhiều — community tự kể chuyện cho nhau.</p>
-      <div class="mechanic">KOL seed câu hỏi → community trả lời → Gigabyte repost các câu trả lời hay nhất → vòng lặp tự chạy không cần thêm budget.</div>
+      <div class="vc-n">01</div>
+      <h3>"What parts did your first build use?"</h3>
+      <div class="trigger">Trigger: Nostalgia + Identity</div>
+      <p>Gigabyte mainboards were in Vietnamese PC builds from the 2000s. This question taps personal memory — the community tells the story, Gigabyte doesn't have to.</p>
+      <div class="how">KOL seeds the question → community answers → Gigabyte reposts the best responses → loop runs without additional budget.</div>
     </div>
     <div class="vc">
-      <div class="vc-num">02</div>
-      <h3>Challenge: "Build bộ Powered by GIGABYTE dưới X triệu"</h3>
-      <div class="why">Trigger: Competition + Utility</div>
-      <p>PC builder community thích thử thách tối ưu ngân sách. Gigabyte đặt bài toán cụ thể, KOL làm trước, community follow. Cấu hình hay nhất featured tại Big Event và nhận prize.</p>
-      <div class="mechanic">Mỗi bài dự thi = 1 post organic reach về Gigabyte. Có winner = có lý do để người khác tham gia. Viral vì vừa cạnh tranh vừa có giá trị thực tế.</div>
+      <div class="vc-n">02</div>
+      <h3>Challenge: Build "Powered by GIGABYTE" Under X Million</h3>
+      <div class="trigger">Trigger: Competition + Utility</div>
+      <p>PC builders love optimizing for budget. Gigabyte sets the problem, a KOL demonstrates first, the community follows. Best build wins a prize at the Big Festival.</p>
+      <div class="how">Every submission = one organic post about Gigabyte. A winner creates a reason for others to join. Viral because it's both competitive and practically useful.</div>
     </div>
     <div class="vc">
-      <div class="vc-num">03</div>
-      <h3>Đếm ngược 40 ngày — mỗi ngày 1 fact ít người biết</h3>
-      <div class="why">Trigger: Habit + Discovery</div>
-      <p>40 ngày trước Big Event, mỗi ngày 1 điều ít ai biết về Gigabyte — không phải spec sheet mà là chuyện hậu trường, kỷ lục kỳ lạ, quyết định thiết kế bất ngờ. Nhỏ nhưng tạo thói quen follow page hàng ngày.</p>
-      <div class="mechanic">"Mày biết cái này chưa?" — cơ chế lan truyền tự nhiên nhất. Mỗi ngày là lý do để quay lại page.</div>
+      <div class="vc-n">03</div>
+      <h3>40-Day Countdown — One Surprising Fact Daily</h3>
+      <div class="trigger">Trigger: Habit + Discovery</div>
+      <p>40 days before the festival, one thing nobody knows about Gigabyte each day — backstory, a strange record, an unexpected design decision. Builds a daily page-check habit.</p>
+      <div class="how">"Did you know this?" is the most natural sharing mechanic. Every post is a reason to come back tomorrow.</div>
     </div>
     <div class="vc">
-      <div class="vc-num">04</div>
-      <h3>Reaction video: "Người chưa biết AORUS thử lần đầu"</h3>
-      <div class="why">Trigger: Social Proof + Surprise</div>
-      <p>Chọn đúng người chưa biết brand — sinh viên, casual gamer, người chỉ quen laptop văn phòng — để reaction thật với AORUS MASTER 16. Không scripted. Sự ngạc nhiên thật thuyết phục hơn spec comparison.</p>
-      <div class="mechanic">Xem người khác bị "wow" kích thích tò mò — người xem muốn tự trải nghiệm. Chuyển directly sang intent to visit store.</div>
+      <div class="vc-n">04</div>
+      <h3>Reaction Video: "First Time Trying AORUS"</h3>
+      <div class="trigger">Trigger: Social Proof + Surprise</div>
+      <p>Real people who've never seen AORUS before — students, casual gamers, office laptop users — react genuinely to AORUS MASTER 16 or an AORUS OLED monitor. No script.</p>
+      <div class="how">Watching someone be genuinely surprised triggers curiosity in viewers. Converts directly into store visit intent.</div>
     </div>
     <div class="vc">
-      <div class="vc-num">05</div>
-      <h3>Meme: "Sao anh tới đúng địa chỉ em đưa rồi mà thấy cái bảng led vậy em?"</h3>
-      <div class="why">Trigger: Relatability + Shareability</div>
-      <p>Benchmark từ PV × MSI: post meme về khách hỏi "đến đúng địa chỉ mà thấy bảng led" đạt 50K reach. Gaming community Việt share meme nhanh hơn bất kỳ thứ gì. Cần 2–3 meme contextual mỗi tuần trong campaign.</p>
-      <div class="mechanic">Meme không cần big budget. Cần nhanh và đúng tone — trong vòng 24h sau mỗi trending moment gaming.</div>
+      <div class="vc-n">05</div>
+      <h3>Meme: Relatable Gaming Moments</h3>
+      <div class="trigger">Trigger: Relatability + Speed</div>
+      <p>Vietnamese gaming communities share memes faster than any other content format. 2–3 contextual memes per week tied to campaign moments and trending topics in gaming culture.</p>
+      <div class="how">Memes don't need big budgets — they need speed and tone. Must be published within 24 hours of the relevant moment.</div>
     </div>
   </div>
 
-  <!-- KOL SYSTEM -->
-  <h3 style="font-family:'Syne',sans-serif;font-size:18px;font-weight:600;margin:44px 0 16px;">KOL System — Ambassador model, không phải transactional</h3>
-  <div class="insight">
-    <strong>Model: 1 fixed ambassador + tiered support network</strong>
-    1–2 macro KOL ký hợp đồng cho full 45–60 ngày — họ own narrative arc của campaign. Dưới đó là mạng lưới mid và micro KOL cho product, event, và community moments cụ thể. Không phải one-off posts transactional — một hệ thống có defined roles.
+  <!-- KOL -->
+  <h3 style="font-family:'Syne',sans-serif;font-size:18px;font-weight:600;margin:44px 0 14px;">KOL System — Ambassador-Led, Not Transactional</h3>
+  <div class="note">
+    <b>Model</b>
+    1–2 macro KOLs signed as campaign ambassadors for the full 45–60 days — they own the narrative arc. A tiered network below amplifies specific products, events, and community moments. Not one-off posts — a structured system with defined roles throughout the campaign.
   </div>
   <table class="tbl">
-    <thead><tr><th>Tier</th><th>Profile</th><th>Số lượng</th><th>Vai trò trong campaign</th></tr></thead>
+    <thead><tr><th>Tier</th><th>Profile</th><th>Qty</th><th>Campaign Role</th></tr></thead>
     <tbody>
-      <tr><td><strong>Ambassador</strong></td><td>Top gaming/tech KOL (500K+), ký cho full campaign</td><td>1–2</td><td>Face of campaign, narrative anchor, event headline, heritage series co-host</td></tr>
-      <tr><td><strong>Macro</strong></td><td>Tech reviewer, top streamers (200K–500K)</td><td>3–5</td><td>Product deep-dive, heritage amplification, tournament participation</td></tr>
-      <tr><td><strong>Mid</strong></td><td>PC builder, hardware enthusiast, gaming streamer (30K–200K)</td><td>8–12</td><td>SKU review, build challenge entry, mini event coverage per city</td></tr>
-      <tr><td><strong>Micro</strong></td><td>Community builder, genuine tech fan (5K–30K)</td><td>15–20</td><td>Hashtag engine, peer trust, UGC amplification — base layer làm cho mọi thứ có vẻ thật</td></tr>
+      <tr><td><strong>Ambassador</strong></td><td>Top gaming/tech KOL, 500K+ — signed for full campaign</td><td>1–2</td><td>Campaign face, narrative anchor, event headline, heritage series co-host</td></tr>
+      <tr><td><strong>Macro</strong></td><td>Tech reviewers, top streamers (200K–500K)</td><td>3–5</td><td>Product deep-dives, heritage amplification, tournament participation</td></tr>
+      <tr><td><strong>Mid</strong></td><td>PC builders, hardware enthusiasts, gaming streamers (30K–200K)</td><td>8–12</td><td>SKU reviews, build challenge entries, mini event coverage per city</td></tr>
+      <tr><td><strong>Micro</strong></td><td>Community builders, genuine tech fans (5K–30K)</td><td>15–20</td><td>Hashtag engine, peer trust, UGC amplification — the base layer that makes everything feel real</td></tr>
     </tbody>
   </table>
 
-  <!-- OOH -->
-  <h3 style="font-family:'Syne',sans-serif;font-size:18px;font-weight:600;margin:44px 0 16px;">OOH — Ngoài trời</h3>
-  <div class="pair">
-    <div class="pb">
-      <h4>Location Strategy</h4>
+  <!-- OOH + PR -->
+  <div class="split" style="margin-top:36px;">
+    <div class="sp">
+      <h4>OOH — Outdoor</h4>
       <ul>
-        <li>HCM: 264 NTMK (860K traffics/day), CMT8-ĐBP, Vòng xoay Bến Thành, Nguyễn Văn Trỗi</li>
-        <li>Đà Nẵng + Huế: 2 LED screens cho national footprint</li>
-        <li>Air <strong>ít nhất 7 ngày trước</strong> D-Day — không phải sát ngày (lesson từ PV×MSI: màn 264 air trễ = mất hiệu quả)</li>
-        <li>Creative message: "40 năm công nghệ. Việt Nam chưa biết tên tôi." — provocative, memorable</li>
+        <li>HCM: 264 NTMK · CMT8-DBP intersection · Bến Thành roundabout · Nguyễn Văn Trỗi</li>
+        <li>Da Nang + Hue: 2 LED screens for national footprint</li>
+        <li>Air <strong>7+ days before D-Day</strong> minimum — early exposure drives recall</li>
+        <li>Message: "40 Years of Engineering. Vietnam, Meet Gigabyte." — direct, memorable</li>
+        <li>Mandatory: go-live confirmation photo + timestamp from vendor</li>
       </ul>
     </div>
-    <div class="pb dark">
-      <h4>Execution Rule</h4>
-      <p style="margin-bottom:10px;">Checklist go-live cứng với deadline 7 ngày trước event. OOH vendor confirm receipt bằng photo + timestamp — không confirm miệng.</p>
-      <p>OOH không tạo ra clicks. Nó tạo ra recall — khi người xem sau đó gặp Gigabyte tại store hoặc trên social, brand đã không còn xa lạ. Measure bằng: so sánh organic brand search volume trong tuần OOH air vs baseline.</p>
-    </div>
-  </div>
-
-  <!-- PR -->
-  <h3 style="font-family:'Syne',sans-serif;font-size:18px;font-weight:600;margin:40px 0 16px;">PR — Earned media</h3>
-  <div class="cards">
-    <div class="card feat">
-      <div class="c-tag">Tech & Gaming — Core</div>
-      <h3>Tinhte · VnReview · Genk · Sforum</h3>
-      <p>Technical credibility layer. In-depth product review, campaign launch feature, Big Event recap. Sống lâu hơn campaign — SEO-indexed, evergreen cho buyers research tháng sau.</p>
-    </div>
-    <div class="card feat">
-      <div class="c-tag">Gaming & Esports</div>
-      <h3>GEARVN Blog · Esports VN · Gaming communities</h3>
-      <p>Tournament coverage, player profile, community angle. Reach đúng audience attend event — và audience xem online.</p>
-    </div>
-    <div class="card feat">
-      <div class="c-tag">Mainstream — Funnel Opener</div>
-      <h3>VnExpress Tech · ICTNews · Dân Trí Công nghệ</h3>
-      <p>"Gigabyte tròn 40 tuổi tại Việt Nam với festival công nghệ quốc gia" — đây là tin các outlet mainstream sẽ đăng mà không cần pitch deck. Mở rộng top-of-funnel ra ngoài tech bubble.</p>
+    <div class="sp">
+      <h4>Press & Earned Media</h4>
+      <ul>
+        <li><strong>Tech core:</strong> Tinhte · VnReview · Genk · Sforum — technical credibility, evergreen SEO</li>
+        <li><strong>Gaming:</strong> GEARVN Blog · Esports VN — tournament coverage, community angle</li>
+        <li><strong>Mainstream:</strong> VnExpress Tech · ICTNews · Dân Trí — "Gigabyte turns 40 with a national festival" is a story they'll run unprompted</li>
+      </ul>
     </div>
   </div>
 </section>
 </div>
 
-<!-- ══════════════════════ PART 4: PARTNERSHIP ══════════════════════ -->
-<div id="partners" class="wrap">
+<!-- ══ 04 PARTNERS ════════════════════════════════════════════════════ -->
+<div id="partners" class="w">
 <section class="sec">
-  <div class="s-num">04</div>
-  <div class="s-eye">Partnership Strategy</div>
-  <h2>Mỗi partner muốn một thứ khác nhau — pitch phải khác nhau</h2>
-  <p class="lead">Benchmark từ Mega Sale Booming Deal 2025: 18 brands đóng ~410 triệu → Phong Vũ net cost 0. GIGABYTE 40 là single-brand event, chi phí lớn hơn — nhưng cùng logic: lead với cái partner nhận được, không phải cái Gigabyte cần.</p>
+  <div class="s-index">04</div>
+  <div class="s-over">Partnership Strategy</div>
+  <h2>Every partner wants something different. Pitch accordingly.</h2>
+  <p class="intro">Partnership strategy fails when every partner receives the same ask. Intel, VNG, and Phong Vũ have completely different motivations. Structure the conversation around what they gain — not what Gigabyte needs. Lead with their ROI, and the funding conversation becomes easy.</p>
 
-  <div class="tier" style="margin-top:32px;">
-    <div class="tier-l">Chip brands</div>
-    <div class="tier-b">
-      <h4>Intel · AMD · Nvidia · Microsoft</h4>
-      <p>Quarterly MDF đã có — 40th anniversary là leverage để negotiate top-up extraordinary. Pitch: "Campaign này bán silicon của bạn. Mọi Powered by GIGABYTE build feature CPU/GPU của bạn. Mọi AORUS laptop showcase chạy GPU của bạn." Co-branded demo zones tại Big Event. Logo xuất hiện xuyên suốt. <strong>Target co-fund: NVIDIA 150–200M, Intel 100–150M.</strong></p>
+  <div class="tiers">
+    <div class="tier">
+      <div class="tier-l">Chip Brands</div>
+      <div class="tier-r">
+        <h4>NVIDIA · Intel · AMD · Microsoft</h4>
+        <p>Quarterly MDF already exists — the 40th anniversary is leverage for an extraordinary top-up above standard allocation. The pitch: "This campaign sells your silicon too. Every Powered by GIGABYTE build features your processor. Every AORUS laptop showcase runs your GPU. Co-branded demo zones at the festival. Your logo in every demo build." Brands that see their products at a 5,000-person gaming festival don't need to be convinced — they need to be shown the opportunity clearly. <strong>Target: NVIDIA 150–200M · Intel 100–150M VND.</strong></p>
+      </div>
     </div>
-  </div>
-  <div class="tier">
-    <div class="tier-l">Game publishers</div>
-    <div class="tier-b">
-      <h4>VNG (Delta Force) · Garena (FC Online)</h4>
-      <p>Không phải sponsorship ask — đây là co-organizer relationship cho tournament. VNG và Garena amplify qua channel của họ: in-game banners, community announcements, tournament listings. Họ mang player base đến event Gigabyte; Gigabyte mang hardware credibility đến esports ecosystem của họ. Win-win không cần cash exchange — hiện vật (prize pool) và channel support.</p>
+    <div class="tier">
+      <div class="tier-l">Publishers</div>
+      <div class="tier-r">
+        <h4>VNG (Delta Force) · Garena (FC Online)</h4>
+        <p>This is not a sponsorship ask — it's a co-organizer relationship for the tournament. VNG and Garena amplify through their own channels: in-game banners, community posts, tournament listings on their platforms. They bring their player base to Gigabyte's event; Gigabyte brings hardware credibility to their esports ecosystem. Exchange: prize pool (in-kind) and channel marketing support. No cash required — mutual reach benefit.</p>
+      </div>
     </div>
-  </div>
-  <div class="tier">
-    <div class="tier-l">Universities</div>
-    <div class="tier-b">
-      <h4>Bách Khoa · RMIT · FPT · KHTN + others</h4>
-      <p>Sponsor internal esports clubs và gaming tournament bằng Gigabyte product prize. Deploy demo units cho 1-day on-campus sessions. Online qualifying round có dedicated bracket cho university teams — sinh viên có stakein Big Event. Không build quarter này's revenue. Build 5 năm tới của Gigabyte's customer base tại Việt Nam.</p>
+    <div class="tier">
+      <div class="tier-l">Universities</div>
+      <div class="tier-r">
+        <h4>Bach Khoa · RMIT · FPT · HCMUS + others</h4>
+        <p>Sponsor internal esports clubs and student gaming tournaments with Gigabyte product prizes. Deploy demo units for 1-day on-campus sessions. Tournament online qualifying includes a dedicated university bracket — giving student communities a direct stake in the Big Festival. This doesn't build this quarter's revenue. It builds Gigabyte's customer base for the next five years in Vietnam.</p>
+      </div>
     </div>
-  </div>
-  <div class="tier">
-    <div class="tier-l">Retailers</div>
-    <div class="tier-b">
-      <h4>Phong Vũ · GEARVN · An Phát · CellphoneS · Hacom</h4>
-      <p>Retailers là distribution partners — execute campaign trong channel của họ với consistent "GIGABYTE 40" messaging. Forecast-linked gift bundle mechanic tạo commercial incentive để mỗi retailer đầu tư vào promotion. Gigabyte set narrative và brand standards; retailers amplify. <strong>Critical: không có equal co-branding ở campaign level.</strong> 40-year milestone thuộc về Gigabyte. Logo retailer xuất hiện trong materials của họ, không trên Gigabyte's campaign assets.</p>
+    <div class="tier">
+      <div class="tier-l">Retailers</div>
+      <div class="tier-r">
+        <h4>Phong Vũ · GEARVN · An Phát · CellphoneS · Hacom</h4>
+        <p>Retailers execute the campaign in their own channels with consistent "GIGABYTE 40" messaging. The forecast-linked gift bundle gives each retailer a commercial incentive to invest in promotion. Gigabyte sets the narrative and brand standards; retailers amplify. Critical: <strong>no equal co-branding at campaign level</strong>. The 40-year milestone belongs to Gigabyte. Retailer logos appear in their own materials, not on Gigabyte's campaign assets.</p>
+      </div>
     </div>
-  </div>
-
-  <div class="insight">
-    <strong>Từ kinh nghiệm quản lý ≥10 tỷ VND/năm brand co-investment tại Phong Vũ</strong>
-    Funding mạnh nhất đến khi bạn show ROI của partner trước. Đừng mở đầu bằng "chúng tôi cần co-fund cho campaign." Mở đầu bằng "đây là thứ brand của bạn nhận được từ campaign này" — rồi fund conversation là dễ. Brand thấy logo của họ tại festival 5,000 người và sản phẩm của họ trong mọi demo build sẽ không cần thuyết phục — chỉ cần được show cơ hội rõ ràng.
   </div>
 
-  <!-- COST ESTIMATE -->
-  <h3 style="font-family:'Syne',sans-serif;font-size:18px;font-weight:600;margin:40px 0 16px;">Budget estimate — 3 scenarios</h3>
-  <table class="tbl">
-    <thead><tr><th>Item</th><th>Conservative</th><th>Base</th><th>Optimal</th></tr></thead>
+  <!-- BUDGET -->
+  <h3 style="font-family:'Syne',sans-serif;font-size:18px;font-weight:600;margin:44px 0 14px;">Budget Scenarios</h3>
+  <table class="btbl">
+    <thead><tr><th>Component</th><th>Conservative</th><th>Base</th><th>Full Scale</th></tr></thead>
     <tbody>
-      <tr><td>40 Mini events (kit, staff, logistics)</td><td>400M</td><td>600M</td><td>800M</td></tr>
-      <tr><td>Big Festival (venue + build + AV + staffing)</td><td>700M</td><td>1B</td><td>1.4B</td></tr>
-      <tr><td>Media & digital ads</td><td>200M</td><td>350M</td><td>500M</td></tr>
-      <tr><td>OOH</td><td>100M</td><td>180M</td><td>280M</td></tr>
-      <tr><td>KOL system</td><td>200M</td><td>350M</td><td>500M</td></tr>
+      <tr><td>40 Mini events — kit, staff, logistics</td><td>400M</td><td>600M</td><td>800M</td></tr>
+      <tr><td>Big Festival — venue, build, A/V, staffing</td><td>700M</td><td>1B</td><td>1.4B</td></tr>
+      <tr><td>Media & digital advertising</td><td>200M</td><td>350M</td><td>500M</td></tr>
+      <tr><td>OOH (HCM + national)</td><td>100M</td><td>180M</td><td>280M</td></tr>
+      <tr><td>KOL system (ambassador + tiers)</td><td>200M</td><td>350M</td><td>500M</td></tr>
       <tr><td>POSM + merchandise production</td><td>200M</td><td>350M</td><td>500M</td></tr>
-      <tr><td>Gift bundle production (laptop + PC)</td><td>300M</td><td>500M</td><td>700M</td></tr>
-      <tr><td><strong>TỔNG TRƯỚC CO-FUND</strong></td><td><strong>2.1 tỷ</strong></td><td><strong>3.3 tỷ</strong></td><td><strong>4.7 tỷ</strong></td></tr>
-      <tr class="highlight"><td><strong>Co-fund target (NVIDIA+Intel+AMD+VNG+Garena+Retailers)</strong></td><td><strong>−1.2 tỷ</strong></td><td><strong>−1.8 tỷ</strong></td><td><strong>−2.5 tỷ</strong></td></tr>
-      <tr class="highlight"><td><strong>Gigabyte Vietnam net investment</strong></td><td><strong>~900M</strong></td><td><strong>~1.5 tỷ</strong></td><td><strong>~2.2 tỷ</strong></td></tr>
+      <tr><td>Gift bundle production</td><td>300M</td><td>500M</td><td>700M</td></tr>
+      <tr class="total"><td>Total before co-funding</td><td>2.1B VND</td><td>3.3B VND</td><td>4.7B VND</td></tr>
+      <tr><td>Partner co-funding target (NVIDIA + Intel + VNG + Retailers)</td><td>−1.2B</td><td>−1.8B</td><td>−2.5B</td></tr>
+      <tr class="net"><td><strong>Gigabyte Vietnam net investment</strong></td><td><strong>~900M</strong></td><td><strong>~1.5B</strong></td><td><strong>~2.2B</strong></td></tr>
     </tbody>
   </table>
-  <p style="font-size:12px;color:var(--g400);margin-top:8px;">* Estimate dựa trên benchmark Mega Sale Booming Deal 2025 (306M/2-day 18-brand event) và Mega Tech Fest 2024. Không bao gồm VAT. Co-fund target dựa trên MDF pattern đã confirmed với các brand tại Phong Vũ.</p>
+  <p style="font-size:12px;color:var(--muted);margin-top:8px;">Estimates based on comparable single-brand tech events at similar scale in Vietnam. Excludes VAT. Co-funding targets based on established MDF patterns with chip and peripheral brands.</p>
 </section>
 </div>
 
-<!-- ══════════════════════ PART 5: POSM ══════════════════════ -->
-<div id="posm" class="wrap">
+<!-- ══ 05 IN-STORE ════════════════════════════════════════════════════ -->
+<div id="posm" class="w">
 <section class="sec">
-  <div class="s-num">05</div>
-  <div class="s-eye">Shop Decoration / POSM</div>
-  <h2>Tại shelf, Gigabyte hiện không tồn tại. Campaign này thay đổi điều đó.</h2>
-  <p class="lead">Tại Phong Vũ: Lenovo có branded lightbox, MSI có floor lightbox, ASUS ROG có premium laser-etched display, Predator có 3D logo RGB — đây là đối thủ trực tiếp nhất. Gigabyte không có gì. 40th anniversary là cơ hội để không chỉ bắt kịp — mà own "40 years" moment trong khi mọi đối thủ đang chạy materials thông thường.</p>
+  <div class="s-index">05</div>
+  <div class="s-over">In-Store Presence / POSM</div>
+  <h2>At the shelf, Gigabyte currently doesn't exist. That changes.</h2>
+  <p class="intro">Every competitor — Lenovo, MSI, ASUS ROG, Predator — has branded in-store presence. Gigabyte has nothing. The 40th anniversary is the moment to not just match the competition, but to own the "40 years" visual while competitors are running standard brand materials.</p>
 
-  <div class="insight">
-    <strong>Benchmark Predator — tại sao 3D matters</strong>
-    Predator's in-store display là gaming brand presence nhận ra ngay tại Phong Vũ — không phải vì to nhất, mà vì 3D logo tạo depth và RGB tạo movement. Static flat logos biến mất. AORUS Eagle dạng 3D với ambient RGB lighting sẽ là visual Gigabyte đầu tiên làm người đi ngang phải dừng lại.
+  <div class="note">
+    <b>Competitive Benchmark</b>
+    Predator's in-store display has the strongest gaming identity at retail — not because it's the largest, but because its 3D logo creates depth and RGB creates movement. Static flat logos disappear. An AORUS Eagle lightbox in 3D with ambient RGB will be the first Gigabyte visual that stops foot traffic. That's the entire job of the hero display unit: make someone pause who wasn't planning to.
   </div>
 
-  <h3 style="font-family:'Syne',sans-serif;font-size:18px;font-weight:600;margin:36px 0 16px;">3-Layer POSM System</h3>
-  <div class="posm-grid">
-    <div class="posm-c">
+  <h3 style="font-family:'Syne',sans-serif;font-size:18px;font-weight:600;margin:36px 0 14px;">3-Layer POSM System</h3>
+  <div class="posm">
+    <div class="pm">
       <h4>Layer 1 — Brand Identity</h4>
       <ul>
-        <li>AORUS Eagle lightbox — 3D logo, RGB ambient</li>
-        <li>"GIGABYTE 40 · Since 1986" totem — dark + gold, vertical</li>
+        <li>AORUS Eagle lightbox — 3D, RGB ambient</li>
+        <li>"GIGABYTE 40 · Since 1986" totem</li>
         <li>Laptop display stand — "40" embossed</li>
         <li>Facade banner (exterior)</li>
         <li>Window decal — "40 Years"</li>
-        <li>Hanging mobiles — ceiling ×6–8</li>
+        <li>Ceiling mobiles ×6–8</li>
       </ul>
     </div>
-    <div class="posm-c">
-      <h4>Layer 2 — Product Specific</h4>
+    <div class="pm">
+      <h4>Layer 2 — Product</h4>
       <ul>
         <li>AORUS spec card + demo stand</li>
         <li>"Powered by GIGABYTE" build badge</li>
         <li>Monitor spec card — acrylic</li>
         <li>Combo pricing card (PC + Monitor)</li>
         <li>Shelf header strips per category</li>
-        <li>Wobbler — promo SKUs</li>
-        <li>QR code → Lucky Draw</li>
+        <li>QR code → Lucky Draw registration</li>
       </ul>
     </div>
-    <div class="posm-c">
-      <h4>Layer 3 — Campaign Moment</h4>
+    <div class="pm">
+      <h4>Layer 3 — Campaign</h4>
       <ul>
         <li>Photo backdrop — #GIGABYTE40VN</li>
-        <li>Gift bundle display — physical, visible</li>
+        <li>Gift bundle display — physical, open</li>
         <li>40 Tour map — cities activated</li>
         <li>Event registration touchpoint</li>
-        <li>40th Anniversary brochure (collectible)</li>
+        <li>40th Anniversary collectible brochure</li>
       </ul>
     </div>
-    <div class="posm-c">
+    <div class="pm">
       <h4>Merchandise</h4>
       <ul>
-        <li>Backpack GIGABYTE 40 edition</li>
-        <li>AORUS Chibi figure (limited)</li>
-        <li>Custom premium item (40-year exclusive)</li>
+        <li>Backpack — GIGABYTE 40 edition</li>
+        <li>AORUS Chibi figure (limited run)</li>
+        <li>Premium exclusive item (campaign only)</li>
         <li>Sticker pack — 5 designs</li>
-        <li>Mousepad mini — logo 40 năm</li>
-        <li>Postcard set — 40 Years</li>
-        <li>Keychain AORUS (event-only)</li>
+        <li>Mousepad mini — 40-year logo</li>
+        <li>Postcard set — 40 Years of GIGABYTE</li>
+        <li>AORUS keychain (event-only)</li>
       </ul>
     </div>
   </div>
 
-  <div class="pair">
-    <div class="pb dark">
-      <h4>Execution rule #1: Visible over described</h4>
-      <p style="margin-bottom:10px;">Gift bundle phải được display vật lý — sản phẩm kế bên quà tặng, giá combo ngay trên đó. Nếu phải đọc flyer mới hiểu được ưu đãi, khách sẽ không đọc.</p>
-      <p>LCD MSI MAG 274QF X24 27" phải được mở hộp và đặt cạnh laptop/PC — không phải in hình lên poster. Thấy thật → muốn thật.</p>
+  <div class="split">
+    <div class="sp dark">
+      <h4>Rule: Visible Over Described</h4>
+      <p style="margin-bottom:10px;">The gift bundle must be displayed physically — laptop next to the monitor and gift items, priced together. If understanding the promotion requires reading a flyer, it won't be read.</p>
+      <p>The MSI MAG 274QF X24 27" must be unboxed and placed beside the laptop or PC build — not printed on a poster. Seeing it real creates wanting it real.</p>
     </div>
-    <div class="pb">
-      <h4>Execution rule #2: Timeline cứng</h4>
+    <div class="sp">
+      <h4>Execution Timeline</h4>
       <ul>
-        <li>Lock all designs: <strong>Campaign W−3</strong> (3 tuần trước D-Day)</li>
-        <li>POSM production: 7–10 ngày sản xuất</li>
-        <li>Deploy flagship stores (top 3/retailer): <strong>Day 1</strong></li>
-        <li>Tier 2 stores: Week 2</li>
-        <li>POSM coordinator riêng per retailer group — không share resource</li>
-        <li>LCD screen: protocol riêng, không phụ thuộc PG hãng (lesson từ PV×MSI: LCD air trễ 1 tiếng)</li>
+        <li>Design lock: <strong>Campaign W−3</strong> (3 weeks before launch)</li>
+        <li>Production lead time: 7–10 business days</li>
+        <li>Flagship stores (top 3 per retailer): <strong>Day 1 deployment</strong></li>
+        <li>Tier 2 stores: by campaign Week 2</li>
+        <li>Dedicated POSM coordinator per retailer group</li>
+        <li>In-store LCD: independent setup protocol — not dependent on brand PG timing</li>
       </ul>
     </div>
   </div>
 </section>
 </div>
 
-<!-- ══════════════════════ PART 6: KPIs ══════════════════════ -->
-<div id="kpi" class="wrap">
+<!-- ══ 06 KPIs ════════════════════════════════════════════════════════ -->
+<div id="kpi" class="w">
 <section class="sec">
-  <div class="s-num">06</div>
-  <div class="s-eye">Success Metrics</div>
-  <h2>KPIs theo 3 mục tiêu — Brand, Sales, Data</h2>
-  <p class="lead">Mỗi mục tiêu có metric riêng, đo được khác nhau. Campaign 45–60 ngày cần checkpoint tại Week 2, Week 4, và post-campaign để điều chỉnh kịp thời.</p>
+  <div class="s-index">06</div>
+  <div class="s-over">Success Metrics</div>
+  <h2>Three goals. Each measured differently.</h2>
+  <p class="intro">Brand awareness, sales effectiveness, and data are three distinct outcomes requiring three distinct measurement approaches. Checkpoints at Week 2, Week 4, and post-campaign allow real-time adjustments — not just retrospective reporting.</p>
 
-  <table class="tbl">
-    <thead><tr><th>Mục tiêu</th><th>Metric</th><th>Target</th><th>Đo bằng</th></tr></thead>
-    <tbody>
-      <tr>
-        <td rowspan="4"><strong>Brand Awareness</strong></td>
-        <td>Organic social reach (Facebook + TikTok)</td>
-        <td>≥ 2M (total campaign)</td>
-        <td>Facebook Insights, TikTok Analytics</td>
-      </tr>
-      <tr>
-        <td>Brand search volume (Google Trends "Gigabyte Vietnam")</td>
-        <td>+50% vs pre-campaign baseline</td>
-        <td>Google Trends, Search Console</td>
-      </tr>
-      <tr>
-        <td>OOH total traffics coverage</td>
-        <td>≥ 5M impressions/day trong tuần peak</td>
-        <td>Vendor report</td>
-      </tr>
-      <tr>
-        <td>Earned media mentions (PR articles)</td>
-        <td>≥ 15 publications trong campaign window</td>
-        <td>Media monitoring</td>
-      </tr>
-      <tr>
-        <td rowspan="4"><strong>Sales Effectiveness</strong></td>
-        <td>Laptop SO Units (campaign vs baseline)</td>
-        <td>+40% vs same period prior year</td>
-        <td>POS data per retailer</td>
-      </tr>
-      <tr>
-        <td>PC (VGA+Mainboard combo) SO Units</td>
-        <td>+60% vs baseline — combo mechanic có multiplier</td>
-        <td>POS data per retailer</td>
-      </tr>
-      <tr>
-        <td>GVGS revenue tại mini events</td>
-        <td>≥ 80% target per event stop</td>
-        <td>SO report per activation day</td>
-      </tr>
-      <tr>
-        <td>Big Event revenue on D-Day</td>
-        <td>≥ 2 tỷ VND tại venue</td>
-        <td>POS venue report</td>
-      </tr>
-      <tr>
-        <td rowspan="3"><strong>Data (CDP)</strong></td>
-        <td>Lucky Draw entries (verified customer records)</td>
-        <td>≥ 5,000 unique entries</td>
-        <td>Gigabyte VN system</td>
-      </tr>
-      <tr>
-        <td>Tournament registrations</td>
-        <td>≥ 2,000 registered players</td>
-        <td>Tournament platform</td>
-      </tr>
-      <tr>
-        <td>Post-campaign lead quality (CR "Có nhu cầu")</td>
-        <td>≥ 35% (vs 20.5% benchmark PV×MSI)</td>
-        <td>CRM / Chatsale follow-up</td>
-      </tr>
-    </tbody>
-  </table>
+  <div class="kpi-grid">
+    <div class="kg">
+      <div class="kg-head"><h4>Brand Awareness</h4></div>
+      <div class="kg-body">
+        <div class="kg-item">
+          <div class="metric">Organic social reach (Facebook + TikTok)</div>
+          <div class="target">≥ 2M total campaign</div>
+        </div>
+        <div class="kg-item">
+          <div class="metric">Brand search volume uplift (Google Trends)</div>
+          <div class="target">+50% vs pre-campaign baseline</div>
+        </div>
+        <div class="kg-item">
+          <div class="metric">OOH daily coverage during peak week</div>
+          <div class="target">≥ 5M impressions/day</div>
+        </div>
+        <div class="kg-item">
+          <div class="metric">Earned media placements</div>
+          <div class="target">≥ 15 publications</div>
+        </div>
+      </div>
+    </div>
+    <div class="kg">
+      <div class="kg-head"><h4>Sales Effectiveness</h4></div>
+      <div class="kg-body">
+        <div class="kg-item">
+          <div class="metric">Laptop sell-out units (vs same period prior year)</div>
+          <div class="target">+40% YoY</div>
+        </div>
+        <div class="kg-item">
+          <div class="metric">PC (VGA + Mainboard combo) units</div>
+          <div class="target">+60% YoY — combo multiplier</div>
+        </div>
+        <div class="kg-item">
+          <div class="metric">GVGS revenue per mini event stop</div>
+          <div class="target">≥ 80% of target per activation</div>
+        </div>
+        <div class="kg-item">
+          <div class="metric">Big Festival on-site revenue</div>
+          <div class="target">≥ 2B VND on D-Day</div>
+        </div>
+      </div>
+    </div>
+    <div class="kg">
+      <div class="kg-head"><h4>Data (CDP)</h4></div>
+      <div class="kg-body">
+        <div class="kg-item">
+          <div class="metric">Lucky Draw verified entries</div>
+          <div class="target">≥ 5,000 unique customer records</div>
+        </div>
+        <div class="kg-item">
+          <div class="metric">Tournament registered players</div>
+          <div class="target">≥ 2,000 across both titles</div>
+        </div>
+        <div class="kg-item">
+          <div class="metric">Post-campaign lead conversion rate</div>
+          <div class="target">≥ 35% "active intent"</div>
+        </div>
+        <div class="kg-item">
+          <div class="metric">Retailer forecast submissions received</div>
+          <div class="target">≥ 70% of invited retailers commit</div>
+        </div>
+      </div>
+    </div>
+  </div>
 
-  <div class="pair">
-    <div class="pb">
-      <h4>Campaign Checkpoints</h4>
+  <div class="split">
+    <div class="sp">
+      <h4>Adjustment Protocol</h4>
       <ul>
-        <li><strong>Week 2:</strong> Social content mix — nếu product post underperform, shift thêm budget sang meme/viral content</li>
-        <li><strong>Week 4:</strong> Digital lead quality review — nếu CPL cao, adjust targeting và thêm lower-AOV products vào funnel</li>
-        <li><strong>Post-campaign:</strong> Lucky Draw database quality audit — verify contact info, segment by product interest, build retargeting list</li>
+        <li><strong>Week 2:</strong> If product content underperforms, shift editorial toward meme and viral formats — organic reach responds within 48 hours</li>
+        <li><strong>Week 4:</strong> Review digital lead quality — if CPL is high, add lower-AOV products (accessories, monitors) to warm up the funnel before pushing high-ticket items</li>
+        <li><strong>Post-campaign:</strong> Audit Lucky Draw database — segment by product interest, build retargeting lists for next 90 days</li>
       </ul>
     </div>
-    <div class="pb dark">
-      <h4>Điều chỉnh nếu high-AOV không convert đúng tiến độ</h4>
-      <p style="margin-bottom:10px;">Dựa trên PV × MSI data: laptop chỉ đạt 10%, PC đạt 33% trong 1 ngày. Với 45–60 ngày GIGABYTE 40, cần strategy:</p>
-      <p>GVGS → tạo traffic và data → nurture leads bằng product content → kéo họ về trong-store session → close. Không kỳ vọng conversion trong lần tiếp xúc đầu tiên với high-AOV SKU.</p>
+    <div class="sp dark">
+      <h4>On High-AOV Conversion Timing</h4>
+      <p style="margin-bottom:10px;">High-ticket items (laptops, flagship PCs) require consideration time. A customer who engages on Day 3 may convert on Day 20. The 45-day window is intentional.</p>
+      <p>Strategy: GVGS → generate traffic and CDP data → nurture with product content → drive in-store experience sessions → close. Never expect first-touch conversion on a 30–90M VND purchase.</p>
     </div>
   </div>
 </section>
 </div>
 
-<!-- ══════════════════════ CLOSING ══════════════════════ -->
-<div class="closing">
-  <h2>40 năm cho Gigabyte câu chuyện.<br/>Campaign này <em>kể nó</em> — lần đầu tiên.</h2>
-  <p>Một promotion mechanic rõ ràng cho từng product line. Bốn mươi điểm tiếp xúc thực tế dẫn đến một khoảnh khắc quốc gia. Một content system thiết kế để lan truyền chứ không chỉ để đăng. Partnership khuếch đại tầm với và giảm net cost. POSM cuối cùng đặt Gigabyte lên shelf.</p>
-  <p style="margin-bottom:8px;">Đây không phải là kế hoạch campaign. Đây là cách một brand đi từ vô danh đến hiện diện — trong 45 ngày.</p>
-  <div class="sig">Nguyen Hoa Mai (Mia) · Head of Marketing · Ho Chi Minh City · 2026</div>
+<!-- ══ CLOSE ══════════════════════════════════════════════════════════ -->
+<div class="close">
+  <h2>40 years gave Gigabyte the story.<br/>This campaign <em>tells it</em>.</h2>
+  <p>One focused mechanic per product line. Forty real points of human contact leading to one national moment. A content system built to earn attention. Partnerships that multiply reach. POSM that finally puts Gigabyte on the shelf.</p>
+  <p>This isn't a campaign plan. It's how a brand goes from invisible to present — in 45 days.</p>
+  <div class="close-sig">Nguyen Hoa Mai (Mia) · Head of Marketing · Ho Chi Minh City · 2026</div>
 </div>
 
 </body>
