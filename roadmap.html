@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>GIGABYTE 40th Anniversary — Timeline Roadmap</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --black:#000007;--s0:#070710;--s1:#0C0C18;--s2:#13131F;--s3:#1A1A28;
+  --gold:#FF6A1A;--g2:#FF8C42;--g3:#FFB570;
+  --white:#F2F0EC;--dim:#A09C92;--faint:#5C5A54;
+  /* track colours */
+  --e:#FF6A1A;--m:#B25CFF;--o:#4D9BFF;--p:#34D399;
+  --e-l:rgba(255,106,26,.12);--m-l:rgba(178,92,255,.12);--o-l:rgba(77,155,255,.12);--p-l:rgba(52,211,153,.12);
+  /* phase colours */
+  --ig:#FF6A1A;--ri:#FF2D78;--inf:#22D3EE;
+}
+html{-webkit-font-smoothing:antialiased}
+body{font-family:'DM Sans',sans-serif;background:var(--black);color:var(--white);font-size:14px;line-height:1.5}
+h1,h2,h3,h4{font-family:'Space Grotesk',sans-serif;line-height:1.1;letter-spacing:-.02em}
+.gold-tx{background:linear-gradient(135deg,var(--gold),var(--g3) 55%,var(--gold));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+body::before{content:'';pointer-events:none;position:fixed;inset:0;z-index:9998;opacity:.02;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:200px 200px}
+
+.page{max-width:1480px;margin:0 auto;padding:40px 28px 56px}
+
+/* HEADER */
+.rhead{text-align:center;margin-bottom:26px}
+.rhead h1{font-size:clamp(26px,3.4vw,42px);font-weight:700}
+.rhead .sub{font-size:clamp(13px,1.4vw,17px);color:var(--dim);margin-top:6px;letter-spacing:.04em}
+.rhead .by{font-size:12px;color:var(--faint);margin-top:8px}
+.rhead .by b{color:var(--g2)}
+
+/* TOP TRACK LEGEND */
+.tracklegend{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-bottom:28px}
+.tl{display:inline-flex;align-items:center;gap:9px;padding:7px 16px;border-radius:100px;background:var(--s1);border:1px solid rgba(255,255,255,.07);font-size:12.5px;font-weight:500;color:var(--dim)}
+.tl b{font-family:'Space Grotesk',sans-serif;font-weight:700;color:var(--white)}
+.tl .sq{width:20px;height:20px;border-radius:5px;display:flex;align-items:center;justify-content:center;font-family:'Space Grotesk',sans-serif;font-size:11px;font-weight:700;color:#000;flex-shrink:0}
+.tl.e .sq{background:var(--e)}.tl.m .sq{background:var(--m)}.tl.o .sq{background:var(--o)}.tl.p .sq{background:var(--p)}
+
+/* SCROLL WRAP */
+.scroll{overflow-x:auto;padding-bottom:8px}
+.grid{min-width:1240px;display:grid;grid-template-columns:118px repeat(6,1fr);gap:9px}
+
+/* month header */
+.corner{}
+.mhead{background:var(--s1);border:1px solid rgba(255,255,255,.07);border-radius:10px;padding:12px 12px 14px;text-align:center;position:relative}
+.mhead .mn{font-family:'Space Grotesk',sans-serif;font-size:14px;font-weight:700;color:var(--white)}
+.mhead .mt{font-size:9px;color:var(--faint);letter-spacing:.06em;margin-top:1px}
+.mhead .ph{display:inline-block;margin-top:7px;font-size:9px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:2px 9px;border-radius:100px}
+.mhead .ph.ig{color:var(--ig);background:rgba(255,106,26,.12)}
+.mhead .ph.ri{color:var(--ri);background:rgba(255,45,120,.12)}
+.mhead .ph.inf{color:var(--inf);background:rgba(34,211,238,.12)}
+.mhead .dot{position:absolute;bottom:-14px;left:50%;transform:translateX(-50%);width:11px;height:11px;border-radius:50%;border:2px solid var(--black);z-index:2}
+.mhead.peak{border-color:rgba(34,211,238,.4);box-shadow:0 0 24px rgba(34,211,238,.12)}
+
+/* track row label */
+.trk{border-radius:10px;padding:14px 12px;display:flex;flex-direction:column;justify-content:center;gap:6px;border:1px solid}
+.trk .sq{width:26px;height:26px;border-radius:7px;display:flex;align-items:center;justify-content:center;font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:700;color:#000}
+.trk .nm{font-family:'Space Grotesk',sans-serif;font-size:11px;font-weight:700;line-height:1.15}
+.trk .ds{font-size:9px;color:var(--faint);line-height:1.2}
+.trk.e{background:var(--e-l);border-color:rgba(255,106,26,.3)}.trk.e .sq{background:var(--e)}.trk.e .nm{color:var(--e)}
+.trk.m{background:var(--m-l);border-color:rgba(178,92,255,.3)}.trk.m .sq{background:var(--m)}.trk.m .nm{color:var(--m)}
+.trk.o{background:var(--o-l);border-color:rgba(77,155,255,.3)}.trk.o .sq{background:var(--o)}.trk.o .nm{color:var(--o)}
+.trk.p{background:var(--p-l);border-color:rgba(52,211,153,.3)}.trk.p .sq{background:var(--p)}.trk.p .nm{color:var(--p)}
+
+/* activity card */
+.card{background:var(--s1);border:1px solid rgba(255,255,255,.06);border-radius:10px;padding:13px 13px 14px;border-top:2px solid;transition:transform .2s,box-shadow .2s}
+.card:hover{transform:translateY(-2px);box-shadow:0 8px 26px rgba(0,0,7,.55)}
+.card.e{border-top-color:var(--e)}.card.m{border-top-color:var(--m)}.card.o{border-top-color:var(--o)}.card.p{border-top-color:var(--p)}
+.card .ct{font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:700;margin-bottom:8px;display:flex;align-items:flex-start;gap:7px;line-height:1.2}
+.card .bdg{width:17px;height:17px;border-radius:4px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:700;color:#000;font-family:'Space Grotesk',sans-serif;margin-top:1px}
+.card.e .bdg{background:var(--e)}.card.m .bdg{background:var(--m)}.card.o .bdg{background:var(--o)}.card.p .bdg{background:var(--p)}
+.card.e .ct{color:var(--e)}.card.m .ct{color:var(--m)}.card.o .ct{color:var(--o)}.card.p .ct{color:var(--p)}
+.card ul{list-style:none;display:flex;flex-direction:column;gap:4px}
+.card li{font-size:10.5px;color:var(--dim);line-height:1.35;display:flex;gap:5px;align-items:flex-start}
+.card li::before{content:'';width:3px;height:3px;border-radius:50%;background:currentColor;opacity:.5;flex-shrink:0;margin-top:5px}
+.card.peak{border:1px solid var(--o);border-top-width:2px;box-shadow:0 0 30px rgba(77,155,255,.14)}
+
+/* WOW moment */
+.wow{margin-top:18px;display:flex;justify-content:center}
+.wow-inner{display:inline-flex;align-items:center;gap:14px;background:linear-gradient(135deg,rgba(255,106,26,.14),rgba(34,211,238,.1));border:1px solid var(--gold);border-radius:14px;padding:14px 28px;box-shadow:0 0 40px rgba(255,106,26,.12)}
+.wow-inner .tag{font-family:'Space Grotesk',sans-serif;font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#000;background:linear-gradient(135deg,var(--gold),var(--g2));padding:4px 12px;border-radius:100px}
+.wow-inner .txt{font-family:'Space Grotesk',sans-serif;font-size:16px;font-weight:700}
+.wow-inner .txt span{color:var(--g3)}
+
+/* BOTTOM ROW */
+.botrow{display:grid;grid-template-columns:1fr 1fr 1fr;gap:18px;margin-top:30px}
+.box{background:var(--s1);border:1px solid rgba(255,255,255,.07);border-radius:14px;padding:22px 24px}
+.box h3{font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
+.box ul{list-style:none;display:flex;flex-direction:column;gap:8px}
+.box li{font-size:13px;color:var(--dim);display:flex;gap:9px;align-items:flex-start;line-height:1.4}
+.box li::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--gold);flex-shrink:0;margin-top:7px}
+/* legend box */
+.box.legend ul{gap:11px}
+.box.legend li{align-items:center}
+.box.legend li::before{display:none}
+.box.legend .sq{width:22px;height:22px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-family:'Space Grotesk',sans-serif;font-size:11px;font-weight:700;color:#000;flex-shrink:0;margin-right:4px}
+.box.legend .e{background:var(--e)}.box.legend .m{background:var(--m)}.box.legend .o{background:var(--o)}.box.legend .p{background:var(--p)}
+.box.legend .lt{font-family:'Space Grotesk',sans-serif;font-weight:700;color:var(--white);font-size:13px}
+.box.legend .ld{font-size:11px;color:var(--faint);margin-left:4px}
+/* metrics box */
+.box.metrics li{font-weight:500;color:var(--white)}
+.box.metrics li b{color:var(--g2);font-family:'Space Grotesk',sans-serif;margin-right:4px}
+
+.footnote{text-align:center;font-size:11px;color:var(--faint);margin-top:24px;letter-spacing:.04em}
+
+@media(max-width:900px){
+  .botrow{grid-template-columns:1fr}
+  .page{padding:28px 14px}
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="rhead">
+    <h1>GIGABYTE <span class="gold-tx">40<sup style="font-size:.5em">TH</sup></span> ANNIVERSARY — TIMELINE ROADMAP</h1>
+    <div class="sub">Enter Infinity · 40 Years of Infinite Innovation · 6-Month National Campaign 2026</div>
+    <div class="by">Prepared by <b>Mai Nguyen (Mia)</b></div>
+  </div>
+
+  <div class="tracklegend">
+    <span class="tl e"><span class="sq">E</span><b>Execution</b> · Sales Promotion</span>
+    <span class="tl m"><span class="sq">M</span><b>Marketing Online</b> · PR & Media</span>
+    <span class="tl o"><span class="sq">O</span><b>Marketing Offline</b> · POSM / Event</span>
+    <span class="tl p"><span class="sq">P</span><b>Partnership</b> · Collaboration</span>
+  </div>
+
+  <div class="scroll">
+    <div class="grid">
+      <!-- MONTH HEADER ROW -->
+      <div class="corner"></div>
+      <div class="mhead"><div class="mn">Month 1</div><div class="mt">T6</div><span class="ph ig">Ignite · Teaser</span><span class="dot" style="background:var(--ig)"></span></div>
+      <div class="mhead"><div class="mn">Month 2</div><div class="mt">T7</div><span class="ph ig">Ignite · Warm-up</span><span class="dot" style="background:var(--ig)"></span></div>
+      <div class="mhead"><div class="mn">Month 3</div><div class="mt">T8</div><span class="ph ri">Rise · Awareness</span><span class="dot" style="background:var(--ri)"></span></div>
+      <div class="mhead"><div class="mn">Month 4</div><div class="mt">T9</div><span class="ph ri">Rise · Activation</span><span class="dot" style="background:var(--ri)"></span></div>
+      <div class="mhead"><div class="mn">Month 5</div><div class="mt">T10</div><span class="ph ri">Rise · Amplify</span><span class="dot" style="background:var(--ri)"></span></div>
+      <div class="mhead peak"><div class="mn">Month 6</div><div class="mt">T11</div><span class="ph inf">Infinity · Peak</span><span class="dot" style="background:var(--inf)"></span></div>
+
+      <!-- ===== E · EXECUTION ===== -->
+      <div class="trk e"><span class="sq">E</span><span class="nm">Execution</span><span class="ds">Sales Promotion</span></div>
+      <div class="card e"><div class="ct"><span class="bdg">E</span>Promo Setup</div><ul><li>Build promotion mechanics</li><li>Design 40th gift packages</li><li>Dealer forecast &amp; allocation</li><li>Lucky Draw opens (monthly)</li></ul></div>
+      <div class="card e"><div class="ct"><span class="bdg">E</span>Laptop Gift Package</div><ul><li>HQ Limited + 40th packages live</li><li>Tiered by product</li><li>Lucky Draw · monthly #2</li></ul></div>
+      <div class="card e"><div class="ct"><span class="bdg">E</span>Powered by GIGABYTE</div><ul><li>Tier program: Essential / Pro / Infinity</li><li>More GIGABYTE = more unlocked</li><li>Lucky Draw · monthly #3</li></ul></div>
+      <div class="card e"><div class="ct"><span class="bdg">E</span>Bundle PC &amp; LCD</div><ul><li>Buy PC → free monitor / voucher</li><li>AORUS Robot 40th collectible</li><li>Lucky Draw · monthly #4</li></ul></div>
+      <div class="card e"><div class="ct"><span class="bdg">E</span>Sell-out Push</div><ul><li>All mechanics at peak</li><li>National sell-out drive</li><li>Lucky Draw · monthly #5</li></ul></div>
+      <div class="card e"><div class="ct"><span class="bdg">E</span>Grand Finale</div><ul><li>Grand Lucky Draw live at Big Event</li><li>Final push · last-chance offers</li><li>Sell-out closure</li></ul></div>
+
+      <!-- ===== M · MARKETING ONLINE ===== -->
+      <div class="trk m"><span class="sq">M</span><span class="nm">Marketing Online</span><span class="ds">PR &amp; Media</span></div>
+      <div class="card m"><div class="ct"><span class="bdg">M</span>Teaser &amp; Reveal</div><ul><li>40-year brand story</li><li>Launch #EnterInfinity</li><li>KOL Ambassador reveal (Hoàng Luân)</li><li>Nostalgia UGC</li></ul></div>
+      <div class="card m"><div class="ct"><span class="bdg">M</span>Media Warm-up</div><ul><li>KOL key-product reviews</li><li>PR: tech / gaming / mainstream</li><li>40-day countdown begins</li></ul></div>
+      <div class="card m"><div class="ct"><span class="bdg">M</span>Content Blast</div><ul><li>Build Challenge · AI in Action</li><li>KOL Tier 2–4 wave</li><li>Paid media full throttle</li></ul></div>
+      <div class="card m"><div class="ct"><span class="bdg">M</span>Performance Media</div><ul><li>Performance ads · retargeting</li><li>Confessional + reaction content</li><li>Press deep-dives</li></ul></div>
+      <div class="card m"><div class="ct"><span class="bdg">M</span>Community Amplify</div><ul><li>Creator challenge</li><li>UGC peak · social viral</li><li>Pre-event hype</li></ul></div>
+      <div class="card m"><div class="ct"><span class="bdg">M</span>Big Event Blast</div><ul><li>Festival livestream</li><li>Grand draw broadcast</li><li>Full press · recap content</li></ul></div>
+
+      <!-- ===== O · MARKETING OFFLINE ===== -->
+      <div class="trk o"><span class="sq">O</span><span class="nm">Marketing Offline</span><span class="ds">POSM / Event</span></div>
+      <div class="card o"><div class="ct"><span class="bdg">O</span>POSM Prep</div><ul><li>Design POSM concept</li><li>Store decoration plan</li><li>Dealer staff training</li></ul></div>
+      <div class="card o"><div class="ct"><span class="bdg">O</span>POSM Live + Kick-off</div><ul><li>Brand + product POSM deployed</li><li>Store activations begin</li><li>In-store experience zones</li></ul></div>
+      <div class="card o"><div class="ct"><span class="bdg">O</span>Activations Full Swing</div><ul><li>39 Store Activations</li><li>Gaming Tournament (cyber circuit)</li><li>University AI Workshop</li></ul></div>
+      <div class="card o"><div class="ct"><span class="bdg">O</span>Retail Domination</div><ul><li>Product POSM refresh</li><li>Benchmark challenge</li><li>Staff incentive</li></ul></div>
+      <div class="card o"><div class="ct"><span class="bdg">O</span>Campus &amp; Community</div><ul><li>Campus roadshow</li><li>Build-PC workshops</li><li>Mini tournaments</li></ul></div>
+      <div class="card o peak"><div class="ct"><span class="bdg">O</span>Enter Infinity Festival</div><ul><li>2,000+ attendees</li><li>Heritage exhibition · product zones</li><li>Tournament final · grand draw</li></ul></div>
+
+      <!-- ===== P · PARTNERSHIP ===== -->
+      <div class="trk p"><span class="sq">P</span><span class="nm">Partnership</span><span class="ds">Collaboration</span></div>
+      <div class="card p"><div class="ct"><span class="bdg">P</span>Partner Onboarding</div><ul><li>Intel / AMD / NVIDIA / Microsoft</li><li>Universities · game publishers</li><li>Secure MDF co-investment</li></ul></div>
+      <div class="card p"><div class="ct"><span class="bdg">P</span>Co-Branding Activation</div><ul><li>Co-marketing with partners</li><li>Co-branded assets</li><li>In-store partner activation</li></ul></div>
+      <div class="card p"><div class="ct"><span class="bdg">P</span>Festival &amp; Campus</div><ul><li>Publisher tournaments</li><li>Campus workshop co-activation</li><li>Joint content</li></ul></div>
+      <div class="card p"><div class="ct"><span class="bdg">P</span>Channel &amp; B2B Push</div><ul><li>Cyber café upgrade program</li><li>Studio / creator partnership</li><li>B2B AI-PC</li></ul></div>
+      <div class="card p"><div class="ct"><span class="bdg">P</span>Community Partners</div><ul><li>eSports clubs</li><li>AI / Tech clubs</li><li>Publisher events</li></ul></div>
+      <div class="card p"><div class="ct"><span class="bdg">P</span>Converge + Long-term</div><ul><li>All partners at Big Event</li><li>Co-branded grand prizes</li><li>Strategic long-term deals</li></ul></div>
+    </div>
+  </div>
+
+  <!-- WOW MOMENT -->
+  <div class="wow">
+    <div class="wow-inner">
+      <span class="tag">★ WOW Moment</span>
+      <span class="txt">ENTER INFINITY FESTIVAL — <span>2,000+ live</span> · Grand Lucky Draw broadcast</span>
+    </div>
+  </div>
+
+  <!-- BOTTOM ROW -->
+  <div class="botrow">
+    <div class="box">
+      <h3>Key Objectives</h3>
+      <ul>
+        <li>#1 trusted hardware brand in Vietnam</li>
+        <li>AI-PC performance positioning</li>
+        <li>National sell-through growth</li>
+        <li>Retail dominance at the shelf</li>
+        <li>Community &amp; advocacy</li>
+      </ul>
+    </div>
+    <div class="box legend">
+      <h3>Legend</h3>
+      <ul>
+        <li><span class="sq e">E</span><span class="lt">Execution</span><span class="ld">Sales Promotion</span></li>
+        <li><span class="sq m">M</span><span class="lt">Marketing Online</span><span class="ld">PR &amp; Media</span></li>
+        <li><span class="sq o">O</span><span class="lt">Marketing Offline</span><span class="ld">POSM / Event</span></li>
+        <li><span class="sq p">P</span><span class="lt">Partnership</span><span class="ld">Collaboration</span></li>
+      </ul>
+    </div>
+    <div class="box metrics">
+      <h3>Success Metrics</h3>
+      <ul>
+        <li><b>+25%</b>YoY sell-through</li>
+        <li><b>15M+</b>impressions (paid + owned)</li>
+        <li><b>10K+</b>CDP profiles</li>
+        <li><b>5K+</b>UGC · #EnterInfinity</li>
+        <li><b>2K+</b>Big Event attendees</li>
+        <li><b>3×+</b>partner co-investment</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footnote">GIGABYTE Vietnam · Enter Infinity · 40th Anniversary Campaign 2026 · Targets illustrative — to validate with GIGABYTE data</div>
+
+</div>
+</body>
+</html>
