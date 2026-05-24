@@ -11,9 +11,10 @@
 *{margin:0;padding:0;box-sizing:border-box}
 :root{
   --black:#000007;--s0:#070710;--s1:#0C0C18;--s2:#13131F;--s3:#1A1A28;
-  --gold:#C9963A;--g2:#E8B55A;--g3:#F5D07A;
-  --g-hi:rgba(201,150,58,.18);--g-lo:rgba(201,150,58,.08);--g-line:rgba(201,150,58,.22);
+  --gold:#FF6A1A;--g2:#FF8C42;--g3:#FFB570;
+  --g-hi:rgba(255,106,26,.18);--g-lo:rgba(255,106,26,.08);--g-line:rgba(255,106,26,.22);
   --white:#F2F0EC;--dim:#A09C92;--faint:#5C5A54;--blue:#7CB9FF;--red:#FF7A7A;
+  --pink:#FF2D78;--pink2:#FF7AAE;--cyan:#22D3EE;--cyan2:#7FE9FB;--violet:#B25CFF;--green:#5BD89A;
 }
 html,body{height:100%;overflow:hidden}
 body{font-family:'DM Sans',sans-serif;background:var(--black);color:var(--white);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
@@ -25,8 +26,8 @@ body::before{content:'';pointer-events:none;position:fixed;inset:0;z-index:9998;
 .deck{position:fixed;inset:0}
 .slide{position:absolute;inset:0;opacity:0;visibility:hidden;transform:scale(.99);transition:opacity .5s ease,transform .5s ease;display:flex;flex-direction:column;justify-content:center;padding:7vh 8vw}
 .slide.active{opacity:1;visibility:visible;transform:none}
-.slide-glow{position:absolute;inset:0;z-index:-1;background:radial-gradient(ellipse 60% 50% at 50% 35%,rgba(201,150,58,.07),transparent 60%)}
-.dots-bg{position:absolute;inset:0;z-index:-1;background-image:radial-gradient(circle,rgba(201,150,58,.13) 1px,transparent 1px);background-size:44px 44px;mask-image:radial-gradient(ellipse 75% 75% at 50% 50%,black 8%,transparent 68%)}
+.slide-glow{position:absolute;inset:0;z-index:-1;background:radial-gradient(ellipse 60% 50% at 50% 35%,rgba(255,106,26,.07),transparent 60%)}
+.dots-bg{position:absolute;inset:0;z-index:-1;background-image:radial-gradient(circle,rgba(255,106,26,.13) 1px,transparent 1px);background-size:44px 44px;mask-image:radial-gradient(ellipse 75% 75% at 50% 50%,black 8%,transparent 68%)}
 
 .kicker{display:inline-flex;align-items:center;gap:9px;margin-bottom:22px}
 .kicker .d{width:5px;height:5px;border-radius:50%;background:var(--gold)}
@@ -40,8 +41,8 @@ body::before{content:'';pointer-events:none;position:fixed;inset:0;z-index:9998;
 
 /* TITLE / CLOSE */
 .s-center{align-items:center;text-align:center}
-.s-center .inf{position:absolute;font-family:'Space Grotesk',sans-serif;font-size:42vh;font-weight:700;color:transparent;-webkit-text-stroke:1px rgba(201,150,58,.1);top:50%;left:50%;transform:translate(-50%,-52%);z-index:-1;pointer-events:none;animation:pulse 6s ease-in-out infinite}
-@keyframes pulse{0%,100%{-webkit-text-stroke-color:rgba(201,150,58,.09)}50%{-webkit-text-stroke-color:rgba(201,150,58,.2)}}
+.s-center .inf{position:absolute;font-family:'Space Grotesk',sans-serif;font-size:42vh;font-weight:700;color:transparent;-webkit-text-stroke:1px rgba(255,106,26,.1);top:50%;left:50%;transform:translate(-50%,-52%);z-index:-1;pointer-events:none;animation:pulse 6s ease-in-out infinite}
+@keyframes pulse{0%,100%{-webkit-text-stroke-color:rgba(255,106,26,.09)}50%{-webkit-text-stroke-color:rgba(255,106,26,.2)}}
 .s-center h1{font-size:clamp(48px,9vw,118px);font-weight:700;line-height:.98;margin-bottom:18px}
 .s-center .sub{font-size:clamp(16px,2.2vw,24px);color:var(--dim);margin-bottom:8px}
 .s-center .meta{font-size:13px;color:var(--faint);letter-spacing:.06em;margin-top:28px}
@@ -79,6 +80,25 @@ body::before{content:'';pointer-events:none;position:fixed;inset:0;z-index:9998;
 .phase .barfill{position:absolute;left:0;bottom:0;height:4px;background:linear-gradient(90deg,var(--gold),var(--g3))}
 .phase.ig .barfill{width:33%}.phase.ri .barfill{width:75%}.phase.inf .barfill{width:100%}
 
+/* 3 macro + 6 sub-phase chips */
+.macro3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:34px}
+.macro{border-radius:16px;padding:20px;border:1px solid var(--g-line);background:var(--s1)}
+.macro .mh{font-family:'Space Grotesk',sans-serif;font-size:15px;font-weight:700;color:var(--white);margin-bottom:14px}
+.macro .mh small{display:block;color:var(--faint);font-weight:400;font-size:11px;letter-spacing:.06em;margin-top:2px}
+.mchips{display:flex;flex-direction:column;gap:8px}
+.sc{display:inline-flex;align-items:center;gap:8px;padding:9px 14px;border-radius:10px;font-size:14px;font-weight:600;border:1px solid}
+.sc.cyan{color:var(--cyan);border-color:rgba(34,211,238,.4);background:rgba(34,211,238,.08)}
+.sc.blue{color:var(--blue);border-color:rgba(124,185,255,.4);background:rgba(124,185,255,.08)}
+.sc.violet{color:var(--violet);border-color:rgba(178,92,255,.4);background:rgba(178,92,255,.08)}
+.sc.pink{color:var(--pink);border-color:rgba(255,45,120,.4);background:rgba(255,45,120,.08)}
+.sc.orange{color:var(--g2);border-color:var(--g-line);background:var(--g-lo)}
+.sc.green{color:var(--green);border-color:rgba(91,216,154,.4);background:rgba(91,216,154,.08)}
+.roles6{display:grid;grid-template-columns:1fr 1fr;gap:16px 30px;margin-top:30px}
+.role6 .rn{display:inline-block;font-family:'Space Grotesk',sans-serif;font-size:15px;font-weight:700;margin-bottom:5px}
+.role6 .rn.cyan{color:var(--cyan)}.role6 .rn.blue{color:var(--blue)}.role6 .rn.violet{color:var(--violet)}.role6 .rn.pink{color:var(--pink)}.role6 .rn.orange{color:var(--g2)}.role6 .rn.green{color:var(--green)}
+.role6 p{font-size:13.5px;color:var(--dim);line-height:1.5}
+.role6 p em{color:var(--g2);font-style:italic;font-weight:500}
+
 .mg{margin-top:30px;border:1px solid var(--g-line);border-radius:14px;padding:24px;background:var(--s1)}
 .mg-row{display:grid;grid-template-columns:200px 1fr;align-items:center;margin-bottom:12px;gap:14px}
 .mg-row:last-child{margin-bottom:0}
@@ -87,9 +107,9 @@ body::before{content:'';pointer-events:none;position:fixed;inset:0;z-index:9998;
 .mg-track{position:relative;height:26px;background:var(--s3);border-radius:6px;overflow:hidden}
 .mg-bar{position:absolute;height:100%;border-radius:6px;display:flex;align-items:center;padding:0 12px;font-size:11px;font-weight:600;color:#000;white-space:nowrap}
 .mg-bar.lucky{left:0;right:0;background:linear-gradient(90deg,var(--gold),var(--g2) 70%,var(--g3))}
-.mg-bar.laptop{left:17%;width:42%;background:linear-gradient(90deg,rgba(201,150,58,.85),var(--g2))}
-.mg-bar.pbg{left:33%;width:42%;background:linear-gradient(90deg,rgba(201,150,58,.85),var(--g2))}
-.mg-bar.bundle{left:50%;right:0;background:linear-gradient(90deg,rgba(201,150,58,.85),var(--g3))}
+.mg-bar.laptop{left:17%;width:42%;background:linear-gradient(90deg,rgba(255,106,26,.85),var(--g2))}
+.mg-bar.pbg{left:33%;width:42%;background:linear-gradient(90deg,rgba(255,106,26,.85),var(--g2))}
+.mg-bar.bundle{left:50%;right:0;background:linear-gradient(90deg,rgba(255,106,26,.85),var(--g3))}
 .mg-months{display:grid;grid-template-columns:200px repeat(6,1fr);margin-bottom:10px}
 .mg-months span{text-align:center;font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:600;color:var(--faint)}
 
@@ -98,16 +118,16 @@ body::before{content:'';pointer-events:none;position:fixed;inset:0;z-index:9998;
 .pmx thead th{font-family:'Space Grotesk',sans-serif;font-size:16px;font-weight:700}
 .pmx thead th:first-child{text-align:left;font-size:12px;color:var(--faint);text-transform:uppercase;letter-spacing:.08em;font-weight:600}
 .pmx .ce{color:var(--dim)}.pmx .cp{color:var(--g2)}.pmx .ci{color:var(--g3)}
-.pmx thead .ci{background:rgba(201,150,58,.1)}.pmx thead .cp{background:rgba(201,150,58,.05)}
+.pmx thead .ci{background:rgba(255,106,26,.1)}.pmx thead .cp{background:rgba(255,106,26,.05)}
 .pmx tbody td:first-child{text-align:left;font-size:14px;color:var(--white);font-weight:500}
 .pmx tbody td{font-size:14px;color:var(--dim)}
-.pmx tbody td.cp{background:rgba(201,150,58,.04);color:var(--g2);font-weight:600}
-.pmx tbody td.ci{background:rgba(201,150,58,.07);color:var(--g3);font-weight:600}
+.pmx tbody td.cp{background:rgba(255,106,26,.04);color:var(--g2);font-weight:600}
+.pmx tbody td.ci{background:rgba(255,106,26,.07);color:var(--g3);font-weight:600}
 .pmx tr:last-child td{border-bottom:none}
 .pmx .anchor{display:inline-block;font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;background:linear-gradient(135deg,var(--gold),var(--g2));color:#000;padding:2px 7px;border-radius:4px;margin-left:6px}
 
 .hubwrap{position:relative;height:46vh;min-height:360px;margin-top:20px;display:flex;align-items:center;justify-content:center}
-.hub-c{position:absolute;width:130px;height:130px;border-radius:50%;z-index:10;border:2px solid var(--gold);background:radial-gradient(circle at 50% 38%,rgba(201,150,58,.22),rgba(201,150,58,.04));display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;box-shadow:0 0 70px rgba(201,150,58,.2);animation:pulse 5s ease-in-out infinite}
+.hub-c{position:absolute;width:130px;height:130px;border-radius:50%;z-index:10;border:2px solid var(--gold);background:radial-gradient(circle at 50% 38%,rgba(255,106,26,.22),rgba(255,106,26,.04));display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;box-shadow:0 0 70px rgba(255,106,26,.2);animation:pulse 5s ease-in-out infinite}
 .hub-c .n{font-family:'Space Grotesk',sans-serif;font-size:14px;font-weight:700;color:var(--gold)}
 .hub-c .s{font-size:11px;color:var(--dim)}
 .hub-svg{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:2}
@@ -168,7 +188,7 @@ body::before{content:'';pointer-events:none;position:fixed;inset:0;z-index:9998;
 /* investment tiers */
 .inv{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:34px}
 .invc{background:var(--s1);border:1px solid var(--g-line);border-radius:14px;padding:26px;position:relative}
-.invc.rec{border-color:var(--gold);background:var(--s2);box-shadow:0 0 40px rgba(201,150,58,.1)}
+.invc.rec{border-color:var(--gold);background:var(--s2);box-shadow:0 0 40px rgba(255,106,26,.1)}
 .invc .t{font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--faint);margin-bottom:10px}
 .invc.rec .t{color:var(--gold)}
 .invc .amt{font-family:'Space Grotesk',sans-serif;font-size:34px;font-weight:700;line-height:1;margin-bottom:4px}
@@ -200,7 +220,7 @@ body::before{content:'';pointer-events:none;position:fixed;inset:0;z-index:9998;
 
 @media(max-width:768px){
   .slide{padding:9vh 6vw}
-  .three,.engines,.media-cols,.off-grid,.be-2col,.phases,.inv{grid-template-columns:1fr}
+  .three,.engines,.media-cols,.off-grid,.be-2col,.phases,.inv,.macro3,.roles6{grid-template-columns:1fr}
   .kpis{grid-template-columns:1fr 1fr}
   .stats{gap:24px}
   .hubwrap{height:auto;flex-direction:column;gap:10px}
@@ -228,34 +248,49 @@ body::before{content:'';pointer-events:none;position:fixed;inset:0;z-index:9998;
 <!-- 02 WHY NOW -->
 <section class="slide">
   <div class="slide-glow"></div>
-  <div class="kicker"><span class="eyebrow">Why Now</span></div>
+  <div class="kicker"><span class="eyebrow">Why Now</span><span style="font-size:11px;color:var(--faint);margin-left:8px">· market data illustrative — to validate</span></div>
   <h2 class="h-mid">40 years happens <span class="gold-tx">once.</span></h2>
-  <p class="lead" style="margin-top:20px">Vietnam's PC & gaming hardware market is climbing — premium monitors, high-refresh displays, and the AI-PC wave are reshaping demand. The audience is ready for a premium story. And 2026 is the only year GIGABYTE turns 40 — a non-renewable moment to own that story before ASUS ROG or MSI claim it first.</p>
+  <p class="lead" style="margin-top:20px">Vietnam's gamers are at an inflection point — shifting to premium, OLED and 240Hz+, and ready to pay for a brand with a story. GIGABYTE owns a <strong style="color:var(--white)">40-year heritage rivals can't copy.</strong> Claim 2026 now — or ASUS ROG / MSI will.</p>
   <div class="stats">
-    <div class="stat"><div class="v">40</div><div class="l">Years of heritage — a moat rivals can't copy</div></div>
-    <div class="stat"><div class="v">2026</div><div class="l">The only year to claim it</div></div>
-    <div class="stat"><div class="v">AI</div><div class="l">PC wave expanding the premium audience</div></div>
+    <div class="stat"><div class="v">+18.4%</div><div class="l">VN gaming monitor market · YoY Q1 2026</div></div>
+    <div class="stat"><div class="v">71%</div><div class="l">Volume already shifted to 165Hz+</div></div>
+    <div class="stat"><div class="v">+19pp</div><div class="l">240Hz+ share: 9% → 19% in 4 quarters</div></div>
   </div>
 </section>
 
 <!-- 03 THE CHALLENGE -->
 <section class="slide">
-  <div class="kicker"><span class="eyebrow">The Challenge</span><span style="font-size:11px;color:var(--faint);margin-left:8px">· market diagnosis — to validate with GIGABYTE data</span></div>
+  <div class="kicker"><span class="eyebrow">The Challenge</span><span style="font-size:11px;color:var(--faint);margin-left:8px">· diagnosis illustrative — to validate with GIGABYTE data</span></div>
   <h2 class="h-mid">Strong product. <span class="gold-tx">Under-told story.</span></h2>
-  <div class="three">
-    <div class="tcard"><div class="no">01 · Awareness</div><h4>Trails ROG & MSI</h4><p>GIGABYTE leads in components, but lags top-of-mind brand awareness — especially in laptops and the premium tier.</p></div>
-    <div class="tcard"><div class="no">02 · AORUS</div><h4>Premium underexposed</h4><p>AORUS has the product to rival ROG, but nowhere near the brand presence among Vietnamese gamers.</p></div>
-    <div class="tcard"><div class="no">03 · Heritage</div><h4>40 years untapped</h4><p>Four decades of credibility — the strongest asset in the category — barely surfaced in local marketing.</p></div>
+  <div class="engines">
+    <div class="engine">
+      <h3 style="color:var(--pink);font-size:20px;margin-bottom:16px">Where GIGABYTE is now</h3>
+      <div class="items">
+        <div class="it"><b style="background:var(--pink)"></b>#3 top-of-mind — after ASUS ROG &amp; MSI</div>
+        <div class="it"><b style="background:var(--pink)"></b>Gaming-gear recognition below actual DNA</div>
+        <div class="it"><b style="background:var(--pink)"></b>AORUS premium tier (15–25 mil) under-showcased</div>
+        <div class="it"><b style="background:var(--pink)"></b>Gen Z / esports awareness still weak</div>
+      </div>
+    </div>
+    <div class="engine">
+      <h3 style="color:var(--g2);font-size:20px;margin-bottom:16px">The 40-year opportunity</h3>
+      <div class="items">
+        <div class="it"><b></b>Single-shot narrative moment — tell the innovation story</div>
+        <div class="it"><b></b>High brand equity, convertible to Q4 sales</div>
+        <div class="it"><b></b>Unlocks T1 co-fund (Intel/AMD/NVIDIA) — they want this moment too</div>
+        <div class="it"><b></b>Capture 40,000+ CRM leads for 2027</div>
+      </div>
+    </div>
   </div>
-  <p class="lead" style="margin-top:28px;font-size:16px">The opportunity: convert <strong style="color:var(--white)">heritage + the 40th moment</strong> into awareness <em>and</em> sell-through — through a retail-savvy plan that wins at the shelf, not just on the feed.</p>
 </section>
 
 <!-- 04 BIG IDEA -->
 <section class="slide">
   <div class="dots-bg"></div>
   <div class="kicker"><span class="eyebrow">The Big Idea</span></div>
-  <h2 class="h-big"><span class="gold-tx">Enter Infinity</span></h2>
-  <p class="lead" style="margin-top:18px">40 years isn't a finish line — it's the gateway to GIGABYTE's next era. "Enter Infinity" reframes heritage as <strong style="color:var(--white)">unbroken, forward momentum</strong>. One campaign, two engines, six months — turning the anniversary into Vietnam's biggest GIGABYTE moment.</p>
+  <h2 class="h-big"><span class="gold-tx">Enter Infinity.</span></h2>
+  <p class="lead" style="margin-top:18px">40 years of GIGABYTE isn't static heritage — it's an <strong style="color:var(--white)">unbroken chain of pushing limits</strong>. "Enter Infinity" turns the anniversary into forward momentum: one campaign, two engines, six months — Vietnam's biggest GIGABYTE moment.</p>
+  <div class="punch" style="font-size:clamp(20px,2.6vw,30px);margin-top:14px">Past → Present → <span class="gold-tx">Next 40.</span></div>
   <div class="three">
     <div class="tcard"><div class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></div><h4>Awareness</h4><p>Sustained presence across paid, owned & earned for 6 months.</p></div>
     <div class="tcard"><div class="ic"><svg viewBox="0 0 24 24"><path d="M3 3h18v18H3zM3 9h18M9 21V9"/></svg></div><h4>Sales</h4><p>Mechanics converting intent into purchase at every price point.</p></div>
@@ -271,7 +306,7 @@ body::before{content:'';pointer-events:none;position:fixed;inset:0;z-index:9998;
     <div class="engine">
       <div class="tag">Engine 1</div><h3>Sale Promotion</h3><div class="role">Drives revenue</div>
       <div class="items">
-        <div class="it"><b></b>Laptop × Gear Bundle</div>
+        <div class="it"><b></b>Laptop Gift Package</div>
         <div class="it"><b></b>Powered by GIGABYTE (components)</div>
         <div class="it"><b></b>Bundle PC & LCD + collectible</div>
         <div class="it"><b></b>Lucky Draw — all purchases</div>
@@ -293,11 +328,26 @@ body::before{content:'';pointer-events:none;position:fixed;inset:0;z-index:9998;
 <section class="slide">
   <div class="dots-bg"></div>
   <div class="kicker"><span class="eyebrow">Timeline · 6 Months</span></div>
-  <h2 class="h-mid">Three phases, building to <span class="gold-tx">the peak.</span></h2>
-  <div class="phases">
-    <div class="phase ig"><div class="pn">IGNITE</div><div class="pt">T6–T7 · Teasing / Warm-up</div><div class="pr">Spark awareness. Lock partners. Reveal the Ambassador. Set the stage.</div><div class="barbg"></div><div class="barfill"></div></div>
-    <div class="phase ri"><div class="pn">RISE</div><div class="pt">T8–T10 · Booming</div><div class="pr">Boom on every front — content, activations, tournaments, workshops, full media.</div><div class="barbg"></div><div class="barfill"></div></div>
-    <div class="phase inf"><div class="pn">INFINITY</div><div class="pt">T11 · Peak</div><div class="pr">Everything converges at the Big Event. Grand draw. Maximum belief.</div><div class="barbg"></div><div class="barfill"></div></div>
+  <h2 class="h-mid">3 macro phases · 6 moves · <span class="gold-tx">1 weekend climax.</span></h2>
+  <div class="macro3">
+    <div class="macro"><div class="mh">IGNITE<small>T6–T7 · Teasing / Warm-up</small></div><div class="mchips"><span class="sc cyan">🌙 Teaser</span><span class="sc blue">🚀 Launch</span></div></div>
+    <div class="macro"><div class="mh">RISE<small>T8–T10 · Booming</small></div><div class="mchips"><span class="sc violet">📣 Awareness</span><span class="sc pink">⚡ Activation</span></div></div>
+    <div class="macro"><div class="mh">INFINITY<small>T11+ · Peak</small></div><div class="mchips"><span class="sc orange">🔥 Climax</span><span class="sc green">♻️ Sustain</span></div></div>
+  </div>
+  <p class="lead" style="margin-top:24px;font-size:15px">Each phase plays a distinct role — no single message dragged across four months, no audience fatigue. The climax is one explosive weekend festival, not a month-long drag.</p>
+</section>
+
+<!-- 07 PHASE ROLES -->
+<section class="slide">
+  <div class="kicker"><span class="eyebrow">Each Phase, One Role</span><span style="font-size:11px;color:var(--faint);margin-left:8px">· KPI goals illustrative — to validate</span></div>
+  <h2 class="h-mid">Six moves, six <span class="gold-tx">clear goals.</span></h2>
+  <div class="roles6">
+    <div class="role6"><span class="rn cyan">🌙 Teaser · T6</span><p>Mystery video. Build curiosity. No sale. <em>Goal: 500K reach · 2K early sign-ups.</em></p></div>
+    <div class="role6"><span class="rn blue">🚀 Launch · T7</span><p>Concept reveal. 3 promotion mechanics go live. Store wave 1. <em>Goal: 2M reach · 3K orders.</em></p></div>
+    <div class="role6"><span class="rn violet">📣 Awareness · T8</span><p>Tournament + KOL Tier 2. UGC challenge. Lucky draw #1. <em>Goal: 200 UGC · 500 players.</em></p></div>
+    <div class="role6"><span class="rn pink">⚡ Activation · T9–T10</span><p>University + KOL Tier 3–4. Lucky draw #2. POSM refresh. <em>Goal: 2K students · 1.5K event reg.</em></p></div>
+    <div class="role6"><span class="rn orange">🔥 Climax · T11</span><p>Enter Infinity Festival 2,000+. Grand Lucky live broadcast. <em>Goal: 50K concurrent livestream.</em></p></div>
+    <div class="role6"><span class="rn green">♻️ Sustain · post · Q4</span><p>Recap + retarget + Q4 BlackFriday bridge. <em>Goal: +25% Q4 sale uplift.</em></p></div>
   </div>
 </section>
 
@@ -338,10 +388,10 @@ body::before{content:'';pointer-events:none;position:fixed;inset:0;z-index:9998;
   <h2 class="h-mid">An ecosystem with <span class="gold-tx">GIGABYTE at the center.</span></h2>
   <div class="hubwrap">
     <svg class="hub-svg" viewBox="0 0 900 400" preserveAspectRatio="none">
-      <path d="M450 70 L450 150" stroke="rgba(201,150,58,.3)" stroke-width="1.5" stroke-dasharray="5 4"/>
-      <path d="M450 250 L450 330" stroke="rgba(201,150,58,.3)" stroke-width="1.5" stroke-dasharray="5 4"/>
-      <path d="M360 200 L250 200" stroke="rgba(201,150,58,.3)" stroke-width="1.5" stroke-dasharray="5 4"/>
-      <path d="M540 200 L650 200" stroke="rgba(201,150,58,.3)" stroke-width="1.5" stroke-dasharray="5 4"/>
+      <path d="M450 70 L450 150" stroke="rgba(255,106,26,.3)" stroke-width="1.5" stroke-dasharray="5 4"/>
+      <path d="M450 250 L450 330" stroke="rgba(255,106,26,.3)" stroke-width="1.5" stroke-dasharray="5 4"/>
+      <path d="M360 200 L250 200" stroke="rgba(255,106,26,.3)" stroke-width="1.5" stroke-dasharray="5 4"/>
+      <path d="M540 200 L650 200" stroke="rgba(255,106,26,.3)" stroke-width="1.5" stroke-dasharray="5 4"/>
     </svg>
     <div class="hub-c"><div class="n">GIGABYTE</div><div class="s">40th · 2026</div></div>
     <div class="hub-n top"><h4><span class="ic"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></span>Technology Brands</h4><div class="tg"><span>Intel</span><span>AMD</span><span>NVIDIA</span><span>Microsoft</span></div></div>
@@ -466,7 +516,7 @@ body::before{content:'';pointer-events:none;position:fixed;inset:0;z-index:9998;
 </div>
 
 <div class="nav-bar">
-  <div class="nav-counter"><b id="cur">01</b> / <span id="total">15</span></div>
+  <div class="nav-counter"><b id="cur">01</b> / <span id="total">16</span></div>
   <div class="nav-arrows">
     <div class="nav-btn" id="prev"><svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg></div>
     <div class="nav-btn" id="next"><svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg></div>
