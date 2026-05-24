@@ -408,6 +408,30 @@ footer b{color:var(--dim);font-weight:600}
   footer{flex-direction:column;gap:8px;text-align:center}
 }
 @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}*{animation:none!important}}
+
+/* ── PRINT / PDF EXPORT ── */
+@page{size:A4 landscape;margin:0}
+@media print{
+  *{-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important;animation:none!important;transition:none!important}
+  html,body{background:var(--black)!important}
+  body::before{display:none!important}
+  nav{display:none!important}
+  .reveal{opacity:1!important;transform:none!important}
+  .hero{min-height:auto!important;padding:60px 0 48px!important}
+  .hero-symbol,.bg-inf{opacity:.5}
+  section{padding:40px 0!important}
+  .part-h{padding:32px 0 20px!important}
+  .divider{margin:28px 0!important}
+  .wrap{padding:0 32px!important;max-width:100%!important}
+  /* page breaks */
+  .part-h{break-before:page;page-break-before:always}
+  .card,.mm-branch,.tier,.tier-card,.ev,.act,.bigev,.kpi,.hub-n,.ch,.rm,.pmx,.pm-table,.matrix,.gantt,.draw,.layer-card,.press-cell,.kol-sow>div,table,.mock-stage,.posm-col{break-inside:avoid;page-break-inside:avoid}
+  /* wide scroll containers fit the page */
+  .pmatrix{overflow:visible!important}
+  .pm-table{min-width:0!important}
+  .gantt-head,.gantt-phaserow,.gantt-row{min-width:0!important}
+  .close{padding:60px 0!important}
+}
 </style>
 </head>
 <body>
