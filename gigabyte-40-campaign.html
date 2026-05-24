@@ -264,6 +264,9 @@ nav{position:fixed;top:14px;left:50%;transform:translateX(-50%);z-index:9999;wid
 .rm-t{font-size:15px;font-weight:700;color:var(--white);margin-bottom:6px;line-height:1.3}
 .rm-d{font-size:13px;color:var(--dim);line-height:1.6;max-width:720px}
 .rm-d .prod{color:var(--g2)}
+.rm-ch{display:flex;align-items:center;flex-wrap:wrap;gap:6px;margin-top:10px}
+.rm-ch .k{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--faint)}
+.rm-ch .c{font-size:11px;background:var(--s3);border:1px solid rgba(255,255,255,.06);border-radius:4px;padding:2px 9px;color:var(--g2)}
 
 /* POSM */
 .posm-cols{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:20px}
@@ -303,13 +306,6 @@ nav{position:fixed;top:14px;left:50%;transform:translateX(-50%);z-index:9999;wid
 .posm-note strong{color:var(--white)}
 
 /* EVENT — ROAD TO INFINITY */
-.road-ribbon{display:flex;align-items:center;gap:0;margin-bottom:28px;padding:14px 0;border-top:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06)}
-.rr-seg{flex:1;text-align:center;position:relative;font-family:'Space Grotesk',sans-serif;font-size:11px;font-weight:600;color:var(--faint);padding:0 8px}
-.rr-seg.on{color:var(--g2)}
-.rr-seg.peak{color:var(--g3)}
-.rr-seg::after{content:'';position:absolute;right:0;top:50%;width:1px;height:14px;background:rgba(255,255,255,.08);transform:translateY(-50%)}
-.rr-seg:last-child::after{display:none}
-.rr-seg span{display:block;font-size:9px;font-weight:400;font-family:'DM Sans',sans-serif;color:var(--faint);margin-top:2px}
 .road{display:grid;grid-template-columns:1fr 1fr 1fr auto;gap:14px;align-items:stretch}
 .act{background:var(--s1);border:1px solid rgba(255,255,255,.06);border-radius:var(--r2);padding:22px;transition:border-color .25s,transform .25s}
 .act:hover{border-color:var(--g-line);transform:translateY(-2px)}
@@ -522,12 +518,24 @@ footer b{color:var(--dim);font-weight:600}
       <div class="eyebrow" style="margin-bottom:10px">1.1 — Mechanic A · Laptop</div>
       <h2 class="sec-title" style="margin-bottom:18px">Laptop × GIGABYTE Gear Bundle</h2>
     </div>
-    <div class="card hi reveal reveal-d1" style="display:grid;grid-template-columns:2fr 1fr;gap:26px;align-items:center">
-      <div>
-        <p style="font-size:15px;color:var(--dim);line-height:1.7;margin-bottom:16px">Any GIGABYTE laptop purchase unlocks a <strong style="color:var(--white)">limited-edition AORUS accessory gift</strong> in 40th anniversary packaging — headset, gaming mouse, or backpack. Auto-registers for Lucky Draw and enters the buyer into GIGABYTE's CDP.</p>
-        <div style="display:flex;flex-wrap:wrap;gap:8px"><span class="pill">Anniversary gear gift</span><span class="pill">1× draw entry</span><span class="pill">CDP registration</span><span class="pill">3-yr warranty</span></div>
+    <div class="reveal reveal-d1">
+      <p style="font-size:15px;color:var(--dim);line-height:1.7;margin-bottom:20px;max-width:700px">Every GIGABYTE laptop comes with a special 40th anniversary gift bundle — <strong style="color:var(--white)">tiered by product</strong>. Flagship models unlock the scarce HQ edition; all other models get the celebratory 40-year bundle. Every purchase auto-registers for the Lucky Draw and enters GIGABYTE's CDP.</p>
+      <div class="layers" style="margin-bottom:20px">
+        <div class="layer-card collect">
+          <div class="layer-tag" style="text-align:center;display:block">Premium products</div>
+          <div class="collect-fig"><svg viewBox="0 0 24 24"><path d="M20 12v10H4V12M2 7h20v5H2zM12 22V7M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7zM12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></svg><span class="serial">LTD</span></div>
+          <h3>HQ Limited Bundle</h3>
+          <p>A limited-run collector bundle shipped from GIGABYTE HQ — scarce, exclusive to flagship laptop buyers. The trophy gift of the campaign.</p>
+          <div class="scarcity"><span class="sc">Limited run</span><span class="sc">From HQ</span><span class="sc">Flagship only</span></div>
+        </div>
+        <div class="layer-card">
+          <div class="layer-tag">All other models</div>
+          <h3>40th Anniversary Bundle</h3>
+          <p style="font-size:13px;color:var(--dim);line-height:1.6;margin-bottom:14px">Celebratory AORUS gear bundle — headset, mouse or backpack — stamped with the <strong style="color:var(--white)">GIGABYTE 40-year logo</strong>. Higher production volume so every buyer joins the celebration.</p>
+          <div class="scarcity" style="justify-content:flex-start"><span class="sc">40-year logo</span><span class="sc">Wide availability</span><span class="sc">All laptop tiers</span></div>
+        </div>
       </div>
-      <div style="border-left:1px solid rgba(255,255,255,.06);padding-left:26px"><div style="font-size:11px;color:var(--faint);letter-spacing:.1em;text-transform:uppercase;margin-bottom:6px">Target</div><p style="font-size:14px;color:var(--dim);line-height:1.6"><strong style="color:var(--white)">Students, remote workers, first-time buyers</strong> — high gift-sensitivity, value-driven decisions.</p></div>
+      <div style="display:flex;flex-wrap:wrap;gap:8px"><span class="pill">1× draw entry</span><span class="pill">CDP registration</span><span class="pill">3-yr warranty</span><span class="pill">Target · students · creators · first-time buyers</span></div>
     </div>
 
     <!-- 1.2 Powered by GIGABYTE -->
@@ -578,8 +586,8 @@ footer b{color:var(--dim);font-weight:600}
           <svg viewBox="0 0 24 24"><rect x="6" y="8" width="12" height="11" rx="2"/><path d="M9 8V5a3 3 0 0 1 6 0v3"/><circle cx="9.5" cy="13" r="1"/><circle cx="14.5" cy="13" r="1"/><path d="M10 16h4M12 2v2M5 12H3M21 12h-2"/></svg>
           <span class="serial">#0001</span>
         </div>
-        <h3>AORUS Robit — 40th Infinity Edition</h3>
-        <p>A serial-numbered collectible reviving the legendary 2018 AORUS Robit. Given with every Bundle PC & LCD — the reason to choose the bundle.</p>
+        <h3>AORUS Robot — 40th Infinity Edition</h3>
+        <p>A serial-numbered collectible reviving the legendary 2018 AORUS Robot. Given with every Bundle PC & LCD — the reason to choose the bundle.</p>
         <div class="scarcity"><span class="sc">Serial-numbered</span><span class="sc">Campaign-only</span><span class="sc">Never sold retail</span></div>
       </div>
     </div>
@@ -654,8 +662,8 @@ footer b{color:var(--dim);font-weight:600}
           </tr>
           <tr>
             <td class="pm-track">Offline<br>POSM & Event</td>
-            <td class="pm-cell"><ul><li>Roll out brand POSM</li><li>Store decoration</li></ul></td>
-            <td class="pm-cell"><ul><li>39 store activations</li><li>Gaming tournament · AI workshop</li><li>Product POSM active</li></ul></td>
+            <td class="pm-cell"><ul><li>Roll out brand POSM</li><li>3 activations launch (parallel)</li></ul></td>
+            <td class="pm-cell"><ul><li>39 activations · tournament · AI workshop in full swing</li><li>Product POSM active</li></ul></td>
             <td class="pm-cell"><ul><li class="hl">Big Event — 2,000 people</li><li>Heritage exhibition · tournament final</li><li>Grand Lucky Draw ceremony</li></ul></td>
           </tr>
           <tr>
@@ -749,10 +757,10 @@ footer b{color:var(--dim);font-weight:600}
       </div>
     </div>
 
-    <!-- Media timeline matrix incl KOL -->
-    <div class="reveal" style="margin:8px 0 22px">
-      <h3 style="font-size:17px;font-weight:700;margin-bottom:6px">Media & PR Across the 3 Phases</h3>
-      <p style="font-size:13px;color:var(--faint)">KOL Ambassador (Hoàng Luân) anchors all three phases; satellite KOLs amplify around him.</p>
+    <!-- KOL System — compact 2-row × 3-phase -->
+    <div class="reveal" style="margin:8px 0 18px">
+      <h3 style="font-size:17px;font-weight:700;margin-bottom:6px">KOL System Across 3 Phases</h3>
+      <p style="font-size:13px;color:var(--faint)"><strong style="color:var(--g2)">Hoàng Luân</strong> (Lead Ambassador · Tech & Gaming KOL · 1M+ reach) anchors every phase; satellite KOLs (Tier 2–4) amplify around him.</p>
     </div>
     <div class="pmatrix reveal reveal-d1" style="margin-bottom:40px">
       <table class="pm-table">
@@ -764,41 +772,19 @@ footer b{color:var(--dim);font-weight:600}
         </tr></thead>
         <tbody>
           <tr>
-            <td class="pm-track">Owned</td>
-            <td class="pm-cell"><ul><li>Teaser + brand story</li><li>Microsite · #EnterInfinity</li></ul></td>
-            <td class="pm-cell"><ul><li>Full content cadence</li><li>Daily countdown posts</li></ul></td>
-            <td class="pm-cell"><ul><li>Big Event livestream</li><li>Recap + UGC repost</li></ul></td>
+            <td class="pm-track">Ambassador<br><span style="font-weight:400;color:var(--g2);text-transform:none;letter-spacing:0">Hoàng Luân</span></td>
+            <td class="pm-cell amb"><ul><li class="hl">★ Official reveal + hero video</li></ul></td>
+            <td class="pm-cell amb"><ul><li class="hl">Lead Build Challenge + reviews</li></ul></td>
+            <td class="pm-cell amb"><ul><li class="hl">Host Big Event + MC grand draw</li></ul></td>
           </tr>
           <tr>
-            <td class="pm-track">Paid</td>
-            <td class="pm-cell"><ul><li>PR announce (3 media tiers)</li><li>Teaser paid social</li></ul></td>
-            <td class="pm-cell"><ul><li>Paid media full throttle</li><li>Press deep-dive · perf ads</li></ul></td>
-            <td class="pm-cell"><ul><li>Full press coverage</li><li>Grand draw broadcast</li></ul></td>
-          </tr>
-          <tr>
-            <td class="pm-track">KOL Ambassador<br><span style="font-weight:400;color:var(--g2);text-transform:none;letter-spacing:0">Hoàng Luân</span></td>
-            <td class="pm-cell amb"><ul><li class="hl">★ Official reveal</li><li>Hero campaign video</li><li>Kick off 40-day countdown</li></ul></td>
-            <td class="pm-cell amb"><ul><li class="hl">Lead Build Challenge</li><li>Daily countdown reactions</li><li>Deep-dive reviews</li></ul></td>
-            <td class="pm-cell amb"><ul><li class="hl">Host Big Event stage</li><li>MC live grand draw</li><li>Recap & thank-you</li></ul></td>
-          </tr>
-          <tr>
-            <td class="pm-track">Satellite KOLs<br><span style="font-weight:400;color:var(--faint);text-transform:none;letter-spacing:0">Tier 2–4</span></td>
-            <td class="pm-cell"><ul><li>Amplify the reveal</li><li>T2–3 teaser reactions</li><li>T4 seed curiosity on forums</li></ul></td>
-            <td class="pm-cell"><ul><li>T2 deep unboxing + tier builds</li><li>T3 setup showcase, join challenge</li><li>T4 forum reviews + UGC volume</li></ul></td>
-            <td class="pm-cell"><ul><li>Attend + live coverage</li><li>Post-event content</li><li>Winner reactions</li></ul></td>
+            <td class="pm-track">Satellite<br><span style="font-weight:400;color:var(--faint);text-transform:none;letter-spacing:0">Tier 2–4</span></td>
+            <td class="pm-cell"><ul><li>Amplify reveal · seed forums</li></ul></td>
+            <td class="pm-cell"><ul><li>Unboxing · builds · UGC volume</li></ul></td>
+            <td class="pm-cell"><ul><li>Live coverage · winner reactions</li></ul></td>
           </tr>
         </tbody>
       </table>
-    </div>
-
-    <!-- KOL Ambassador card -->
-    <div class="amb reveal reveal-d1">
-      <div class="amb-av">HL</div>
-      <div>
-        <h3>Hoàng Luân — Lead Brand Ambassador</h3>
-        <div class="amb-tags"><span class="amb-tag">Tech KOL</span><span class="amb-tag">Gaming Content</span><span class="amb-tag">1M+ Reach</span><span class="amb-tag">Community Trust</span></div>
-        <p>The anchor voice for the entire campaign — reveal in Ignite, lead the Build Challenge in Rise, host the Big Event in Infinity. His audience is the GIGABYTE target demographic in Vietnam, and they trust his word on hardware above all else.</p>
-      </div>
     </div>
 
     <!-- Content Roadmap -->
@@ -810,23 +796,23 @@ footer b{color:var(--dim);font-weight:600}
     <div class="roadmap reveal reveal-d1">
       <div class="rm">
         <div class="rm-l"><div class="rm-c">01</div><div class="rm-line"></div></div>
-        <div class="rm-b"><div class="rm-tag">UGC · Nostalgia</div><div class="rm-t">"Máy tính đầu tiên của mày dùng linh kiện gì?"</div><div class="rm-d">GIGABYTE mainboard has been in Vietnam since the early 2000s — every first-gen builder has a story. The question unlocks VOZ, Facebook groups and TikTok organically. <span class="prod">Closes naturally on the GIGABYTE 2026 lineup</span> — heritage leading to today's products, never a pitch.</div></div>
+        <div class="rm-b"><div class="rm-tag">UGC · Nostalgia</div><div class="rm-t">"Máy tính đầu tiên của mày dùng linh kiện gì?"</div><div class="rm-d">GIGABYTE mainboard has been in Vietnam since the early 2000s — every first-gen builder has a story. <span class="prod">Closes naturally on the GIGABYTE 2026 lineup</span> — heritage leading to today's products, never a pitch.</div><div class="rm-ch"><span class="k">Channel</span><span class="c">VOZ Forum</span><span class="c">Facebook Groups</span></div></div>
       </div>
       <div class="rm">
         <div class="rm-l"><div class="rm-c">02</div><div class="rm-line"></div></div>
-        <div class="rm-b"><div class="rm-tag">Challenge · Viral</div><div class="rm-t">"Build Powered by GIGABYTE Infinity under X triệu"</div><div class="rm-d">Vietnam's builder community runs on budget-optimization challenges. Hoàng Luân builds first → community follows → best build featured at the Big Event. <span class="prod">Components surface naturally as builders pick them</span> — no spec-dumping.</div></div>
+        <div class="rm-b"><div class="rm-tag">Challenge · Viral</div><div class="rm-t">"Build Powered by GIGABYTE Infinity under X triệu"</div><div class="rm-d">Vietnam's builder community runs on budget-optimization challenges. Hoàng Luân builds first → community follows → best build featured at the Big Event. <span class="prod">Components surface naturally as builders pick them</span> — no spec-dumping.</div><div class="rm-ch"><span class="k">Channel</span><span class="c">YouTube (full build)</span><span class="c">TikTok (clip)</span><span class="c">FB Groups</span></div></div>
       </div>
       <div class="rm">
         <div class="rm-l"><div class="rm-c">03</div><div class="rm-line"></div></div>
-        <div class="rm-b"><div class="rm-tag">Brand Story · Human</div><div class="rm-t">"GIGABYTE nhân viên kể chuyện" — confessional</div><div class="rm-d">Not a corporate interview. "Day in the life" / "things I wish I knew" — real staff stories. <span class="prod">Each story naturally name-drops a product they're proud of</span>; authentic tone beats any brand film.</div></div>
+        <div class="rm-b"><div class="rm-tag">Brand Story · Human</div><div class="rm-t">"GIGABYTE nhân viên kể chuyện" — confessional</div><div class="rm-d">Not a corporate interview. "Day in the life" / "things I wish I knew" — real staff stories. <span class="prod">Each story naturally name-drops a product they're proud of</span>; authentic tone beats any brand film.</div><div class="rm-ch"><span class="k">Channel</span><span class="c">TikTok</span><span class="c">YouTube Shorts</span></div></div>
       </div>
       <div class="rm">
         <div class="rm-l"><div class="rm-c">04</div><div class="rm-line"></div></div>
-        <div class="rm-b"><div class="rm-tag">Countdown · Daily Habit</div><div class="rm-t">40-day countdown — 1 fact per day</div><div class="rm-d">Daily backstage facts, records, odd milestones — not spec sheets. Builds a daily follow habit. <span class="prod">A few facts weave in product milestones & 40th-edition teasers</span>, tucked among the history.</div></div>
+        <div class="rm-b"><div class="rm-tag">AI · Product Power</div><div class="rm-t">AI in Action — "Chạy AI ngay trên máy GIGABYTE"</div><div class="rm-d">Show GIGABYTE hardware running real AI: local LLMs, Stable Diffusion, AI-accelerated rendering, in-game AI upscaling. <span class="prod">The AI PC positioning made tangible</span> — ties directly to the university AI workshops and the creator/dev audience.</div><div class="rm-ch"><span class="k">Channel</span><span class="c">YouTube (demo)</span><span class="c">TikTok (wow clip)</span></div></div>
       </div>
       <div class="rm">
         <div class="rm-l"><div class="rm-c">05</div></div>
-        <div class="rm-b" style="padding-bottom:0"><div class="rm-tag">Reaction · Authentic Proof</div><div class="rm-t">"Người chưa biết GIGABYTE thử AORUS lần đầu"</div><div class="rm-d">Cast non-enthusiasts — students, casual gamers — for genuine first reactions. <span class="prod">The product speaks through the real experience</span>; unscripted surprise converts better than any review.</div></div>
+        <div class="rm-b" style="padding-bottom:0"><div class="rm-tag">Reaction · Authentic Proof</div><div class="rm-t">"Người chưa biết GIGABYTE thử AORUS lần đầu"</div><div class="rm-d">Cast non-enthusiasts — students, casual gamers — for genuine first reactions. <span class="prod">The product speaks through the real experience</span>; unscripted surprise converts better than any review.</div><div class="rm-ch"><span class="k">Channel</span><span class="c">TikTok</span><span class="c">YouTube Shorts</span></div></div>
       </div>
     </div>
   </div>
@@ -871,30 +857,25 @@ footer b{color:var(--dim);font-weight:600}
     <div class="reveal">
       <div class="eyebrow" style="margin-bottom:10px">2.4 — Marketing Offline · Event</div>
       <h2 class="sec-title">The Road to Infinity</h2>
-      <p class="sec-desc" style="margin-bottom:24px">Grassroots activations build momentum through Rise, cascading into the Big Event climax in Infinity.</p>
-    </div>
-    <div class="road-ribbon reveal">
-      <div class="rr-seg">T6<span>Jun</span></div><div class="rr-seg">T7<span>Jul</span></div>
-      <div class="rr-seg on">T8<span>Aug</span></div><div class="rr-seg on">T9<span>Sep</span></div><div class="rr-seg on">T10<span>Oct</span></div>
-      <div class="rr-seg peak">T11 ★<span>Nov · Peak</span></div>
+      <p class="sec-desc" style="margin-bottom:24px">Three grassroots activations run <strong style="color:var(--g2)">in parallel from June to October</strong>, building momentum. November is reserved entirely for the Big Event.</p>
     </div>
     <div class="road reveal reveal-d1">
       <div class="act">
-        <div class="act-ph">Rise · T8–10</div>
+        <div class="act-ph">Parallel · T6–T10</div>
         <div class="act-num">39</div>
         <h4>Store Activations</h4>
         <p>Operated directly by GIGABYTE. Pop-up experience zones inside partner stores — AORUS demo, product trial, QR mechanics.</p>
         <div class="act-meta"><span class="act-m">39 stores</span><span class="act-m">GIGABYTE-run</span></div>
       </div>
       <div class="act">
-        <div class="act-ph">Rise · T8–10</div>
+        <div class="act-ph">Parallel · T6–T10</div>
         <div class="act-num">GG</div>
         <h4>Gaming Tournament</h4>
         <p>At cyber cafes & gaming centers. AORUS hardware on every station, publisher tie-in. Targets the grassroots gamer community.</p>
         <div class="act-meta"><span class="act-m">Cyber circuit</span><span class="act-m">HCM·HN·DN</span></div>
       </div>
       <div class="act">
-        <div class="act-ph">Rise · T8–10</div>
+        <div class="act-ph">Parallel · T6–T10</div>
         <div class="act-num">AI</div>
         <h4>University Workshop</h4>
         <p>Positions GIGABYTE as the platform for AI workloads. Covers laptops, GPUs, AI systems — reaching the next generation of buyers.</p>
