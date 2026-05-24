@@ -11,17 +11,18 @@
 *{margin:0;padding:0;box-sizing:border-box}
 :root{
   --black:#000007;--s0:#070710;--s1:#0C0C18;--s2:#13131F;--s3:#1A1A28;--s4:#22222F;
-  --gold:#C9963A;--g2:#E8B55A;--g3:#F5D07A;
-  --g-hi:rgba(201,150,58,.18);--g-lo:rgba(201,150,58,.08);--g-line:rgba(201,150,58,.2);
+  --gold:#FF6A1A;--g2:#FF8C42;--g3:#FFB570;
+  --g-hi:rgba(255,106,26,.18);--g-lo:rgba(255,106,26,.08);--g-line:rgba(255,106,26,.2);
   --white:#F2F0EC;--dim:#A09C92;--faint:#5C5A54;
   --blue:#7CB9FF;--green:#5BD89A;--purple:#C4B5FD;
+  --pink:#FF2D78;--pink2:#FF7AAE;--cyan:#22D3EE;--cyan2:#7FE9FB;--violet:#B25CFF;
   --r:6px;--r2:12px;--r3:18px;
 }
 html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
 body{font-family:'DM Sans',sans-serif;background:var(--black);color:var(--white);font-size:15px;line-height:1.7;overflow-x:hidden}
 h1,h2,h3,h4,h5,h6{font-family:'Space Grotesk',sans-serif;line-height:1.12}
 a{color:inherit;text-decoration:none}
-::selection{background:rgba(201,150,58,.22)}
+::selection{background:rgba(255,106,26,.22)}
 body::before{content:'';pointer-events:none;position:fixed;inset:0;z-index:9998;opacity:.025;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:200px 200px}
 
 .wrap{max-width:1160px;margin:0 auto;padding:0 36px}
@@ -50,10 +51,10 @@ nav{position:fixed;top:14px;left:50%;transform:translateX(-50%);z-index:9999;wid
 
 /* HERO */
 .hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:120px 36px 76px;position:relative;overflow:hidden}
-.hero-dots{position:absolute;inset:0;background-image:radial-gradient(circle,rgba(201,150,58,.16) 1px,transparent 1px);background-size:46px 46px;mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,black 8%,transparent 68%)}
-.hero-glow{position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 50% 0%,rgba(201,150,58,.11) 0%,transparent 55%),radial-gradient(ellipse 50% 40% at 50% 55%,rgba(201,150,58,.05) 0%,transparent 60%)}
-.hero-symbol{position:absolute;font-family:'Space Grotesk',sans-serif;font-size:clamp(200px,32vw,480px);font-weight:700;line-height:1;color:transparent;-webkit-text-stroke:1px rgba(201,150,58,.12);top:50%;left:50%;transform:translate(-50%,-52%);pointer-events:none;user-select:none;animation:pulse 6s ease-in-out infinite}
-@keyframes pulse{0%,100%{-webkit-text-stroke-color:rgba(201,150,58,.10)}50%{-webkit-text-stroke-color:rgba(201,150,58,.22)}}
+.hero-dots{position:absolute;inset:0;background-image:radial-gradient(circle,rgba(255,106,26,.16) 1px,transparent 1px);background-size:46px 46px;mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,black 8%,transparent 68%)}
+.hero-glow{position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 50% 0%,rgba(255,106,26,.11) 0%,transparent 55%),radial-gradient(ellipse 50% 40% at 50% 55%,rgba(255,106,26,.05) 0%,transparent 60%)}
+.hero-symbol{position:absolute;font-family:'Space Grotesk',sans-serif;font-size:clamp(200px,32vw,480px);font-weight:700;line-height:1;color:transparent;-webkit-text-stroke:1px rgba(255,106,26,.12);top:50%;left:50%;transform:translate(-50%,-52%);pointer-events:none;user-select:none;animation:pulse 6s ease-in-out infinite}
+@keyframes pulse{0%,100%{-webkit-text-stroke-color:rgba(255,106,26,.10)}50%{-webkit-text-stroke-color:rgba(255,106,26,.22)}}
 .hero-body{position:relative;z-index:3;max-width:760px}
 .hero-eyebrow{display:inline-flex;align-items:center;gap:10px;margin-bottom:24px}
 .hero-eyebrow .d{width:4px;height:4px;border-radius:50%;background:var(--gold)}
@@ -100,9 +101,9 @@ nav{position:fixed;top:14px;left:50%;transform:translateX(-50%);z-index:9999;wid
 .gantt-phaserow{display:grid;grid-template-columns:180px repeat(6,1fr);margin-bottom:14px}
 .gantt-phaserow .lbl{}
 .gph{margin:0 2px;border-radius:4px;text-align:center;font-size:9px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:3px 0;color:#000}
-.gph.ig{grid-column:2 / 4;background:linear-gradient(90deg,rgba(201,150,58,.5),rgba(201,150,58,.7))}
-.gph.ri{grid-column:4 / 7;background:linear-gradient(90deg,rgba(201,150,58,.7),var(--g2))}
-.gph.inf{grid-column:7 / 8;background:linear-gradient(90deg,var(--g2),var(--g3))}
+.gph.ig{grid-column:2 / 4;background:linear-gradient(90deg,#FF6A1A,#FF8C42);color:#000}
+.gph.ri{grid-column:4 / 7;background:linear-gradient(90deg,var(--pink),var(--pink2));color:#000}
+.gph.inf{grid-column:7 / 8;background:linear-gradient(90deg,var(--cyan),var(--cyan2));color:#000}
 .gantt-branch{margin-bottom:16px}
 .gantt-branch-t{display:flex;align-items:center;gap:8px;font-size:12px;font-weight:700;color:var(--g2);margin-bottom:8px;text-transform:uppercase;letter-spacing:.06em}
 .gantt-branch-t .tag{font-size:9px;padding:2px 8px;border-radius:4px;background:var(--g-hi);color:var(--gold);letter-spacing:.04em}
@@ -111,9 +112,9 @@ nav{position:fixed;top:14px;left:50%;transform:translateX(-50%);z-index:9999;wid
 .gantt-row .lbl em{display:block;font-size:10px;color:var(--faint);font-style:normal;font-weight:400}
 .bar{height:22px;border-radius:5px;display:flex;align-items:center;padding:0 10px;font-size:10px;font-weight:600;color:#000;white-space:nowrap;overflow:hidden}
 .bar.lucky{grid-column:2 / 8;background:linear-gradient(90deg,var(--gold),var(--g2) 70%,var(--g3));margin:0 2px}
-.bar.laptop{grid-column:3 / 6;background:linear-gradient(90deg,rgba(201,150,58,.85),var(--g2));margin:0 2px}
-.bar.pbg{grid-column:4 / 7;background:linear-gradient(90deg,rgba(201,150,58,.85),var(--g2));margin:0 2px}
-.bar.bundle{grid-column:5 / 8;background:linear-gradient(90deg,rgba(201,150,58,.85),var(--g3));margin:0 2px}
+.bar.laptop{grid-column:3 / 6;background:linear-gradient(90deg,rgba(255,106,26,.85),var(--g2));margin:0 2px}
+.bar.pbg{grid-column:4 / 7;background:linear-gradient(90deg,rgba(255,106,26,.85),var(--g2));margin:0 2px}
+.bar.bundle{grid-column:5 / 8;background:linear-gradient(90deg,rgba(255,106,26,.85),var(--g3));margin:0 2px}
 .star{margin-left:auto;color:#000;font-size:11px}
 .gantt-note{display:flex;align-items:center;gap:8px;margin-top:14px;padding-top:14px;border-top:1px solid rgba(255,255,255,.06);font-size:12px;color:var(--dim)}
 .gantt-note svg{width:14px;height:14px;stroke:var(--gold);fill:none;stroke-width:2;flex-shrink:0}
@@ -124,13 +125,13 @@ nav{position:fixed;top:14px;left:50%;transform:translateX(-50%);z-index:9999;wid
 .matrix thead th{font-family:'Space Grotesk',sans-serif;font-size:14px;font-weight:700;letter-spacing:.02em}
 .matrix thead th:first-child{text-align:left;font-size:11px;color:var(--faint);letter-spacing:.1em;text-transform:uppercase;font-weight:600}
 .matrix .col-ess{color:var(--dim)}
-.matrix .col-pro{color:var(--g2);background:rgba(201,150,58,.05);position:relative}
+.matrix .col-pro{color:var(--g2);background:rgba(255,106,26,.05);position:relative}
 .matrix .col-inf{color:var(--g3)}
-.matrix thead .col-inf{background:rgba(201,150,58,.1)}
+.matrix thead .col-inf{background:rgba(255,106,26,.1)}
 .matrix tbody td:first-child{text-align:left;font-size:13px;color:var(--white);font-weight:500}
 .matrix tbody td{font-size:13px;color:var(--dim)}
-.matrix tbody td.col-pro{background:rgba(201,150,58,.04);color:var(--g2);font-weight:600}
-.matrix tbody td.col-inf{background:rgba(201,150,58,.07);color:var(--g3);font-weight:600}
+.matrix tbody td.col-pro{background:rgba(255,106,26,.04);color:var(--g2);font-weight:600}
+.matrix tbody td.col-inf{background:rgba(255,106,26,.07);color:var(--g3);font-weight:600}
 .matrix tr:last-child td{border-bottom:none}
 .matrix .anchor{display:inline-block;font-size:9px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;background:linear-gradient(135deg,var(--gold),var(--g2));color:#000;padding:2px 7px;border-radius:4px;margin-top:4px}
 .tick{color:var(--gold);font-weight:700}
@@ -147,8 +148,8 @@ nav{position:fixed;top:14px;left:50%;transform:translateX(-50%);z-index:9999;wid
 .tsp-k{font-family:'Space Grotesk',sans-serif;font-size:11px;font-weight:700;color:var(--g2);text-transform:uppercase;letter-spacing:.04em;flex-shrink:0;min-width:88px}
 .tsp-v{font-size:13px;color:var(--dim);line-height:1.45}
 /* collectible */
-.collect{background:var(--s2);border:1px solid var(--gold);box-shadow:0 0 50px rgba(201,150,58,.1)}
-.collect-fig{width:90px;height:90px;margin:0 auto 16px;border-radius:14px;background:radial-gradient(circle at 50% 35%,rgba(201,150,58,.25),rgba(201,150,58,.04));border:1.5px solid var(--gold);display:flex;align-items:center;justify-content:center;position:relative}
+.collect{background:var(--s2);border:1px solid var(--gold);box-shadow:0 0 50px rgba(255,106,26,.1)}
+.collect-fig{width:90px;height:90px;margin:0 auto 16px;border-radius:14px;background:radial-gradient(circle at 50% 35%,rgba(255,106,26,.25),rgba(255,106,26,.04));border:1.5px solid var(--gold);display:flex;align-items:center;justify-content:center;position:relative}
 .collect-fig svg{width:48px;height:48px;stroke:var(--g3);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
 .collect-fig .serial{position:absolute;bottom:-7px;right:-7px;font-family:'Space Grotesk',sans-serif;font-size:8px;font-weight:700;color:#000;background:var(--g2);padding:2px 6px;border-radius:4px}
 .collect h3{text-align:center;font-size:17px;margin-bottom:6px}
@@ -166,7 +167,7 @@ nav{position:fixed;top:14px;left:50%;transform:translateX(-50%);z-index:9999;wid
 
 /* HERITAGE MANIFESTO */
 .manifesto{position:relative;overflow:hidden;border-radius:var(--r3);background:linear-gradient(135deg,#0a0a14,#10101e);border:1px solid var(--g-line);padding:64px 56px;margin:8px 0}
-.manifesto-wm{position:absolute;right:-30px;top:50%;transform:translateY(-50%);font-family:'Space Grotesk',sans-serif;font-size:280px;font-weight:700;color:transparent;-webkit-text-stroke:1px rgba(201,150,58,.06);line-height:1;pointer-events:none;user-select:none}
+.manifesto-wm{position:absolute;right:-30px;top:50%;transform:translateY(-50%);font-family:'Space Grotesk',sans-serif;font-size:280px;font-weight:700;color:transparent;-webkit-text-stroke:1px rgba(255,106,26,.06);line-height:1;pointer-events:none;user-select:none}
 .manifesto-body{position:relative;z-index:2;max-width:760px}
 .manifesto .tag{font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:18px;display:block}
 .manifesto h2{font-size:clamp(26px,4vw,40px);font-weight:700;letter-spacing:-.02em;line-height:1.15;margin-bottom:22px}
@@ -183,8 +184,8 @@ nav{position:fixed;top:14px;left:50%;transform:translateX(-50%);z-index:9999;wid
 .pm-table thead th:first-child{background:transparent;border:none}
 .pm-phase-name{font-size:18px;font-weight:700}
 .pm-phase-name.ig{color:var(--gold)}
-.pm-phase-name.ri{color:var(--g2)}
-.pm-phase-name.inf{color:var(--g3)}
+.pm-phase-name.ri{color:var(--pink)}
+.pm-phase-name.inf{color:var(--cyan)}
 .pm-phase-time{font-size:11px;color:var(--faint);font-weight:400;font-family:'DM Sans',sans-serif;margin-top:2px;letter-spacing:.04em}
 .pm-phase-role{font-size:12px;color:var(--dim);font-weight:400;font-family:'DM Sans',sans-serif;margin-top:8px;line-height:1.4}
 .pm-track{font-family:'Space Grotesk',sans-serif;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--faint);background:var(--s1);width:130px}
@@ -192,14 +193,14 @@ nav{position:fixed;top:14px;left:50%;transform:translateX(-50%);z-index:9999;wid
 .pm-cell ul{list-style:none;display:flex;flex-direction:column;gap:5px}
 .pm-cell li{display:flex;gap:7px;align-items:flex-start}
 .pm-cell li::before{content:'';width:4px;height:4px;border-radius:50%;background:var(--gold);flex-shrink:0;margin-top:7px}
-.pm-cell.amb{background:rgba(201,150,58,.04)}
+.pm-cell.amb{background:rgba(255,106,26,.04)}
 .pm-cell.amb li::before{background:var(--g3)}
 .pm-cell .hl{color:var(--g2);font-weight:600}
 
 /* ORBITAL HUB */
 .hub{position:relative;height:520px;margin:36px 0 24px;display:flex;align-items:center;justify-content:center}
 .hub-svg{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:2}
-.hub-c{position:absolute;width:128px;height:128px;border-radius:50%;z-index:10;border:2px solid var(--gold);background:radial-gradient(circle at 50% 38%,rgba(201,150,58,.22),rgba(201,150,58,.04));display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:2px;box-shadow:0 0 70px rgba(201,150,58,.2);animation:pulse 5s ease-in-out infinite}
+.hub-c{position:absolute;width:128px;height:128px;border-radius:50%;z-index:10;border:2px solid var(--gold);background:radial-gradient(circle at 50% 38%,rgba(255,106,26,.22),rgba(255,106,26,.04));display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:2px;box-shadow:0 0 70px rgba(255,106,26,.2);animation:pulse 5s ease-in-out infinite}
 .hub-c .n{font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:700;color:var(--gold);line-height:1.2}
 .hub-c .s{font-size:10px;color:var(--dim)}
 .hub-n{position:absolute;width:206px;border-radius:var(--r2);background:var(--s2);border:1px solid var(--g-line);padding:16px 18px;z-index:5;transition:transform .25s,box-shadow .25s}
@@ -221,7 +222,7 @@ nav{position:fixed;top:14px;left:50%;transform:translateX(-50%);z-index:9999;wid
 
 /* VALUE EXCHANGE TABLE */
 .vtbl{width:100%;border-collapse:collapse;background:var(--s1);border:1px solid rgba(255,255,255,.06);border-radius:var(--r2);overflow:hidden}
-.vtbl thead tr{background:rgba(201,150,58,.07);border-bottom:1px solid var(--g-line)}
+.vtbl thead tr{background:rgba(255,106,26,.07);border-bottom:1px solid var(--g-line)}
 .vtbl th{padding:12px 18px;text-align:left;font-family:'Space Grotesk',sans-serif;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--gold)}
 .vtbl td{padding:12px 18px;font-size:13px;color:var(--dim);border-bottom:1px solid rgba(255,255,255,.04)}
 .vtbl tr:last-child td{border-bottom:none}
@@ -274,23 +275,23 @@ nav{position:fixed;top:14px;left:50%;transform:translateX(-50%);z-index:9999;wid
 .posm-col h3 .badge{font-size:10px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--faint);background:var(--s2);padding:2px 8px;border-radius:4px}
 .mock-stage{background:var(--s2);border:1px solid rgba(255,255,255,.06);border-radius:var(--r2);padding:28px 20px;display:flex;justify-content:center;align-items:flex-end;gap:36px;min-height:200px}
 /* lightbox tower */
-.lb-tower{width:60px;height:148px;border-radius:6px;background:linear-gradient(180deg,#0a0a16,rgba(201,150,58,.06) 20%,rgba(201,150,58,.18) 50%,rgba(201,150,58,.06) 80%,#0a0a16);border:1.5px solid var(--gold);display:flex;align-items:center;justify-content:center;position:relative;box-shadow:0 0 26px rgba(201,150,58,.2),inset 0 0 14px rgba(201,150,58,.06)}
-.lb-tower .lg{font-family:'Space Grotesk',sans-serif;font-size:9px;font-weight:700;letter-spacing:.08em;color:rgba(201,150,58,.92);writing-mode:vertical-lr;transform:rotate(180deg)}
+.lb-tower{width:60px;height:148px;border-radius:6px;background:linear-gradient(180deg,#0a0a16,rgba(255,106,26,.06) 20%,rgba(255,106,26,.18) 50%,rgba(255,106,26,.06) 80%,#0a0a16);border:1.5px solid var(--gold);display:flex;align-items:center;justify-content:center;position:relative;box-shadow:0 0 26px rgba(255,106,26,.2),inset 0 0 14px rgba(255,106,26,.06)}
+.lb-tower .lg{font-family:'Space Grotesk',sans-serif;font-size:9px;font-weight:700;letter-spacing:.08em;color:rgba(255,106,26,.92);writing-mode:vertical-lr;transform:rotate(180deg)}
 /* signage */
 .sgn{display:flex;flex-direction:column;align-items:center}
-.sgn-top{width:108px;height:46px;background:linear-gradient(135deg,#0a0a16,#141422);border:1.5px solid var(--gold);border-radius:5px 5px 0 0;display:flex;align-items:center;justify-content:center;box-shadow:0 0 18px rgba(201,150,58,.15),inset 0 0 10px rgba(201,150,58,.05)}
+.sgn-top{width:108px;height:46px;background:linear-gradient(135deg,#0a0a16,#141422);border:1.5px solid var(--gold);border-radius:5px 5px 0 0;display:flex;align-items:center;justify-content:center;box-shadow:0 0 18px rgba(255,106,26,.15),inset 0 0 10px rgba(255,106,26,.05)}
 .sgn-top span{font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:700;letter-spacing:.04em;color:var(--g2)}
 .sgn-bot{width:108px;height:22px;background:var(--s3);border:1.5px solid rgba(255,255,255,.06);border-top:none;border-radius:0 0 4px 4px;display:flex;align-items:center;justify-content:center}
 .sgn-bot span{font-size:8px;color:var(--faint);letter-spacing:.06em}
 /* laptop stand */
 .lstand{display:flex;flex-direction:column;align-items:center;width:160px}
 .lstand .topper{width:114px;height:50px;background:var(--s3);border:1.5px solid var(--g-line);border-radius:4px 4px 0 0;display:flex;align-items:center;justify-content:center}
-.lstand .topper .in{width:90%;height:80%;background:rgba(201,150,58,.05);border-radius:2px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px}
-.lstand .topper .ad{height:3px;border-radius:2px;background:rgba(201,150,58,.25)}
+.lstand .topper .in{width:90%;height:80%;background:rgba(255,106,26,.05);border-radius:2px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px}
+.lstand .topper .ad{height:3px;border-radius:2px;background:rgba(255,106,26,.25)}
 .lstand .topper .ad.sm{background:rgba(255,255,255,.1)}
 .lstand .lap{width:150px;display:flex;flex-direction:column;align-items:center}
 .lstand .scr{width:144px;height:46px;background:rgba(20,20,36,1);border:1px solid rgba(255,255,255,.1);border-radius:2px 2px 0 0;display:flex;align-items:center;justify-content:center}
-.lstand .scr .gl{width:54px;height:2px;border-radius:1px;background:rgba(201,150,58,.18)}
+.lstand .scr .gl{width:54px;height:2px;border-radius:1px;background:rgba(255,106,26,.18)}
 .lstand .hinge{width:144px;height:4px;background:rgba(255,255,255,.06)}
 .lstand .chassis{width:152px;height:9px;background:rgba(30,30,46,1);border-radius:0 0 2px 2px}
 .lstand .base{width:160px;height:30px;background:linear-gradient(180deg,#141420,#0a0a14);border:1.5px solid rgba(255,255,255,.08);border-top:2px solid var(--gold);border-radius:0 0 6px 6px;display:flex;align-items:center;justify-content:center}
@@ -318,8 +319,8 @@ nav{position:fixed;top:14px;left:50%;transform:translateX(-50%);z-index:9999;wid
 .road-arrow{display:flex;align-items:center;justify-content:center;width:34px;color:var(--gold)}
 .road-arrow svg{width:24px;height:24px;stroke:var(--gold);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 /* big event */
-.bigev{margin-top:18px;background:var(--s2);border:1px solid var(--g-line);border-radius:var(--r3);overflow:hidden;box-shadow:0 0 60px rgba(201,150,58,.08)}
-.bigev-hd{padding:26px 30px;background:rgba(201,150,58,.05);border-bottom:1px solid var(--g-line);display:flex;align-items:center;gap:18px}
+.bigev{margin-top:18px;background:var(--s2);border:1px solid var(--g-line);border-radius:var(--r3);overflow:hidden;box-shadow:0 0 60px rgba(255,106,26,.08)}
+.bigev-hd{padding:26px 30px;background:rgba(255,106,26,.05);border-bottom:1px solid var(--g-line);display:flex;align-items:center;gap:18px}
 .bigev-sym{font-family:'Space Grotesk',sans-serif;font-size:56px;font-weight:700;line-height:1;background:linear-gradient(135deg,var(--gold),var(--g3));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;flex-shrink:0}
 .bigev-hd .ph{font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:4px}
 .bigev-hd h3{font-size:24px;font-weight:700;letter-spacing:-.02em}
@@ -348,12 +349,14 @@ nav{position:fixed;top:14px;left:50%;transform:translateX(-50%);z-index:9999;wid
 .kpi{padding:24px 18px;text-align:center;border-right:1px solid rgba(255,255,255,.06)}
 .kpi:last-child{border-right:none}
 .kpi-v{font-family:'Space Grotesk',sans-serif;font-size:28px;font-weight:700;line-height:1;background:linear-gradient(135deg,var(--gold),var(--g3));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:7px}
+.kpi-strip .kpi:nth-child(2) .kpi-v,.kpi-strip .kpi:nth-child(5) .kpi-v{background:linear-gradient(135deg,var(--pink),var(--pink2));-webkit-background-clip:text;background-clip:text}
+.kpi-strip .kpi:nth-child(3) .kpi-v,.kpi-strip .kpi:nth-child(6) .kpi-v{background:linear-gradient(135deg,var(--cyan),var(--cyan2));-webkit-background-clip:text;background-clip:text}
 .kpi-l{font-size:11px;color:var(--dim);line-height:1.4}
 
 /* CLOSE */
 .close{padding:100px 0;text-align:center;position:relative;overflow:hidden}
-.close-bg{position:absolute;inset:0;background:radial-gradient(ellipse 50% 60% at 50% 50%,rgba(201,150,58,.06),transparent 65%)}
-.close-wm{position:absolute;font-family:'Space Grotesk',sans-serif;font-size:clamp(150px,22vw,320px);font-weight:700;color:transparent;-webkit-text-stroke:1px rgba(201,150,58,.07);top:50%;left:50%;transform:translate(-50%,-50%);user-select:none;pointer-events:none;white-space:nowrap;line-height:1}
+.close-bg{position:absolute;inset:0;background:radial-gradient(ellipse 50% 60% at 50% 50%,rgba(255,106,26,.06),transparent 65%)}
+.close-wm{position:absolute;font-family:'Space Grotesk',sans-serif;font-size:clamp(150px,22vw,320px);font-weight:700;color:transparent;-webkit-text-stroke:1px rgba(255,106,26,.07);top:50%;left:50%;transform:translate(-50%,-50%);user-select:none;pointer-events:none;white-space:nowrap;line-height:1}
 .close-body{position:relative;z-index:2}
 .close-body h2{font-size:clamp(32px,5vw,58px);font-weight:700;letter-spacing:-.03em;line-height:1.1;margin:16px 0}
 .close-body p{font-size:14px;color:var(--dim);max-width:440px;margin:0 auto 12px;line-height:1.7}
@@ -447,7 +450,7 @@ footer b{color:var(--dim);font-weight:600}
         <h3><span class="n">1</span>Sale Promotion</h3>
         <div class="mm-sub">
           <div class="mm-sub-t">a · By product category (drive sale)</div>
-          <div class="mm-items"><span class="mm-item">Laptop × Gear Bundle</span><span class="mm-item">Powered by GIGABYTE</span><span class="mm-item">Bundle PC & LCD</span></div>
+          <div class="mm-items"><span class="mm-item">Laptop — Gift Package</span><span class="mm-item">Powered by GIGABYTE</span><span class="mm-item">Bundle PC & LCD</span></div>
         </div>
         <div class="mm-sub">
           <div class="mm-sub-t">b · Branding overall</div>
@@ -506,7 +509,7 @@ footer b{color:var(--dim);font-weight:600}
       </div>
       <div class="gantt-branch">
         <div class="gantt-branch-t"><span class="tag">②</span>Drive Sale · by category</div>
-        <div class="gantt-row"><div class="lbl">Laptop × Gear<em>back-to-school</em></div><div class="bar laptop">Gift bundle</div></div>
+        <div class="gantt-row"><div class="lbl">Laptop Gift Package<em>back-to-school</em></div><div class="bar laptop">Gift package</div></div>
         <div class="gantt-row"><div class="lbl">Powered by GIGABYTE<em>PC components</em></div><div class="bar pbg">Tier program</div></div>
         <div class="gantt-row"><div class="lbl">Bundle PC & LCD<em>peak push</em></div><div class="bar bundle">PC + monitor + collectible</div></div>
       </div>
@@ -516,22 +519,22 @@ footer b{color:var(--dim);font-weight:600}
     <!-- 1.1 Laptop -->
     <div class="reveal" style="margin-top:56px">
       <div class="eyebrow" style="margin-bottom:10px">1.1 — Mechanic A · Laptop</div>
-      <h2 class="sec-title" style="margin-bottom:18px">Laptop × GIGABYTE Gear Bundle</h2>
+      <h2 class="sec-title" style="margin-bottom:18px">Laptop — Gift Package</h2>
     </div>
     <div class="reveal reveal-d1">
-      <p style="font-size:15px;color:var(--dim);line-height:1.7;margin-bottom:20px;max-width:700px">Every GIGABYTE laptop comes with a special 40th anniversary gift bundle — <strong style="color:var(--white)">tiered by product</strong>. Flagship models unlock the scarce HQ edition; all other models get the celebratory 40-year bundle. Every purchase auto-registers for the Lucky Draw and enters GIGABYTE's CDP.</p>
+      <p style="font-size:15px;color:var(--dim);line-height:1.7;margin-bottom:20px;max-width:700px">Every GIGABYTE laptop comes with a curated 40th anniversary <strong style="color:var(--white)">gift package</strong>, tiered by product. The package can hold accessories, peripherals, or exclusive anniversary items — the contents flex by tier. Flagship models unlock the scarce HQ edition; all other models get the celebratory 40-year package. Every purchase auto-registers for the Lucky Draw and enters GIGABYTE's CDP.</p>
       <div class="layers" style="margin-bottom:20px">
         <div class="layer-card collect">
           <div class="layer-tag" style="text-align:center;display:block">Premium products</div>
           <div class="collect-fig"><svg viewBox="0 0 24 24"><path d="M20 12v10H4V12M2 7h20v5H2zM12 22V7M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7zM12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></svg><span class="serial">LTD</span></div>
-          <h3>HQ Limited Bundle</h3>
-          <p>A limited-run collector bundle shipped from GIGABYTE HQ — scarce, exclusive to flagship laptop buyers. The trophy gift of the campaign.</p>
+          <h3>HQ Limited Package</h3>
+          <p>A limited-run collector package shipped from GIGABYTE HQ — scarce, exclusive to flagship laptop buyers. The trophy gift of the campaign.</p>
           <div class="scarcity"><span class="sc">Limited run</span><span class="sc">From HQ</span><span class="sc">Flagship only</span></div>
         </div>
         <div class="layer-card">
           <div class="layer-tag">All other models</div>
-          <h3>40th Anniversary Bundle</h3>
-          <p style="font-size:13px;color:var(--dim);line-height:1.6;margin-bottom:14px">Celebratory AORUS gear bundle — headset, mouse or backpack — stamped with the <strong style="color:var(--white)">GIGABYTE 40-year logo</strong>. Higher production volume so every buyer joins the celebration.</p>
+          <h3>40th Anniversary Package</h3>
+          <p style="font-size:13px;color:var(--dim);line-height:1.6;margin-bottom:14px">A celebratory gift package stamped with the <strong style="color:var(--white)">GIGABYTE 40-year logo</strong> — contents curated per model. Higher production volume so every buyer joins the celebration.</p>
           <div class="scarcity" style="justify-content:flex-start"><span class="sc">40-year logo</span><span class="sc">Wide availability</span><span class="sc">All laptop tiers</span></div>
         </div>
       </div>
@@ -690,10 +693,10 @@ footer b{color:var(--dim);font-weight:600}
     </div>
     <div class="hub reveal reveal-d1">
       <svg class="hub-svg" viewBox="0 0 900 520" preserveAspectRatio="none">
-        <path d="M450 130 C 450 175, 450 195, 450 196" stroke="rgba(201,150,58,.3)" stroke-width="1.5" fill="none" stroke-dasharray="5 4"/>
-        <path d="M450 324 C 450 350, 450 370, 450 390" stroke="rgba(201,150,58,.3)" stroke-width="1.5" fill="none" stroke-dasharray="5 4"/>
-        <path d="M340 260 C 300 260, 280 260, 250 260" stroke="rgba(201,150,58,.3)" stroke-width="1.5" fill="none" stroke-dasharray="5 4"/>
-        <path d="M560 260 C 600 260, 620 260, 650 260" stroke="rgba(201,150,58,.3)" stroke-width="1.5" fill="none" stroke-dasharray="5 4"/>
+        <path d="M450 130 C 450 175, 450 195, 450 196" stroke="rgba(255,106,26,.3)" stroke-width="1.5" fill="none" stroke-dasharray="5 4"/>
+        <path d="M450 324 C 450 350, 450 370, 450 390" stroke="rgba(255,106,26,.3)" stroke-width="1.5" fill="none" stroke-dasharray="5 4"/>
+        <path d="M340 260 C 300 260, 280 260, 250 260" stroke="rgba(255,106,26,.3)" stroke-width="1.5" fill="none" stroke-dasharray="5 4"/>
+        <path d="M560 260 C 600 260, 620 260, 650 260" stroke="rgba(255,106,26,.3)" stroke-width="1.5" fill="none" stroke-dasharray="5 4"/>
         <circle cx="450" cy="130" r="3" fill="var(--gold)"/><circle cx="450" cy="390" r="3" fill="var(--gold)"/><circle cx="250" cy="260" r="3" fill="var(--gold)"/><circle cx="650" cy="260" r="3" fill="var(--gold)"/>
       </svg>
       <div class="hub-c"><div class="n">GIGABYTE<br>Vietnam</div><div class="s">40th · 2026</div></div>
@@ -796,23 +799,23 @@ footer b{color:var(--dim);font-weight:600}
     <div class="roadmap reveal reveal-d1">
       <div class="rm">
         <div class="rm-l"><div class="rm-c">01</div><div class="rm-line"></div></div>
-        <div class="rm-b"><div class="rm-tag">UGC · Nostalgia</div><div class="rm-t">"Máy tính đầu tiên của mày dùng linh kiện gì?"</div><div class="rm-d">GIGABYTE mainboard has been in Vietnam since the early 2000s — every first-gen builder has a story. <span class="prod">Closes naturally on the GIGABYTE 2026 lineup</span> — heritage leading to today's products, never a pitch.</div><div class="rm-ch"><span class="k">Channel</span><span class="c">VOZ Forum</span><span class="c">Facebook Groups</span></div></div>
+        <div class="rm-b"><div class="rm-tag">UGC · Nostalgia</div><div class="rm-t">"What parts were in your very first PC?"</div><div class="rm-d">GIGABYTE mainboard has been in Vietnam since the early 2000s — every first-gen builder has a story. <span class="prod">Closes naturally on the GIGABYTE 2026 lineup</span> — heritage leading to today's products, never a pitch.</div><div class="rm-ch"><span class="k">Channel</span><span class="c">VOZ Forum</span><span class="c">Facebook Groups</span></div></div>
       </div>
       <div class="rm">
         <div class="rm-l"><div class="rm-c">02</div><div class="rm-line"></div></div>
-        <div class="rm-b"><div class="rm-tag">Challenge · Viral</div><div class="rm-t">"Build Powered by GIGABYTE Infinity under X triệu"</div><div class="rm-d">Vietnam's builder community runs on budget-optimization challenges. Hoàng Luân builds first → community follows → best build featured at the Big Event. <span class="prod">Components surface naturally as builders pick them</span> — no spec-dumping.</div><div class="rm-ch"><span class="k">Channel</span><span class="c">YouTube (full build)</span><span class="c">TikTok (clip)</span><span class="c">FB Groups</span></div></div>
+        <div class="rm-b"><div class="rm-tag">Challenge · Viral</div><div class="rm-t">"Build a Powered by GIGABYTE Infinity rig under X mil"</div><div class="rm-d">Vietnam's builder community runs on budget-optimization challenges. Hoàng Luân builds first → community follows → best build featured at the Big Event. <span class="prod">Components surface naturally as builders pick them</span> — no spec-dumping.</div><div class="rm-ch"><span class="k">Channel</span><span class="c">YouTube (full build)</span><span class="c">TikTok (clip)</span><span class="c">FB Groups</span></div></div>
       </div>
       <div class="rm">
         <div class="rm-l"><div class="rm-c">03</div><div class="rm-line"></div></div>
-        <div class="rm-b"><div class="rm-tag">Brand Story · Human</div><div class="rm-t">"GIGABYTE nhân viên kể chuyện" — confessional</div><div class="rm-d">Not a corporate interview. "Day in the life" / "things I wish I knew" — real staff stories. <span class="prod">Each story naturally name-drops a product they're proud of</span>; authentic tone beats any brand film.</div><div class="rm-ch"><span class="k">Channel</span><span class="c">TikTok</span><span class="c">YouTube Shorts</span></div></div>
+        <div class="rm-b"><div class="rm-tag">Brand Story · Human</div><div class="rm-t">"GIGABYTE people, real stories" — confessional</div><div class="rm-d">Not a corporate interview. "Day in the life" / "things I wish I knew" — real staff stories. <span class="prod">Each story naturally name-drops a product they're proud of</span>; authentic tone beats any brand film.</div><div class="rm-ch"><span class="k">Channel</span><span class="c">TikTok</span><span class="c">YouTube Shorts</span></div></div>
       </div>
       <div class="rm">
         <div class="rm-l"><div class="rm-c">04</div><div class="rm-line"></div></div>
-        <div class="rm-b"><div class="rm-tag">AI · Product Power</div><div class="rm-t">AI in Action — "Chạy AI ngay trên máy GIGABYTE"</div><div class="rm-d">Show GIGABYTE hardware running real AI: local LLMs, Stable Diffusion, AI-accelerated rendering, in-game AI upscaling. <span class="prod">The AI PC positioning made tangible</span> — ties directly to the university AI workshops and the creator/dev audience.</div><div class="rm-ch"><span class="k">Channel</span><span class="c">YouTube (demo)</span><span class="c">TikTok (wow clip)</span></div></div>
+        <div class="rm-b"><div class="rm-tag">AI · Product Power</div><div class="rm-t">AI in Action — "Run AI right on your GIGABYTE machine"</div><div class="rm-d">Show GIGABYTE hardware running real AI: local LLMs, Stable Diffusion, AI-accelerated rendering, in-game AI upscaling. <span class="prod">The AI PC positioning made tangible</span> — ties directly to the university AI workshops and the creator/dev audience.</div><div class="rm-ch"><span class="k">Channel</span><span class="c">YouTube (demo)</span><span class="c">TikTok (wow clip)</span></div></div>
       </div>
       <div class="rm">
         <div class="rm-l"><div class="rm-c">05</div></div>
-        <div class="rm-b" style="padding-bottom:0"><div class="rm-tag">Reaction · Authentic Proof</div><div class="rm-t">"Người chưa biết GIGABYTE thử AORUS lần đầu"</div><div class="rm-d">Cast non-enthusiasts — students, casual gamers — for genuine first reactions. <span class="prod">The product speaks through the real experience</span>; unscripted surprise converts better than any review.</div><div class="rm-ch"><span class="k">Channel</span><span class="c">TikTok</span><span class="c">YouTube Shorts</span></div></div>
+        <div class="rm-b" style="padding-bottom:0"><div class="rm-tag">Reaction · Authentic Proof</div><div class="rm-t">"First-timers try AORUS for the very first time"</div><div class="rm-d">Cast non-enthusiasts — students, casual gamers — for genuine first reactions. <span class="prod">The product speaks through the real experience</span>; unscripted surprise converts better than any review.</div><div class="rm-ch"><span class="k">Channel</span><span class="c">TikTok</span><span class="c">YouTube Shorts</span></div></div>
       </div>
     </div>
   </div>
