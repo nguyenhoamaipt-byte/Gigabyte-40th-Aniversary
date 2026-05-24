@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>GIGABYTE — Enter Infinity · 40th Anniversary Campaign</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --black:#000007;--s0:#070710;--s1:#0C0C18;--s2:#13131F;--s3:#1A1A28;
+  --gold:#FF6A1A;--g2:#FF8C42;--g3:#FFB570;
+  --g-hi:rgba(255,106,26,.18);--g-lo:rgba(255,106,26,.08);--g-line:rgba(255,106,26,.22);
+  --white:#F2F0EC;--dim:#A09C92;--faint:#5C5A54;
+  --violet:#B25CFF;--blue:#4D9BFF;--green:#34D399;
+}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+body{font-family:'DM Sans',sans-serif;background:var(--black);color:var(--white);font-size:15px;line-height:1.6;min-height:100vh;display:flex;flex-direction:column}
+h1,h2,h3{font-family:'Space Grotesk',sans-serif;line-height:1.1;letter-spacing:-.02em}
+a{color:inherit;text-decoration:none}
+.gold-tx{background:linear-gradient(135deg,var(--gold),var(--g3) 55%,var(--gold));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+body::before{content:'';pointer-events:none;position:fixed;inset:0;z-index:0;opacity:.02;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:200px 200px}
+
+.bg-glow{position:fixed;inset:0;z-index:0;background:radial-gradient(ellipse 70% 50% at 50% 0%,rgba(255,106,26,.10),transparent 55%),radial-gradient(ellipse 40% 40% at 50% 60%,rgba(255,106,26,.04),transparent 60%)}
+.bg-inf{position:fixed;font-family:'Space Grotesk',sans-serif;font-size:46vh;font-weight:700;color:transparent;-webkit-text-stroke:1px rgba(255,106,26,.06);top:50%;left:50%;transform:translate(-50%,-50%);z-index:0;pointer-events:none;user-select:none}
+
+.wrap{position:relative;z-index:2;max-width:1080px;margin:0 auto;padding:64px 28px;flex:1;display:flex;flex-direction:column;justify-content:center}
+
+/* HERO */
+.hero{text-align:center;margin-bottom:48px}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;margin-bottom:20px;font-size:12px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+.eyebrow .d{width:4px;height:4px;border-radius:50%;background:var(--gold)}
+.hero h1{font-size:clamp(44px,8vw,86px);font-weight:700;line-height:.98;margin-bottom:16px}
+.hero .sub{font-size:clamp(15px,2vw,20px);color:var(--dim);margin-bottom:10px}
+.hero .rolebadge{display:inline-block;margin-top:10px;padding:7px 20px;border:1px solid var(--g-line);border-radius:100px;background:var(--g-lo);font-size:13px;font-weight:600;color:var(--g2);font-family:'Space Grotesk',sans-serif}
+.hero .by{font-size:13px;color:var(--faint);margin-top:16px;letter-spacing:.04em}
+.hero .by b{color:var(--g2)}
+
+/* CARDS */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.dcard{position:relative;background:var(--s1);border:1px solid rgba(255,255,255,.07);border-radius:18px;padding:30px 26px 26px;display:flex;flex-direction:column;border-top:3px solid;transition:transform .25s,box-shadow .25s,border-color .25s;cursor:pointer}
+.dcard:hover{transform:translateY(-4px);box-shadow:0 16px 50px rgba(0,0,7,.6)}
+.dcard.report{border-top-color:var(--gold)}
+.dcard.deck{border-top-color:var(--violet)}
+.dcard.roadmap{border-top-color:var(--blue)}
+.dcard .num{position:absolute;top:22px;right:24px;font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:700;color:var(--faint)}
+.dcard .ic{width:50px;height:50px;border-radius:13px;display:flex;align-items:center;justify-content:center;margin-bottom:18px}
+.dcard .ic svg{width:24px;height:24px;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.dcard.report .ic{background:var(--g-hi)}.dcard.report .ic svg{stroke:var(--gold)}
+.dcard.deck .ic{background:rgba(178,92,255,.14)}.dcard.deck .ic svg{stroke:var(--violet)}
+.dcard.roadmap .ic{background:rgba(77,155,255,.14)}.dcard.roadmap .ic svg{stroke:var(--blue)}
+.dcard .fmt{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:8px}
+.dcard.report .fmt{color:var(--gold)}.dcard.deck .fmt{color:var(--violet)}.dcard.roadmap .fmt{color:var(--blue)}
+.dcard h3{font-size:21px;font-weight:700;margin-bottom:10px}
+.dcard p{font-size:13.5px;color:var(--dim);line-height:1.55;margin-bottom:14px;flex:1}
+.dcard .use{font-size:12px;color:var(--faint);margin-bottom:20px;display:flex;align-items:center;gap:7px}
+.dcard .use b{color:var(--dim);font-weight:600}
+.dcard .open{display:inline-flex;align-items:center;justify-content:space-between;gap:8px;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:13px;padding:11px 18px;border-radius:9px;transition:opacity .2s}
+.dcard.report .open{background:linear-gradient(135deg,var(--gold),var(--g2));color:#000}
+.dcard.deck .open{background:linear-gradient(135deg,var(--violet),#C98AFF);color:#000}
+.dcard.roadmap .open{background:linear-gradient(135deg,var(--blue),#82BEFF);color:#000}
+.dcard:hover .open{opacity:.88}
+.dcard .open svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+
+footer{position:relative;z-index:2;text-align:center;padding:24px;font-size:12px;color:var(--faint);border-top:1px solid rgba(255,255,255,.05)}
+footer b{color:var(--dim)}
+
+@media(max-width:820px){
+  .cards{grid-template-columns:1fr}
+  .wrap{padding:48px 18px}
+}
+</style>
+</head>
+<body>
+<div class="bg-glow"></div>
+<div class="bg-inf">∞</div>
+
+<div class="wrap">
+  <div class="hero">
+    <div class="eyebrow"><span class="d"></span>GIGABYTE Vietnam · 40th Anniversary 2026<span class="d"></span></div>
+    <h1><span class="gold-tx">Enter</span> Infinity</h1>
+    <div class="sub">40 Years of Infinite Innovation · A National Campaign Concept</div>
+    <div class="rolebadge">Presented for the Marketing Head, Vietnam role</div>
+    <div class="by">by <b>Mai Nguyen (Mia)</b></div>
+  </div>
+
+  <div class="cards">
+    <!-- REPORT -->
+    <a class="dcard report" href="./gigabyte-40-campaign.html">
+      <div class="num">01</div>
+      <div class="ic"><svg viewBox="0 0 24 24"><path d="M4 4h11l5 5v11a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1z"/><path d="M14 4v5h5M8 13h8M8 17h8M8 9h2"/></svg></div>
+      <div class="fmt">Detail Report</div>
+      <h3>The Full Campaign</h3>
+      <p>Every mechanic, channel, partnership and event — in depth. Promotion engine, marketing plan, POSM, KOL system and the Big Event, told as one narrative.</p>
+      <div class="use"><b>Use:</b> deep-dive · leave-behind document</div>
+      <span class="open">Open report <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+    </a>
+
+    <!-- DECK -->
+    <a class="dcard deck" href="./pitch-deck.html">
+      <div class="num">02</div>
+      <div class="ic"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
+      <div class="fmt">Pitch Deck · 17 Slides</div>
+      <h3>The Live Presentation</h3>
+      <p>Built to walk through on stage. Why Now → Challenge → Big Idea → Plan → KPIs → Vision. Arrow keys to navigate, <b style="color:var(--violet)">F</b> for fullscreen.</p>
+      <div class="use"><b>Use:</b> the live interview pitch</div>
+      <span class="open">Open deck <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+    </a>
+
+    <!-- ROADMAP -->
+    <a class="dcard roadmap" href="./roadmap.html">
+      <div class="num">03</div>
+      <div class="ic"><svg viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/><circle cx="7" cy="6" r="1.6" fill="currentColor" stroke="none"/><circle cx="13" cy="12" r="1.6" fill="currentColor" stroke="none"/><circle cx="18" cy="18" r="1.6" fill="currentColor" stroke="none"/></svg></div>
+      <div class="fmt">Timeline Roadmap</div>
+      <h3>The Master View</h3>
+      <p>4 tracks × 6 months at a glance — Execution, Marketing Online &amp; Offline, Partnership. Every activity mapped from teaser to the Big Event peak.</p>
+      <div class="use"><b>Use:</b> the one-page war-room map</div>
+      <span class="open">Open roadmap <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+    </a>
+  </div>
+</div>
+
+<footer>
+  <b>GIGABYTE Vietnam · Enter Infinity · 40th Anniversary Campaign 2026</b> &nbsp;·&nbsp; Prepared by Mai Nguyen (Mia)
+</footer>
+</body>
+</html>
