@@ -3,3 +3,9 @@ package.json
 package-lock.json
 gen*.js
 npm.log
+
+# Local-only working files (full-data deck, script, PDF) — not for publishing
+pitch-deck-data.html
+presentation-script.md
+presentation-script-print.html
+Enter-Infinity-Presentation-Script.pdf
